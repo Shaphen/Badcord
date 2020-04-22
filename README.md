@@ -1,9 +1,5 @@
 # README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+![alt text](https://github.com/Shaphen/Dabcord/blob/master/app/assets/images/logos/git_versions/name_right.png "Dabcord Logo")
 
 * Ruby version
 
