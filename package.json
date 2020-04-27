@@ -1,5 +1,27 @@
 {
-  "name": "Dabcord",
+  "name": "Badcord",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "description": "![alt text](https://github.com/Shaphen/Dabcord/blob/master/app/assets/images/logos/git_versions/cover_bottom.png \"badcord\")",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --mode=development --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shaphen/Badcord.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shaphen/Badcord/issues"
+  },
+  "homepage": "https://github.com/Shaphen/Badcord#readme"
 }
