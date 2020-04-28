@@ -1,17 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import configureStore from './store/store'
 
 // test code
-import { signup, login, logout } from './util/session_api_util';
+import { signupUser, loginUser, logoutUser } from './util/session_api_util';
 //end
 
 document.addEventListener("DOMContentLoaded", () => {
-  // test code
-  window.signup = signup;
-  window.login = login;
-  window.logout = logout;
-  // end
-  
+  const store = configureStore();
   const root = document.getElementById('root');
   ReactDOM.render(<h1>Badcord</h1>, root)
+
+  // test code
+  window.signup = signupUser;
+  window.login = loginUser;
+  window.logout = logoutUser;
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
+  // end
 });
