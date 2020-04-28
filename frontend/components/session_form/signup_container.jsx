@@ -11,7 +11,7 @@ const mSTP = state => {
 };
 
 const mDTP = dispatch => ({
-  signup: user => dispatch(signup(user))
+  processEntry: user => dispatch(signup(user))
 });
 
 export default connect(mSTP, mDTP)(Session);
