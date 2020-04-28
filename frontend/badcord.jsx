@@ -4,7 +4,7 @@ import configureStore from './store/store'
 import Root from './components/root';
 
 // test code
-// import { signupUser, loginUser, logoutUser } from './util/session_api_util';
+import { login, signup } from './actions/session_actions';
 //end
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -13,10 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(<Root store={ store } />, root)
 
   // test code
-  // window.signup = signupUser;
-  // window.login = loginUser;
-  // window.logout = logoutUser;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+  window.login = login;
+  window.signup = signup;
   // end
 });
