@@ -1,0 +1,36 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background-color: grey;
+  min-height: 900px;
+  display: flex;
+  justify-content: center;
+}
+
+.splash {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.splash header {
+  width: 100%;
+  padding: 72px 50px 0px;
+}
+
+.splash header h3 {
+  color: white;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.splash header p {
+  color: rgb(209, 205, 205);
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 18px;
+  text-align: center;
+  margin: 12px 59px 13px 59px;
+}
