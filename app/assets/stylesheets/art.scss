@@ -1,0 +1,59 @@
+.art-box {
+  position: relative;
+  height: 450px;
+  bottom: 100px;
+}
+
+.android {
+  position: absolute;
+  left: 50%;
+  margin-left: -400px;
+  bottom: 0px;
+  width: 100px;
+  height: auto;
+}
+
+.iphone {
+  position: absolute;
+  left: 50%;
+  margin-left: -295px;
+  bottom: 0px;
+  z-index: 2;
+  width: 100px;
+  height: auto;
+}
+
+.controller {
+  position: absolute;
+  width: 110px;
+  left: 50%;
+  margin-left: -195px;
+  bottom: 0px;
+  z-index: 2;
+}
+
+.desktop {
+  position: absolute;
+  left: 50%;
+  margin-left: -220px;
+  bottom: 0px;
+  width: 420px;
+  height: auto;
+}
+
+
+.laptop {
+  position: absolute;
+  width: 440px;
+  left: 50%;
+  margin-left: -12px;
+  bottom: 0;
+}
+
+.headphones {
+  position: absolute;
+  width: 70px;
+  left: 50%;
+  margin-left: 202px;
+  bottom: 132px;
+}
