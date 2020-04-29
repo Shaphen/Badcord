@@ -5,8 +5,6 @@ export default ({ currentUser, logout }) => {
   
   const display = currentUser ? (
     <div className="greeting-container">
-      <p className="greeting-login-state">Logged in as: { currentUser.username }</p>
-      <button className="logout-button" onClick={ logout }>LOGOUT</button>
     </div>
   ) : (
     <div className="signup-login">
@@ -16,7 +14,7 @@ export default ({ currentUser, logout }) => {
   )
 
   return (
-    <div>
+    <div className="signup-login-box">
       { display }
     </div>
   )

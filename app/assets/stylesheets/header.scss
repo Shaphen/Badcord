@@ -1,0 +1,40 @@
+.header {
+  height: 30px;
+}
+
+.header-box {
+  display: flex;
+  justify-content: space-around;
+}
+
+.login-box-side {
+  width: 30px;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 30px;
+  padding-top: 20px;
+}
+
+.logo-white {
+  width: 130px;
+  height: auto;
+}
+
+.header-logo-side {
+  width: 30px;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 30px;
+  padding-top: 20px;
+}
+
+.header-login-button {
+  background: #2A2A2A;
+  font-size: 12px;
+  padding: 8px 15px 0px;
+  border-radius: 20px;
+  text-align: center;
+  border: 1px solid hsla(0,0%,100%,.8);
+  color: hsla(0,0%,100%,.8);
+  text-decoration: none;
+}

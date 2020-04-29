@@ -14,5 +14,9 @@
  *= require_self
  */
 
- 
+ #root {
+   width: 100%;
+  display: flex;
+  justify-content: center;
+ }
  
