@@ -18,6 +18,18 @@ class Session extends React.Component {
     this.props.processEntry(user)
   }
 
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li className="errors" key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+  
   handleChange(type) {
     return e => {
       this.setState({[type]: e.target.value})
@@ -25,14 +37,12 @@ class Session extends React.Component {
   }
 
   render() {
-    if (this.props.errors) {
-      let errors = this.props.errors
-    }
     const address = this.props.formType === 'Welcome Back!' ? '/signup' : '/login'
     const name = this.props.formType === 'Welcome Back!' ? 'sign up' : 'login'
     return (
       <div className="session">
         <h1 className="form-type">{ this.props.formType }</h1>
+        {this.renderErrors()}
         <form className="login-signup-form" onSubmit={ this.handleSubmit }>
           <label className="username">
             <p>USERNAME</p>

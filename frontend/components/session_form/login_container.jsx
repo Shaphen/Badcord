@@ -5,7 +5,7 @@ import { login } from '../../actions/session_actions'
 const mSTP = state => {
   // debugger
   return {
-    errors: state.errors,
+    errors: state.errors.session,
     formType: 'Welcome Back!'
   }
 };
