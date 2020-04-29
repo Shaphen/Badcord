@@ -149,6 +149,16 @@
 }
 
 .login-signup-bg-img {
-  width: 100%;
+  width: 110%;
+  height: 100%;
+}
+
+.login-signup-bg-logo {
+  position: absolute;
+  left: 85px;
+  top: 35px;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  width: 130px;
   height: auto;
 }

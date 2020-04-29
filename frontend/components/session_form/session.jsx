@@ -41,7 +41,8 @@ class Session extends React.Component {
     const name = this.props.formType === 'Welcome Back!' ? 'sign up' : 'login'
     return (
       <div className="login-signup-background">
-        <img className="login-signup-bg-img" src={window.login_signup_bg} />
+        <img className="login-signup-bg-img" src={window.login_signup_bg}/>
+        <img className="login-signup-bg-logo" src={window.mono_logo} />
         <div className="session">
           <h1 className="form-type">{ this.props.formType }</h1>
           {this.renderErrors()}
