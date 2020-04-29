@@ -1,4 +1,9 @@
 .session {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -131,4 +136,19 @@
 .errors {
   color: red;
   text-align: center;
+}
+
+.login-signup-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  z-index: 10;
+}
+
+.login-signup-bg-img {
+  width: 100%;
+  height: auto;
 }

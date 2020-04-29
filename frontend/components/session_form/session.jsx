@@ -40,27 +40,30 @@ class Session extends React.Component {
     const address = this.props.formType === 'Welcome Back!' ? '/signup' : '/login'
     const name = this.props.formType === 'Welcome Back!' ? 'sign up' : 'login'
     return (
-      <div className="session">
-        <h1 className="form-type">{ this.props.formType }</h1>
-        {this.renderErrors()}
-        <form className="login-signup-form" onSubmit={ this.handleSubmit }>
-          <label className="username">
-            <p>USERNAME</p>
-            <input type="text" value={this.state.username} onChange={this.handleChange('username')} />
-          </label>
-          {
-            this.props.formType === 'Create an account' ? <label className="email">EMAIL</label>: ''
-          }
-          {
-            this.props.formType === 'Create an account' ? <input type="email" className="email-box" value={this.state.email} onChange={this.handleChange('email')}/> : ''
-          }
-          <label className="password">
-            <p>PASSWORD</p>
-            <input type="password" value={this.state.password} onChange={this.handleChange('password')} />
-          </label>
-          <button className="session-submit-button" value={this.props.formType}>Submit</button>
-          <Link to={address} className="other-form" >{name}</Link>
-        </form>
+      <div className="login-signup-background">
+        <img className="login-signup-bg-img" src={window.login_signup_bg} />
+        <div className="session">
+          <h1 className="form-type">{ this.props.formType }</h1>
+          {this.renderErrors()}
+          <form className="login-signup-form" onSubmit={ this.handleSubmit }>
+            <label className="username">
+              <p>USERNAME</p>
+              <input type="text" value={this.state.username} onChange={this.handleChange('username')} />
+            </label>
+            {
+              this.props.formType === 'Create an account' ? <label className="email">EMAIL</label>: ''
+            }
+            {
+              this.props.formType === 'Create an account' ? <input type="email" className="email-box" value={this.state.email} onChange={this.handleChange('email')}/> : ''
+            }
+            <label className="password">
+              <p>PASSWORD</p>
+              <input type="password" value={this.state.password} onChange={this.handleChange('password')} />
+            </label>
+            <button className="session-submit-button" value={this.props.formType}>Submit</button>
+            <Link to={address} className="other-form" >{name}</Link>
+          </form>
+        </div>
       </div>
     )
   }
