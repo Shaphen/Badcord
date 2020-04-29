@@ -33,7 +33,6 @@ class Session extends React.Component {
     return (
       <div className="session">
         <h1 className="form-type">{ this.props.formType }</h1>
-        <Link to={ address } className="other-form" >{ name }</Link>
         <form className="login-signup-form" onSubmit={ this.handleSubmit }>
           <label className="username">
             <p>USERNAME</p>
@@ -49,7 +48,8 @@ class Session extends React.Component {
             <p>PASSWORD</p>
             <input type="password" value={this.state.password} onChange={this.handleChange('password')} />
           </label>
-          <button value={this.props.formType}>Submit</button>
+          <button className="session-submit-button" value={this.props.formType}>Submit</button>
+          <Link to={address} className="other-form" >{name}</Link>
         </form>
       </div>
     )

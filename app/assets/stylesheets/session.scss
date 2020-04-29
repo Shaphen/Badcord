@@ -5,13 +5,15 @@
   max-width: 300px;
   background-color: #36393F;
   border-radius: 5px;
-  padding: 30px;
+  padding: 30px 30px 12px 30px;
 }
 
 .form-type {
   text-align: center;
   width: 100%;
   color: white;
+  margin-bottom: 20px;
+  font-size: 20px;
 }
 
 .login-signup-form {
@@ -32,6 +34,10 @@
 .other-form {
   text-align: center;
   width: 100%;
+  color: #7289DA;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  margin-top: 20px;
 }
 
 .username {
@@ -50,26 +56,44 @@
 
 .login-signup-form label p {
   width: 100%;
-  padding-left: 80px;
+  padding-left: 50px;
   font-size: 12px;
+  margin-bottom: 5px;
 }
 
 .email {
   width: 100%;
-  padding-left: 80px;
+  padding-left: 50px;
+  margin-bottom: 5px;
 }
 
 .login-signup-form label input {
-  padding: 3px;
+  padding: 4px;
+  padding-left: 6px;
   border-radius: 3px;
-  border-color: white;
-
+  width: 200px;
+  border: none;
+  outline: none;
 }
 
 .email-box {
-  padding: 3px;
+  padding: 4px;
+  padding-left: 6px;
   border-radius: 3px;
-  border-color: white;
   font-size: 12px;
   margin-bottom: 5px;
+  border: none;
+  outline: none;
+  width: 200px;
+}
+
+.session-submit-button {
+  width: 200px;
+  padding: 3px;
+  margin-top: 5px;
+  border-radius: 3px;
+  border-color: #7289DA;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: #7289DA;
 }
