@@ -2,8 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// #root {
+//   display: flex;
+//   justify-content: center;
+// }
+
 body {
-  background-color: grey;
+  background-color: rgb(42, 42, 42);
   min-height: 900px;
   display: flex;
   justify-content: center;
@@ -12,11 +17,13 @@ body {
 .splash {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  max-width: 830px;
 }
 
 .splash header {
   width: 100%;
-  padding: 72px 50px 0px;
+  padding: 72px 65px 0px 72px;
 }
 
 .splash header h3 {
@@ -30,7 +37,42 @@ body {
 .splash header p {
   color: rgb(209, 205, 205);
   font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
-  font-size: 18px;
+  font-size: 13px;
   text-align: center;
-  margin: 12px 59px 13px 59px;
+  margin: 12px 70px 13px 70px;
+}
+
+.splash div {
+  width: 100%;
+  min-height: 30px;
+}
+
+.signup-login {
+  display: flex;
+  justify-content: center;
+}
+
+.signup-button {
+  margin-right: 40px;
+  color: black;
+  background-color: white;
+  font-size: 13px;
+  padding: 0px 60px;
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  // border: 1px solid grey;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.login-button {
+  color: black;
+  background-color: #7289DA;
+  font-size: 13px;
+  padding: 0px 60px;
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  // border: 1px solid grey;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
 }

@@ -6,7 +6,7 @@ const mSTP = state => {
   // debugger
   return {
     errors: state.errors,
-    formType: 'Login'
+    formType: 'Welcome Back!'
   }
 };
 
