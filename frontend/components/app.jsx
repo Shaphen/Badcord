@@ -3,6 +3,7 @@ import GreetingContainer from './greeting/greeting_container';
 import HeaderContainer from './greeting/header_container';
 import { Route, Switch } from 'react-router-dom';
 import LoginContainer from './session_form/login_container'
+import Art from '../components/greeting/art';
 import SignupContainer from './session_form/signup_container'
 import { AuthRoute } from '../util/route_util';
 
@@ -16,7 +17,7 @@ const App = () => (
     <Switch>
       <AuthRoute path="/login" component={LoginContainer} />
       <AuthRoute path="/signup" component={SignupContainer} />
-      <Route exact path='/' component={GreetingContainer} />
+      <Art />
     </Switch>
   </div>
 );
