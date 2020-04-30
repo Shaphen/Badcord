@@ -10,11 +10,21 @@ class Session extends React.Component {
       email: ""
     }
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.demoLogin = this.demoLogin.bind(this)
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
+    this.props.processEntry(user)
+  }
+
+  demoLogin(e) {
+    e.preventDefault();
+    const user = {
+      username: "shaphen",
+      password: "password"
+    }
     this.props.processEntry(user)
   }
 
@@ -65,6 +75,7 @@ class Session extends React.Component {
               <input type="password" value={this.state.password} onChange={this.handleChange('password')} />
             </label>
             <button className="session-submit-button" value={this.props.formType}>Submit</button>
+            <button onClick={(e) => this.demoLogin(e)} className="demo-login">Demo Login</button>
             <Link to={address} className="other-form" >{name}</Link>
           </form>
         </div>

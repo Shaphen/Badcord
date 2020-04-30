@@ -4,11 +4,19 @@ import { AiFillGithub }from 'react-icons/ai';
 import { AiOutlineLinkedin } from 'react-icons/ai'
 
 
-export default ({ currentUser, logout }) => {
+export default ({ currentUser, logout, login }) => {
 
+  const demoLogin = () => {
+    const user = {
+      username: "shaphen",
+      password: "password"
+    }
+    login(user)
+  }
+  
   const display = currentUser ? (
     <div className="greeting-container">
-      <p className="greeting-login-state">Logged in as: {currentUser.username}</p>
+      <p className="greeting-login-state">Logged in as: {currentUser.username} (temp. confirmation)</p>
       <button className="logout-button" onClick={logout}>LOGOUT</button>
     </div>
   ) : (
@@ -23,6 +31,7 @@ export default ({ currentUser, logout }) => {
         <a className="github-icon" href="https://github.com/Shaphen/Badcord/wiki" target="_blank">
           <AiFillGithub fill="white" size={20} />
         </a>
+        {/* <button className="demo-login" onClick={demoLogin()}>Demo Login</button> */}
         <Link to="/login" className="header-login-button">Log In</Link>
       </div>
     </div>
