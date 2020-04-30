@@ -29,4 +29,12 @@ class User < ApplicationRecord
   def ensure_session_token
     self.session_token ||= self.reset_session_token!
   end
+
+  has_many :servers,
+    foreign_key: :owner_id,
+    class_name: :Server
+
+  has_many :server_memberships,
+    foreign_key: :member_id,
+    class_name: :ServerMember
 end
