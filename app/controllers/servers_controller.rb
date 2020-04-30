@@ -22,7 +22,11 @@ class Api::ServersController < ApplicationController
   end
 
   def destroy
-
+    @server = current_user.servers.find_by(id: params[:id])
+    if @server
+      @server.destroy
+    end
+    render `api/users/#{current_user.id}/servers`
   end
 
   private
