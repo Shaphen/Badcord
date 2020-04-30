@@ -42,7 +42,9 @@ class Session extends React.Component {
     return (
       <div className="login-signup-background">
         <img className="login-signup-bg-img" src={window.login_signup_bg}/>
-        <img className="login-signup-bg-logo" src={window.mono_logo} />
+        <a href="https://badcord.herokuapp.com/#/">
+          <img className="login-signup-bg-logo" src={window.mono_logo} />
+        </a>
         <div className="session">
           <Link to="/" className="login-signup-go-back">X</Link>
           <h1 className="form-type">{ this.props.formType }</h1>
