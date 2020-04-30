@@ -6,5 +6,6 @@ class CreateServers < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
+    add_index :servers, :owner_id
   end
 end

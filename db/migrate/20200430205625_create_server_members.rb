@@ -6,5 +6,7 @@ class CreateServerMembers < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
+    add_index :server_members, :member_id
+    add_index :server_members, :server_id
   end
 end
