@@ -35,7 +35,21 @@
   margin-right: 45px;
   border-radius: 20px;
   text-align: center;
-  border: 1px solid hsla(0,0%,100%,.8);
+  border: 1px solid rgba(189, 186, 186, 0.8);
   color: hsla(0,0%,100%,.8);
   text-decoration: none;
+  -webkit-transition: border .5s;
+}
+
+.header-login-button:hover {
+  animation-duration: 1s;
+  border: 1px solid hsla(0,0%,100%,.8);
+}
+
+.github-icon {
+  padding: 5px 8px 0px 0px;
+}
+
+.discord-icon {
+  padding: 5px 8px 0px 0px;
 }

@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import { AiFillGithub }from 'react-icons/ai';
+import { RiDiscordLine } from 'react-icons/ri'
+
 
 export default ({ currentUser, logout }) => {
 
@@ -14,6 +17,12 @@ export default ({ currentUser, logout }) => {
         <img className="logo-white" src={window.mono_white_logo} />
       </div>
       <div className="login-box-side">
+        <a className="discord-icon" href="https://discordapp.com/" target="_blank">
+          <RiDiscordLine fill="white" size={20} />
+        </a>
+        <a className="github-icon" href="https://github.com/Shaphen/Badcord/wiki" target="_blank">
+          <AiFillGithub fill="white" size={20} />
+        </a>
         <Link to="/login" className="header-login-button">Log In</Link>
       </div>
     </div>
