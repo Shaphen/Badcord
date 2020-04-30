@@ -11,12 +11,12 @@
   width: 30px;
   display: flex;
   justify-content: flex-end;
-  padding-right: 30px;
+  padding-right: 90px;
   padding-top: 20px;
 }
 
 .logo-white {
-  width: 130px;
+  width: 170px;
   height: auto;
 }
 
@@ -24,15 +24,15 @@
   width: 30px;
   display: flex;
   justify-content: flex-start;
-  padding-left: 30px;
+  padding-left: 90px;
   padding-top: 20px;
 }
 
 .header-login-button {
   background: #2A2A2A;
-  font-size: 12px;
-  padding: 8px 12px 0px;
-  margin-right: 45px;
+  font-size: 13px;
+  padding: 7px 17px 7px;
+  margin: 2px 0px 6px;
   border-radius: 20px;
   text-align: center;
   border: 1px solid rgba(189, 186, 186, 0.8);
@@ -47,7 +47,7 @@
 }
 
 .github-icon {
-  padding: 5px 8px 0px 0px;
+  padding: 5px 10px 0px 0px;
   opacity: .3;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .linkedin-icon {
-  padding: 5px 8px 0px 0px;
+  padding: 5px 10px 0px 0px;
   opacity: .3;
   -webkit-transition: opacity .5s;
 }

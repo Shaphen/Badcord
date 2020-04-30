@@ -20,3 +20,8 @@
   justify-content: center;
  }
  
+ html body {
+   background-color: #26262b;
+   height: 100vh
+ }
+ 
