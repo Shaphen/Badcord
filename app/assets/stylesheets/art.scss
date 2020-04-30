@@ -11,6 +11,7 @@
   bottom: 0px;
   width: 100px;
   height: auto;
+  z-index: 1;
 }
 
 .iphone {
@@ -39,6 +40,7 @@
   bottom: 0px;
   width: 420px;
   height: auto;
+  z-index: 1;
 }
 
 
@@ -48,12 +50,205 @@
   left: 50%;
   margin-left: -12px;
   bottom: 0;
+  z-index: 1;
 }
 
 .headphones {
   position: absolute;
+  width: 75px;
+  left: 50%;
+  margin-left: 200px;
+  bottom: 122px;
+  z-index: 2;
+}
+
+.disc {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: 295px;
+  width: 165px;
+}
+
+.potion {
+  position: absolute;
+  width: 90px;
+  bottom: 0;
+  left: 50%;
+  margin-left: -450px;
+}
+
+.mariobox {
+  position: absolute;
+  width: 62px;
+  left: 50%;
+  margin-left: -185px;
+  bottom: 329px;
+}
+
+.coin1 {
+  position: absolute;
+  width: 60px;
+  left: 50%;
+  margin-left: 45px;
+  bottom: 375px;
+}
+
+.coin2 {
+  position: absolute;
+  width: 60px;
+  left: 50%;
+  margin-left: -312px;
+  bottom: 215px;
+}
+
+.bomb {
+  position: absolute;
+  width: 65px;
+  left: 50%;
+  margin-left: -349px;
+  bottom: 245px;
+}
+
+.gamepak {
+  position: absolute;
   width: 70px;
   left: 50%;
-  margin-left: 202px;
-  bottom: 132px;
+  margin-left: 171px;
+  bottom: 270px;
+}
+
+.triangle1 {
+  position: absolute;
+  left: 50%;
+  width: 28px;
+  margin-left: -426px;
+  bottom: 218px;
+  opacity: .3;
+}
+
+.triangle2 {
+  position: absolute;
+  left: 50%;
+  width: 28px;
+  margin-left: 10px;
+  bottom: 389px;
+  opacity: .3;
+}
+
+.circle1 {
+  position: absolute;
+  left: 50%;
+  width: 28px;
+  margin-left: -269px;
+  bottom: 380px;
+  opacity: .3;
+}
+
+.circle2 {
+  position: absolute;
+  left: 50%;
+  width: 28px;
+  margin-left: -158px;
+  bottom: 51px;
+  opacity: .3;
+}
+
+.circle3 {
+  position: absolute;
+  left: 50%;
+  width: 28px;
+  margin-left: 407px;
+  bottom: 195px;
+  opacity: .3;
+}
+
+.x1 {
+  position: absolute;
+  left: 50%;
+  width: 28px;
+  margin-left: -426px;
+  bottom: 360px;
+  opacity: .3;
+}
+
+.x2 {
+  position: absolute;
+  left: 50%;
+  width: 28px;
+  margin-left: 382px;
+  bottom: 150px;
+  opacity: .3;
+}
+
+.square1 {
+  position: absolute;
+  left: 50%;
+  width: 28px;
+  margin-left: 305px;
+  bottom: 285px;
+  opacity: .3;
+}
+
+.square2 {
+  position: absolute;
+  left: 50%;
+  width: 28px;
+  margin-left: 230px;
+  bottom: 430px;
+  opacity: .3;
+}
+
+.square3 {
+  position: absolute;
+  left: 50%;
+  width: 28px;
+  margin-left: 2px;
+  bottom: 60px;
+  opacity: .3;
+}
+
+.circlefill1 {
+  position: absolute;
+  left: 50%;
+  width: 28px;
+  margin-left: -240px;
+  bottom: 435px;
+  opacity: .3;
+}
+
+.circlefill2 {
+  position: absolute;
+  left: 50%;
+  width: 28px;
+  margin-left: -446px;
+  bottom: 145px;
+  opacity: .3;
+}
+
+.circlefill3 {
+  position: absolute;
+  left: 50%;
+  width: 28px;
+  margin-left: 120px;
+  bottom: 355px;
+  opacity: .3;
+}
+
+.circlefill4 {
+  position: absolute;
+  left: 50%;
+  width: 28px;
+  margin-left: 375px;
+  bottom: 425px;
+  opacity: .3;
+}
+
+.circlefill5 {
+  position: absolute;
+  left: 50%;
+  width: 28px;
+  margin-left: 445px;
+  bottom: 90px;
+  opacity: .3;
 }
