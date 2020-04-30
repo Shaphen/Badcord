@@ -48,8 +48,20 @@
 
 .github-icon {
   padding: 5px 8px 0px 0px;
+  opacity: .3;
+}
+
+.github-icon:hover {
+  opacity: 1;
+  -webkit-transition: opacity .5s;
 }
 
 .linkedin-icon {
   padding: 5px 8px 0px 0px;
+  opacity: .3;
+  -webkit-transition: opacity .5s;
+}
+
+.linkedin-icon:hover {
+  opacity: 1;
 }

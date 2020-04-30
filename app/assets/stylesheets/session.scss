@@ -196,8 +196,15 @@
   padding: 6px;
   margin: 5px;
   border-radius: 3px;
-  border-color: #7289DA;
+  border: 1px dotted #7289DA;
+  color: #7289DA;
   font-size: 15px;
   font-weight: 500;
-  background-color: #7289DA;
+  background-color: #2A2A2A;
+  -webkit-transition: border .5s;
+}
+
+.demo-login-splash:hover {
+  animation-duration: 1s;
+    border: 1px solid rgb(233, 236, 245);
 }
