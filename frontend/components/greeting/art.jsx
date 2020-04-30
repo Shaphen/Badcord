@@ -12,10 +12,10 @@ const Art = () => {
       <img className="disc" src={window.disc} />
       <img className="headphones" src={window.headphones} />
       <img className="mariobox" src={window.mariobox} />
-      <img className="gamepak" src={window.gamepak} />
-      <img className="bomb" src={window.bomb} />
-      <img className="coin1" src={window.coin} />
-      <img className="coin2" src={window.coin} />
+      <img className="gamepak floating" src={window.gamepak} />
+      <img className="bomb floating2" src={window.bomb} />
+      <img className="coin1 floating" src={window.coin} />
+      <img className="coin2 floating" src={window.coin} />
       <img className="triangle1" src={window.triangle} />
       <img className="triangle2" src={window.triangle} />
       <img className="circle1" src={window.circle} />
