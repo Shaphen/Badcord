@@ -46,6 +46,7 @@ class Session extends React.Component {
           <img className="login-signup-bg-logo" src={window.mono_logo} />
         </a>
         <div className="session">
+          <Link to="/" className="login-signup-go-back">X</Link>
           <h1 className="form-type">{ this.props.formType }</h1>
           {this.renderErrors()}
           <form className="login-signup-form" onSubmit={ this.handleSubmit }>
