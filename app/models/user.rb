@@ -30,11 +30,15 @@ class User < ApplicationRecord
     self.session_token ||= self.reset_session_token!
   end
 
-  has_many :servers,
+  has_many :owned_servers,
     foreign_key: :owner_id,
     class_name: :Server
 
   has_many :server_memberships,
     foreign_key: :member_id,
     class_name: :ServerMember
+
+  has_many :servers,
+    through: :server_memberships,
+    source: :server
 end

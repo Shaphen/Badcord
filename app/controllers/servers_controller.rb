@@ -2,7 +2,7 @@ class Api::ServersController < ApplicationController
   before_action :require_logged_in
   
   def index
-    @servers = Server.all
+    @servers = current_user.servers.concat(current_user.owned_servers)
     render :index
   end
 
@@ -22,7 +22,7 @@ class Api::ServersController < ApplicationController
   end
 
   def destroy
-    @server = current_user.servers.find_by(id: params[:id])
+    @server = current_user.owned_servers.find_by(id: params[:id])
     if @server
       @server.destroy
     end

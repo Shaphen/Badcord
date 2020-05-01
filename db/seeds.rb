@@ -1,4 +1,11 @@
 User.delete_all
+Server.delete_all
+
+Server.create!([
+  {name: "Extra Thicc Trashbags", owner_id: 19},
+  {name: "Obama Sama Lama", owner_id: 21},
+  {name: "Peaches and Gravy Team", owner_id: 23}
+])
 User.create!([
   {username: "shaphen", email: "shaphen@aa.io", password_digest: "$2a$12$v26IS.RKAACveUisf2eE7uWQ1f6aZ1zVilYi9HMlFCPUyRjyc14G.", session_token: "bcHoWfo1cZUUhZIc6xu7lg"},
   {username: "walker", email: "mewalks@aa.io", password_digest: "$2a$12$fuzwFUwBtTAdyfyUrip1bucnbVKkAAXsK.BVug8CxbeTwqsI7qwoq", session_token: "Je4-uWCIDrdpSQSAm4LrIQ"},
