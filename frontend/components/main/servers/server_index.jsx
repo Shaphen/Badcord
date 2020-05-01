@@ -6,10 +6,12 @@ class ServerIndex extends React.Component {
   }
 
   render() {
-    debugger
+    // debugger
     return (
-      <div>
-        this is the server index
+      <div className="main-page">
+        <div id="server-index">
+          <p>Server idx</p>
+        </div>
       </div>
     )
   }
