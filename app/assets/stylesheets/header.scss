@@ -38,7 +38,7 @@
   border: 1px solid rgba(189, 186, 186, 0.8);
   color: hsla(0,0%,100%,.8);
   text-decoration: none;
-  -webkit-transition: border .5s;
+  transition: border .5s;
 }
 
 .header-login-button:hover {
@@ -53,13 +53,13 @@
 
 .github-icon:hover {
   opacity: 1;
-  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
 }
 
 .linkedin-icon {
   padding: 5px 10px 0px 0px;
   opacity: .3;
-  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
 }
 
 .linkedin-icon:hover {
