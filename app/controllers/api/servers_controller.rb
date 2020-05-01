@@ -2,12 +2,13 @@ class Api::ServersController < ApplicationController
   before_action :require_logged_in
   
   def index
-    @servers = current_user.servers.concat(current_user.owned_servers)
+    @servers = current_user.servers
+    @servers += current_user.owned_servers
     render :index
   end
 
   def show
-    @server = Server.find(server_params)
+    @server = Server.find(params[:id])
     render :show
   end
 
@@ -17,7 +18,7 @@ class Api::ServersController < ApplicationController
     if @server.save
       render :show
     else
-      render json @server.errors.full_messages
+      render json: @server.errors.full_messages
     end
   end
 
@@ -39,6 +40,6 @@ class Api::ServersController < ApplicationController
 
   private
   def server_params
-    params.require(:server).permit(:name)
+    params.require(:server).permit(:name, :owner_id)
   end
 end

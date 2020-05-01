@@ -25,8 +25,6 @@ export const receiveServerErrors = errors => ({
   errors
 });
 
-//delete(serverId)
-
 export const fetchServers = () => dispatch => ApiUtil.fetchServers()
   .then(servers => dispatch(receiveAllServers(servers)));
 
@@ -43,6 +41,6 @@ export const udpateServer = server => dispatch => ApiUtil.updateServer(server)
     dispatch(receiveServerErrors(err.responseJSON))
   ));
 
-export const deleteSever = serverId => dispatch => ApiUtil.deleteServer(serverId)
+export const deleteServer = serverId => dispatch => ApiUtil.deleteServer(serverId)
   .then(() => dispatch(removeServer(serverId)));
   
