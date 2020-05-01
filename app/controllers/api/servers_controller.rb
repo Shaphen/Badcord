@@ -2,7 +2,7 @@ class Api::ServersController < ApplicationController
   before_action :require_logged_in
   
   def index
-    @servers = current_user.servers.concat(current_user.owned_servers)
+    @servers = current_user.servers
     render :index
   end
 
@@ -25,7 +25,7 @@ class Api::ServersController < ApplicationController
     if @server.update(server_params)
       render :show
     else
-      render json: @server.errors.full_messages, status: :422
+      render json: @server.errors.full_messages, status: 422
     end
   end
 

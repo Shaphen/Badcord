@@ -5,6 +5,7 @@ import Root from './components/root';
 
 // test code
 import { login, signup } from './actions/session_actions';
+import { fetchServers, fetchServer, createServer, updateServer } from './util/server_api_util';
 //end
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -30,5 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
   window.dispatch = store.dispatch;
   window.login = login;
   window.signup = signup;
+  window.fetchServers = fetchServers
+  window.fetchServer = fetchServer;
+  window.createServer = createServer;
+  window.updateServer = updateServer;
   // end
 });

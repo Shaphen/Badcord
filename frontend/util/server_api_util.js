@@ -1,6 +1,6 @@
 
 
-export const fetchServers = () => $.ajax({ //need data for grabbing servers user is part of
+export const fetchServers = () => $.ajax({
   url: '/api/servers'
 });
 
