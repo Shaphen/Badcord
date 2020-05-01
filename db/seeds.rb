@@ -3,7 +3,7 @@ Server.delete_all
 ServerMember.delete_all
 
 User.create!([
-  {username: "masterchef", email: "chef@aa.io", password_digest: "$2a$12$v26IS.RKAACveUisf2eE7uWQ1f6aZ1zVilYi9HMlFCPUyRjyc14G.", session_token: "bcHoWfo1cZUUhZIc6xu7lg"},
+  {username: "masterchef", email: "shaphen@aa.io", password_digest: "$2a$12$v26IS.RKAACveUisf2eE7uWQ1f6aZ1zVilYi9HMlFCPUyRjyc14G.", session_token: "bcHoWfo1cZUUhZIc6xu7lg"},
   {username: "TAwalker", email: "iwalks@aa.io", password_digest: "$2a$12$V99U2JC.Yi1cbrIkeXGRV.BUCJF7nrPOua2UZlay..w40i3EVAl0e", session_token: "VWwWrUdNdVR0NkDmomQpoQ"},
   {username: "u1tic00ki3s", email: "s0yum@aa.io", password_digest: "$2a$12$pXfFkK15wm3knrRH44xVCuqun5GGawHJsGhkKd1X/4x9Ar55KmUZW", session_token: "HicRkiIE4_-bo1J5wbVNrA"},
   {username: "tsuderezan", email: "toosmart@aa.io", password_digest: "$2a$12$WfbtSnp0DZ2XVMBC/OY/MORH1U7qjcmE.ZwVKLND1R.M987GaTzsy", session_token: "_FKsV3cxKyqZ0eu51nBOuA"}

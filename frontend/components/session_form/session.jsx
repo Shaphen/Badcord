@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import DemoLoginContainer from '../greeting/demo_login';
 
 class Session extends React.Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class Session extends React.Component {
   demoLogin(e) {
     e.preventDefault();
     const user = {
-      username: "shaphen",
+      username: "masterchef",
       password: "password"
     }
     this.props.processEntry(user)

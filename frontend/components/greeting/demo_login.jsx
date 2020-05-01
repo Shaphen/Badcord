@@ -10,7 +10,7 @@ class DemoLogin extends React.Component {
   demoLogin(e) {
     e.preventDefault();
     const user = {
-      username: "shaphen",
+      username: "masterchef",
       password: "password"
     }
     this.props.login(user)

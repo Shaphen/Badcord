@@ -2,7 +2,7 @@ class Api::ServersController < ApplicationController
   before_action :require_logged_in
   
   def index
-    @servers = current_user.servers
+    @servers = current_user.servers.concat(current_user.owned_servers)
     render :index
   end
 
