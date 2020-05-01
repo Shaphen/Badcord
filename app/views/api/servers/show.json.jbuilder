@@ -1,6 +1,8 @@
 json.server do
   json.extract! @server, :id, :name, :member_ids
+  json.photoURL url_for(@server.photo)
 end
+
 
 # every time we iterate something we need to set a key
 json.members do
