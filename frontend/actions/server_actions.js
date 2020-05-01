@@ -36,7 +36,7 @@ export const createServer = server => dispatch => ApiUtil.createServer(server)
     dispatch(receiveServerErrors(err.responseJSON))
   ));
 
-export const udpateServer = server => dispatch => ApiUtil.updateServer(server)
+export const updateServer = server => dispatch => ApiUtil.updateServer(server)
   .then(server => dispatch(receiveServer(server)), err => (
     dispatch(receiveServerErrors(err.responseJSON))
   ));

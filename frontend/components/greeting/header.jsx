@@ -2,13 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import { AiFillGithub }from 'react-icons/ai';
 import { AiOutlineLinkedin } from 'react-icons/ai'
+import { Redirect } from 'react-redux'
 
 
 export default ({ currentUser, logout }) => {
 
   const display = currentUser ? (
     <div className="greeting-container">
-      <p className="greeting-login-state">Logged in as: {currentUser.username} (temp. confirmation)</p>
+      {/* Redirect */}
+      {/* <p className="greeting-login-state">Logged in as: {currentUser.username} (temp. confirmation)</p> */}
       <button className="logout-button" onClick={logout}>LOGOUT</button>
     </div>
   ) : (

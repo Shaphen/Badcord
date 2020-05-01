@@ -7,6 +7,7 @@ import LoginContainer from './session_form/login_container'
 import Art from '../components/greeting/art';
 import SignupContainer from './session_form/signup_container'
 import { AuthRoute } from '../util/route_util';
+import ServerIndexContrainer from './main/server_index_contrainer';
 
 const App = () => (
   <div className="splash">
@@ -19,6 +20,7 @@ const App = () => (
     <Switch>
       <AuthRoute path="/login" component={LoginContainer} />
       <AuthRoute path="/signup" component={SignupContainer} />
+      <Route path="/main" component={ServerIndexContrainer} />
       <Art />
     </Switch>
   </div>
