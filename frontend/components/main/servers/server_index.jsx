@@ -24,6 +24,7 @@ class ServerIndex extends React.Component {
                 <ServerIndexItem server={server} key={server.id} />
               ))
             }
+            
           </ul>
         </div>
       </div>
