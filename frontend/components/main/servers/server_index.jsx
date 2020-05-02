@@ -17,6 +17,7 @@ class ServerIndex extends React.Component {
         <div id="server-index">
           <div id="server-button">
             <img className="home-server-pic" src={window.logo_head_white} />
+            <p id="home-text-display">Home</p>
           </div>
           <ul>
             {

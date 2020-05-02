@@ -22,8 +22,12 @@
   justify-content: center;
 }
 
+#server-box {
+  display: flex;
+  align-items: center;
+}
+
 #server-name-display {
-  // display: none;
   background: #7289DA;
   color: white;
   position: absolute;
@@ -43,7 +47,7 @@
   height: 43px;
   border-radius: 25px;
   width: 60px;
-  margin-top: 10px;
+  margin: 15px 0px 10px;
   padding: 10px 0px;
   transition: background-color, border-radius .5s;
   display: flex;
@@ -66,7 +70,7 @@
   height: 43px;
   border-radius: 25px;
   width: 60px;
-  margin-top: 10px;
+  margin: 5px 0px;
   padding: 10px 0px;
   transition: background-color, border-radius .5s;
   display: flex;
@@ -77,6 +81,7 @@
 #server-button2:hover {
   background-color: red;
   border-radius: 15px;
+  cursor: pointer;
 }
 
 #server-button2:hover + #server-name-display {
@@ -92,5 +97,21 @@
 
 .home-server-pic {
   width: 45px;
-  // margin-top: 20px;
+}
+
+#home-text-display {
+  background: #7289DA;
+  color: white;
+  position: absolute;
+  left: 80px;
+  height: fit-content;
+  padding: 8px;
+  border-radius: 6px;
+  opacity: 0;
+  transition: opacity .2s;
+}
+
+#server-button:hover #home-text-display {
+  display: block;
+  opacity: 1;
 }

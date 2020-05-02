@@ -8,11 +8,9 @@ const ServerIndexItem = ({ server }) => {
   })
 
   return (
-    <div>
-      <li>
+    <div id="server-box">
         <p id="server-button2">{name}</p>
         <p id="server-name-display">{server.name}</p>
-      </li>
     </div>
   )
 }
