@@ -10,7 +10,6 @@ export default ({ currentUser, logout }) => {
   const display = currentUser ? (
     <div className="greeting-container">
       <Redirect to="/main" />
-      {/* <p className="greeting-login-state">Logged in as: {currentUser.username} (temp. confirmation)</p> */}
       <button className="logout-button" onClick={logout}>LOGOUT</button>
     </div>
   ) : (

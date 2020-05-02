@@ -11,7 +11,6 @@ class ServerIndex extends React.Component {
   }
   
   render() {
-    // debugger
     return (
       <div className="main-page">
         <div id="server-index">
@@ -26,7 +25,10 @@ class ServerIndex extends React.Component {
               ))
             }
           </ul>
-          <button onClick={() => this.props.logout()}>LOGOUT</button>
+        </div>
+        <div id="user-logout-container">
+          <p>{currentUser.username}</p>
+          <button className="logout-button" onClick={() => this.props.logout()}>LOGOUT</button>
         </div>
       </div>
     )

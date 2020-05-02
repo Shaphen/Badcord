@@ -3,7 +3,7 @@
   height: 100vh;
   background-color: #2f3136;
   position: absolute;
-  // display: flex;
+  display: flex;
 }
 
 #server-index {
@@ -116,4 +116,11 @@
 #server-button:hover #home-text-display {
   display: block;
   opacity: 1;
+}
+
+#user-logout-container {
+  background-color: #292b2f;
+  height: 52px;
+  width: 242px;
+  align-self: flex-end;
 }

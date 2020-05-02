@@ -17,7 +17,7 @@ class Session extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processEntry(user).then(() => this.props.history.push("/main"))      //(<Redirect to="/main" />)
+    this.props.processEntry(user).then(() => this.props.history.push("/main"))
   }
 
   demoLogin(e) {
