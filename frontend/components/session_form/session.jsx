@@ -26,7 +26,7 @@ class Session extends React.Component {
       username: "masterchef",
       password: "password"
     }
-    this.props.processEntry(user)
+    this.props.processEntry(user).then(() => this.props.history.push("/main"))
   }
 
   renderErrors() {
@@ -55,32 +55,34 @@ class Session extends React.Component {
     return (
       <div className="login-signup-background">
         <img className="login-signup-bg-img" src={window.login_signup_bg}/>
-        {/* <a href="https://badcord.herokuapp.com/"> */}
           <img className="login-signup-bg-logo" src={window.mono_logo} />
-        {/* </a> */}
-        <div className="session">
+        <div id="session">
           <Link to="/" className="login-signup-go-back">X</Link>
-          <h1 className="form-type">{ this.props.formType }</h1>
-          {this.renderErrors()}
-          <form className="login-signup-form" onSubmit={ this.handleSubmit }>
-            <label className="username">
-              <p>USERNAME</p>
-              <input type="text" value={this.state.username} onChange={this.handleChange('username')} />
-            </label>
-            {
-              this.props.formType === 'Create an account' ? <label className="email">EMAIL</label>: ''
-            }
-            {
-              this.props.formType === 'Create an account' ? <input type="email" className="email-box" value={this.state.email} onChange={this.handleChange('email')}/> : ''
-            }
-            <label className="password">
-              <p>PASSWORD</p>
-              <input type="password" value={this.state.password} onChange={this.handleChange('password')} />
-            </label>
-            <button className="session-submit-button" value={this.props.formType}>Submit</button>
-            <button onClick={(e) => this.demoLogin(e)} className="demo-login">Demo Login</button>
-            <Link to={address} className="other-form" >{name}</Link>
-          </form>
+          <div id="form-box">
+            <h1 className="form-type">{ this.props.formType }</h1>
+            <form className="login-signup-form" onSubmit={ this.handleSubmit }>
+              <label className="username">
+                <p>USERNAME</p>
+                <input type="text" value={this.state.username} onChange={this.handleChange('username')} />
+              </label>
+              {
+                this.props.formType === 'Create an account' ? <label className="email">EMAIL</label>: ''
+              }
+              {
+                this.props.formType === 'Create an account' ? <input type="email" className="email-box" value={this.state.email} onChange={this.handleChange('email')}/> : ''
+              }
+              <label className="password">
+                <p>PASSWORD</p>
+                <input type="password" value={this.state.password} onChange={this.handleChange('password')} />
+              </label>
+              <button className="session-submit-button" value={this.props.formType}>Submit</button>
+              <button onClick={(e) => this.demoLogin(e)} className="demo-login">Demo Login</button>
+              <Link to={address} className="other-form" >{name}</Link>
+            </form>
+          </div>
+          <div id="errors-box">
+            {this.renderErrors()}
+          </div>
         </div>
       </div>
     )
