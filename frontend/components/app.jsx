@@ -1,5 +1,4 @@
 import React from 'react';
-import GreetingContainer from './greeting/greeting_container';
 import DemoLoginContainer from './greeting/demo_login_container';
 import HeaderContainer from './greeting/header_container';
 import { Route, Switch } from 'react-router-dom';
@@ -7,6 +6,7 @@ import LoginContainer from './session_form/login_container'
 import Art from '../components/greeting/art';
 import SignupContainer from './session_form/signup_container'
 import { AuthRoute } from '../util/route_util';
+import { ProtectedRoute } from '../util/route_util';
 import ServerIndexContrainer from './main/servers/server_index_contrainer';
 
 const App = () => (
@@ -18,9 +18,9 @@ const App = () => (
       <DemoLoginContainer />
     </header>
     <Switch>
+      <ProtectedRoute path="/main" component={ServerIndexContrainer} />
       <AuthRoute path="/login" component={LoginContainer} />
       <AuthRoute path="/signup" component={SignupContainer} />
-      <Route path="/main" component={ServerIndexContrainer} />
       <Art />
     </Switch>
   </div>

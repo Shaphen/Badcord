@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import DemoLoginContainer from '../greeting/demo_login';
 
 class Session extends React.Component {
@@ -17,7 +17,7 @@ class Session extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processEntry(user)
+    this.props.processEntry(user).then(<Redirect to="/main" />)
   }
 
   demoLogin(e) {

@@ -25,8 +25,8 @@ class ServerIndex extends React.Component {
                 <ServerIndexItem server={server} key={server.id} />
               ))
             }
-            
           </ul>
+          <button onClick={() => this.props.logout()}>LOGOUT</button>
         </div>
       </div>
     )
