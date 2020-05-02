@@ -3,7 +3,7 @@ import DemoLoginContainer from './greeting/demo_login_container';
 import HeaderContainer from './greeting/header_container';
 import { Route, Switch } from 'react-router-dom';
 import LoginContainer from './session_form/login_container'
-import Art from '../components/greeting/art';
+import ArtContainer from '../components/greeting/art_container';
 import SignupContainer from './session_form/signup_container'
 import { AuthRoute } from '../util/route_util';
 import { ProtectedRoute } from '../util/route_util';
@@ -19,9 +19,9 @@ const App = () => (
     </header>
     <Switch>
       <ProtectedRoute path="/main" component={ServerIndexContrainer} />
-      <AuthRoute path="/login" component={LoginContainer} />
-      <AuthRoute path="/signup" component={SignupContainer} />
-      <Art />
+      <AuthRoute exact path="/login" component={LoginContainer} />
+      <AuthRoute exact path="/signup" component={SignupContainer} />
+      <Route exact path="/" component={ArtContainer} />
     </Switch>
   </div>
 );
