@@ -1,4 +1,4 @@
-.session {
+#session {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -7,18 +7,32 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 300px;
+  width: 680px;
+  height: 350px;
   background-color: #36393F;
   border-radius: 5px;
   padding: 30px 30px 12px 30px;
+}
+
+#form-box {
+  width: 60%;
+}
+
+#errors-box {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 267px;
+  padding-left: 20px;
 }
 
 .form-type {
   text-align: center;
   width: 100%;
   color: white;
-  margin-bottom: 10px;
-  font-size: 20px;
+  margin-bottom: 20px;
+  font-size: 30px;
 }
 
 .login-signup-form {
@@ -33,7 +47,7 @@
   display: flex;
   flex-wrap: wrap;
   color: #8E9297;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .other-form {
@@ -41,8 +55,8 @@
   width: 100%;
   color: #7289DA;
   font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
-  font-size: 11px;
-  margin: 10px 0px 18px 50px;
+  font-size: 12px;
+  margin: 10px 0px 18px 0px;
   text-decoration: none;
 }
 
@@ -62,40 +76,38 @@
 
 .login-signup-form label p {
   width: 100%;
-  padding-left: 50px;
-  font-size: 12px;
+  font-size: 13px;
   margin-bottom: 5px;
 }
 
 .email {
   width: 100%;
-  padding-left: 50px;
   margin-bottom: 5px;
 }
 
 .login-signup-form label input {
-  padding: 4px;
-  padding-left: 6px;
+  padding: 8px;
+  padding-left: 10px;
   border-radius: 3px;
-  width: 200px;
+  width: 100%;
   border: none;
   outline: none;
 }
 
 .email-box {
-  padding: 4px;
-  padding-left: 6px;
+  padding: 8px;
+  padding-left: 10px;
   border-radius: 3px;
   font-size: 12px;
   margin-bottom: 5px;
   border: none;
   outline: none;
-  width: 200px;
+  width: 100%;
 }
 
 .session-submit-button {
-  width: 210px;
-  padding: 3px;
+  width: 100%;
+  padding: 6px;
   margin-top: 5px;
   border-radius: 3px;
   border-color: #7289DA;
@@ -168,6 +180,7 @@
 .login-signup-go-back {
   color: #7289DA;
   width: 100%;
+  height: 0px;
   text-align: right;
   text-decoration: none;
   padding-right: 18px;
@@ -176,8 +189,8 @@
 }
 
 .demo-login {
-  width: 210px;
-  padding: 3px;
+  width: 100%;
+  padding: 6px;
   margin-top: 10px;
   border-radius: 3px;
   border-color: #7289DA;
