@@ -26,7 +26,7 @@ class Session extends React.Component {
       username: "masterchef",
       password: "password"
     }
-    this.props.processEntry(user)
+    this.props.processEntry(user).then(() => this.props.history.push("/main"))
   }
 
   renderErrors() {
