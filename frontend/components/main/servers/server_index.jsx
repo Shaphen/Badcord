@@ -50,10 +50,12 @@ class ServerIndex extends React.Component {
               onRequestClose={this.handleCloseModal}
               style={{
                 content: {
-                  top: '25%',
-                  left: '30%',
+                  top: '50%',
+                  left: '50%',
                   right: '0',
                   bottom: '0',
+                  marginLeft: "-245px",
+                  marginTop: "-175px",
                   width: '490px',
                   height: '350px',
                   background: 'rgb(255, 255, 255)'
@@ -66,7 +68,7 @@ class ServerIndex extends React.Component {
             >
               {/* <label onClick={this.handleCloseModal} id="new-server-close">Close</label> */}
               <h1 id="new-server-title">Greed is good</h1>
-              <ServerFormContainer />
+              <ServerFormContainer closeModal={this.handleCloseModal} />
               <label id="new-server-close" onClick={this.handleCloseModal}>BACK</label>
             </Modal>
           </div>

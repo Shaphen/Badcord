@@ -4,8 +4,8 @@ class ServerForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "SomeName",
-      owner_id: currentUser
+      name: `${currentUser.username}'s server`,
+      owner_id: currentUser.id
     }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -13,7 +13,7 @@ class ServerForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const server = Object.assign({}, this.state)
-    this.props.processEntry(server).then(() => this.props.history.push("/main"))
+    this.props.createServer(server).then(() => this.props.closeModal())
   }
 
   handleChange(type){

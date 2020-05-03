@@ -16,7 +16,7 @@ class Api::ServersController < ApplicationController
     @server = Server.new(server_params)
 
     if @server.save
-      render json: "it worked!"
+      render json: @server, status: 200
     else
       render json: @server.errors.full_messages
     end
