@@ -4,8 +4,9 @@ import { createServer } from '../../../actions/server_actions';
 
 const mSTP = state => {
   return {
+    currentUser: state.entities.users[state.session.id],
     errors: state.errors.session,
-    formType: "So all the others weren't enough, huh?"
+    formType: "Greed is Good"
   }
 };
 

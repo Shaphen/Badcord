@@ -4,7 +4,8 @@ class ServerForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: ""
+      name: "SomeName",
+      owner_id: currentUser
     }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -15,9 +16,9 @@ class ServerForm extends React.Component {
     this.props.processEntry(server).then(() => this.props.history.push("/main"))
   }
 
-  handleChange(){
+  handleChange(type){
     return e => {
-      this.setState({ name: e.target.value })
+      this.setState({ [type]: e.target.value })
     }
   }
 
@@ -28,12 +29,12 @@ class ServerForm extends React.Component {
           <p>By creating a server, you will have access to free texxt chat to make all your mischievous plans</p>
         </div>
         <div id="server-name-container">
-          <form>
+          <form onSubmit={ this.handleSubmit }>
             <label id="server-name-title">SERVER NAME</label>
-            <input id="server-name-input" type="text" onChange={this.handleChange()} value={this.state.name}/>
+            <input id="server-name-input" type="text" onChange={this.handleChange('name')} value={this.state.name}/>
             <div id="create-server-button-container">
-              <label id="new-server-close">BACK</label>
-              <label id="create-server-button" >Create</label>
+              {/* <label id="new-server-close">BACK</label> */}
+              <button id="create-server-button" value={this.props.formType}>Create</button>
             </div>
           </form>
         </div>

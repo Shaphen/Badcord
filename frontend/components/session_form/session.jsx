@@ -10,6 +10,7 @@ class Session extends React.Component {
       password: "",
       email: ""
     }
+    debugger
     this.handleSubmit = this.handleSubmit.bind(this)
     this.demoLogin = this.demoLogin.bind(this)
   }
