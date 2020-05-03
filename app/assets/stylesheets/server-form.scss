@@ -1,0 +1,31 @@
+
+#server-form-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 385px;
+  height: 245px;
+  text-align: center;
+  margin: auto;
+  // border: 1px solid rgba(0,0,0,.2);
+  // border-radius: 8px;
+}
+#new-server-description {
+  width: 100%;
+}
+
+#new-server-description p {
+  color: #747f8d;
+}
+
+#server-name-container {
+  width: 55%;
+  height: 150px;
+  border: 1px solid #747f8d;
+}
+
+#upload-server-photo {
+  width: 40%;
+  height: 150px;
+  border: 1px solid #747f8d;
+}

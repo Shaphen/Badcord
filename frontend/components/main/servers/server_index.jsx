@@ -47,31 +47,26 @@ class ServerIndex extends React.Component {
             <Modal
               isOpen={this.state.showModal}
               contentLabel="Test Modal"
+              onRequestClose={this.handleCloseModal}
               style={{
                 content: {
-                  position: 'absolute',
-                  top: '300px',
-                  left: '440px',
-                  right: '400px',
-                  bottom: '300px',
-                  border: '1px solid rgb(204, 204, 204)',
-                  background: 'rgb(255, 255, 255)',
-                  overflow: 'auto',
-                  outline: 'none',
-                  padding: '20px'
+                  top: '25%',
+                  left: '30%',
+                  right: '0',
+                  bottom: '0',
+                  width: '490px',
+                  height: '320px',
+                  background: 'rgb(255, 255, 255)'
                 },
                 overlay: {
                   position: 'fixed',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  backgroundColor: 'rgba(0,0,0,0.7)',
+                  backgroundColor: 'rgba(0,0,0,0.7)'
                 }
               }}
             >
-              <h1>So other others weren't enough, huh?</h1>
-              <button onClick={this.handleCloseModal}>Close</button>
+              {/* <label onClick={this.handleCloseModal} id="new-server-close">Close</label> */}
+              <h1 id="new-server-title">Greed is good</h1>
+              <ServerFormContainer />
             </Modal>
           </div>
         </div>

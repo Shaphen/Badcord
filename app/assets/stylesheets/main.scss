@@ -176,3 +176,23 @@
   display: block;
   opacity: 1;
 }
+
+#new-server-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 10px 20px 30px;
+}
+
+#new-server-close {
+  margin: 5px 8px 5px 440px;
+  text-align: right;
+  padding: 7px;
+  color: #7289DA;
+  transition: color .5s;
+}
+
+#new-server-close:hover {
+  color: rgba(236, 13, 13, 0.911);
+  cursor: pointer;
+}
