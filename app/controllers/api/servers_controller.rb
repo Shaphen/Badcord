@@ -16,7 +16,7 @@ class Api::ServersController < ApplicationController
     @server = Server.new(server_params)
 
     if @server.save
-      render :show
+      render json: "it worked!"
     else
       render json: @server.errors.full_messages
     end
@@ -34,8 +34,10 @@ class Api::ServersController < ApplicationController
     @server = current_user.owned_servers.find_by(id: params[:id])
     if @server
       @server.destroy
+      render json: "it worked!"
+    else
+      render json: "not a valid server id" #`api/users/#{current_user.id}/servers`
     end
-    render `api/users/#{current_user.id}/servers`
   end
 
   private

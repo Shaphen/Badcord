@@ -5,12 +5,12 @@ import Root from './components/root';
 import Modal from 'react-modal';
 
 // test code
-import { fetchServers, fetchServer, createServer, updateServer } from './util/server_api_util';
+import { fetchServers, fetchServer, createServer, updateServer, deleteServer } from './util/server_api_util';
 //end
 
 document.addEventListener("DOMContentLoaded", () => {
   Modal.setAppElement('#root');
-  
+
   let store;
   if (window.currentUser) {
     const preloadedState = {
@@ -34,5 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.fetchServer = fetchServer;
   window.createServer = createServer;
   window.updateServer = updateServer;
+  window.deleteServer = deleteServer;
   // end
 });
