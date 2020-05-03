@@ -1,7 +1,7 @@
 #session {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 47%;
   transform: translate(-50%, -50%);
   z-index: 11;
   display: flex;
@@ -12,7 +12,7 @@
   background-color: #36393F;
   border-radius: 5px;
   padding: 30px 30px 12px 30px;
-  box-shadow: -10px 10px 15px darkslategrey;
+  box-shadow: -5px 5px 10px black;
 }
 
 #form-box {
