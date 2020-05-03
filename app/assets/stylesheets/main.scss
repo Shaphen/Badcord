@@ -58,7 +58,7 @@
 }
 
 #server-button:hover {
-  background-color: rgba(255, 0, 0, 0.911);
+  background-color: rgba(228, 38, 38, 0.911);
   border-radius: 15px;
   cursor: pointer;
 }
@@ -81,7 +81,7 @@
 }
 
 #server-button2:hover {
-  background-color: red;
+  background-color: rgba(228, 38, 38, 0.911);
   border-radius: 15px;
   cursor: pointer;
 }
@@ -136,8 +136,9 @@
 }
 
 #new-server {
-  // position: relative;
+  position: relative;
   color: white;
+  font-size: 30px;
   padding: 0px 12px;
   text-align: center;
   border: 1px solid rgba(189, 186, 186, 0.8);
@@ -153,7 +154,7 @@
 }
 
 #new-server:hover {
-  background-color: purple;
+  background-color: rgb(151, 52, 151);
   border-radius: 15px;
   cursor: pointer;
 }

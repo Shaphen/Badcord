@@ -26,7 +26,7 @@ class ServerIndex extends React.Component {
             }
           </ul>
           <div id="server-box">
-            <label id="new-server">X</label>
+            <label id="new-server">+</label>
             <p id="add-server-text">Add a Server</p>
           </div>
         </div>
