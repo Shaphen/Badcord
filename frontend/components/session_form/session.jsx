@@ -77,7 +77,7 @@ class Session extends React.Component {
               </label>
               <button className="session-submit-button" value={this.props.formType}>Submit</button>
               <button onClick={(e) => this.demoLogin(e)} className="demo-login">Demo Login</button>
-              <Link to={address} className="other-form" >{name}</Link>
+              <Link to={address} className="other-form">{name}</Link>
             </form>
           </div>
           <div id="errors-box">
