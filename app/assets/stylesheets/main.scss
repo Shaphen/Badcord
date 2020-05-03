@@ -178,17 +178,19 @@
 }
 
 #new-server-title {
+  color: #7289DA;
   text-align: center;
   font-size: 22px;
   font-weight: 600;
-  margin: 10px 20px 30px;
+  margin: 10px 20px 15px;
 }
 
 #new-server-close {
-  margin: 5px 8px 5px 440px;
   text-align: right;
   padding: 7px;
-  color: #7289DA;
+  color: #747f8d;
+  margin: 18px 20px 15px 50px;
+  font-size: 13px;
   transition: color .5s;
 }
 

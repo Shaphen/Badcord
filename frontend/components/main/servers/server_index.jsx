@@ -55,7 +55,7 @@ class ServerIndex extends React.Component {
                   right: '0',
                   bottom: '0',
                   width: '490px',
-                  height: '320px',
+                  height: '350px',
                   background: 'rgb(255, 255, 255)'
                 },
                 overlay: {
