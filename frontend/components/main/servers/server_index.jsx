@@ -14,8 +14,8 @@ class ServerIndex extends React.Component {
     return (
       <div className="main-page">
         <div id="server-index">
-          <div id="server-button">
-            <img className="home-server-pic" src={window.logo_head_white} />
+          <div id="server-box">
+            <img id="server-button" src={window.logo_head_white} />
             <p id="home-text-display">Home</p>
           </div>
           <ul>
@@ -25,6 +25,10 @@ class ServerIndex extends React.Component {
               ))
             }
           </ul>
+          <div id="server-box">
+            <label id="new-server">X</label>
+            <p id="add-server-text">Add a Server</p>
+          </div>
         </div>
         <div id="user-logout-container">
           <p>{this.props.currentUser.username}</p>
