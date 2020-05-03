@@ -2,14 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store'
 import Root from './components/root';
+import Modal from 'react-modal';
 
 // test code
-import { login, signup } from './actions/session_actions';
 import { fetchServers, fetchServer, createServer, updateServer } from './util/server_api_util';
 //end
 
 document.addEventListener("DOMContentLoaded", () => {
-  // const store = configureStore();
+  Modal.setAppElement('#root');
+  
   let store;
   if (window.currentUser) {
     const preloadedState = {
@@ -29,8 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // test code
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.login = login;
-  window.signup = signup;
   window.fetchServers = fetchServers
   window.fetchServer = fetchServer;
   window.createServer = createServer;

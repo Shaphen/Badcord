@@ -1,14 +1,29 @@
 import React from 'react';
 import ServerIndexItem from './server_index-item';
 import ServerFormContainer from './server_form_container'
+import Modal from 'react-modal'
+
 
 class ServerIndex extends React.Component {
   constructor(props){
     super(props);
+    this.state = {
+      showModal: false
+    };
+    this.handleOpenModal = this.handleOpenModal.bind(this);
+    this.handleCloseModal = this.handleCloseModal.bind(this);
   }
 
   componentDidMount() {
     this.props.getServers();
+  }
+
+  handleOpenModal() {
+    this.setState({ showModal: true })
+  }
+
+  handleCloseModal() {
+    this.setState({ showModal: false })
   }
   
   render() {
@@ -27,8 +42,37 @@ class ServerIndex extends React.Component {
             }
           </ul>
           <div id="server-box">
-            <label id="new-server">+</label>
+            <label id="new-server" onClick={this.handleOpenModal}>+</label>
             <p id="add-server-text">Add a Server</p>
+            <Modal
+              isOpen={this.state.showModal}
+              contentLabel="Test Modal"
+              style={{
+                content: {
+                  position: 'absolute',
+                  top: '300px',
+                  left: '440px',
+                  right: '400px',
+                  bottom: '300px',
+                  border: '1px solid rgb(204, 204, 204)',
+                  background: 'rgb(255, 255, 255)',
+                  overflow: 'auto',
+                  outline: 'none',
+                  padding: '20px'
+                },
+                overlay: {
+                  position: 'fixed',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  backgroundColor: 'rgba(0,0,0,0.7)',
+                }
+              }}
+            >
+              <h1>So other others weren't enough, huh?</h1>
+              <button onClick={this.handleCloseModal}>Close</button>
+            </Modal>
           </div>
         </div>
         <div id="user-logout-container">
