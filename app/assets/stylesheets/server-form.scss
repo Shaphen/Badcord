@@ -73,19 +73,17 @@
 }
 
 #delete-server-box {
-  display: flex;
-  flex-wrap: wrap;
   width: 90%;
   height: 20px;
-  color: red;
   padding: 10px;
-  margin-bottom: 5px;
   cursor: pointer;
 }
 
 #delete-server-button {
   cursor: pointer;
   font-size: 14px;
+  font-weight: 500;
+  color: rgb(240, 71, 71);
 }
 
 #delete-server-box:hover {
@@ -95,7 +93,6 @@
 #add-friends-box {
   width: 90%;
   height: 20px;
-  color: red;
   padding: 10px;
   margin-bottom: 5px;
   cursor: pointer;
@@ -104,6 +101,9 @@
 #add-friends-button {
   cursor: pointer;
   font-size: 14px;
+  font-weight: 500;
+  color: white;
+  opacity: 0.7;
 }
 
 #add-friends-box:hover {

@@ -46,7 +46,7 @@ class ServerIndex extends React.Component {
         </ul>
         <div id="server-box">
           <label id="new-server" onClick={this.handleOpenModal}>+</label>
-          <p id="add-server-text">Add a Server</p>
+          <p id="add-server-text">New Hideout</p>
           <Modal
             isOpen={this.state.showCreateModal}
             contentLabel="Create Server Modal"
