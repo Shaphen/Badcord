@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ServerIndexItem = ({ server }) => {
+const ServerIndexItem = ({ server, changeServer }) => {
   let words = server.name.split(" ")
   let name = "";
   words.forEach((word) => {

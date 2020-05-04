@@ -8,7 +8,7 @@ class ServerIndex extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      showModal: false
+      showModal: false,
     };
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
@@ -36,7 +36,7 @@ class ServerIndex extends React.Component {
         <ul>
           {
             this.props.servers.map((server) => (
-              <ServerIndexItem server={server} key={server.id} />
+              <ServerIndexItem server={server} key={server.id} changeServer={this.handleChangeServer} />
             ))
           }
         </ul>

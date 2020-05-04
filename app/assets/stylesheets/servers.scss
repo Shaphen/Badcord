@@ -1,3 +1,12 @@
-// Place all the styles related to the Servers controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#server-display-box {
+  height: 890px;
+  width: 240px;
+  color: white;
+  border-right: 1px solid black;
+}
+
+#server-display-name {
+  height: 48px;
+  border-bottom: 1px solid black;
+}

@@ -7,9 +7,13 @@ class ServerDisplay extends React.Component {
 
   render() {
     return (
-      <div>
-        
+      <div id="server-display-box">
+        <div id='server-display-name'>
+          
+        </div>
       </div>
     )
   }
 }
+
+export default ServerDisplay;
