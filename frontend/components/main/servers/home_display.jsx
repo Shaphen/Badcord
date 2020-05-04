@@ -9,7 +9,7 @@ class HomeDisplay extends React.Component {
     return (
       <div id="server-display-box">
         <div id='server-display-name'>
-          <p id="home-display">Home</p>
+          <p id="server-display-text">Home</p>
         </div>
       </div>
     )

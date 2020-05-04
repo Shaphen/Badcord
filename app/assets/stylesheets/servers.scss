@@ -11,9 +11,11 @@
 
 #server-display-name {
   display: flex;
-  justify-content: center;
   align-items: center;
   background-color: #2f3136;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   height: 48px;
   border-bottom: 1px solid black;
 }
@@ -22,7 +24,6 @@
   text-decoration: none;
 }
 
-// #home-display {
-//   text-align: center;
-//   padding-top: 15px;
-// }
+#server-display-text {
+  padding: 0px 12px;
+}
