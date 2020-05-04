@@ -1,8 +1,11 @@
 import React from 'react';
+import HeaderContainer from './header_container';
+
 
 const Art = () => {
   return (
     <div className="art-box">
+      <HeaderContainer />
       <img className="android" src={window.android} />
       <img className="iphone" src={window.iphone} />
       <img className="controller" src={window.controller} />

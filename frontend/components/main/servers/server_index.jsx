@@ -9,7 +9,7 @@ class ServerIndex extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      showModal: false,
+      showCreateModal: false
     };
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
@@ -20,11 +20,11 @@ class ServerIndex extends React.Component {
   }
 
   handleOpenModal() {
-    this.setState({ showModal: true })
+    this.setState({ showCreateModal: true })
   }
 
   handleCloseModal() {
-    this.setState({ showModal: false })
+    this.setState({ showCreateModal: false })
   }
   
   render() {
@@ -47,9 +47,9 @@ class ServerIndex extends React.Component {
           <label id="new-server" onClick={this.handleOpenModal}>+</label>
           <p id="add-server-text">Add a Server</p>
           <Modal
-            isOpen={this.state.showModal}
-            contentLabel="Test Modal"
-            onRequestClose={this.handleCloseModal}
+            isOpen={this.state.showCreateModal}
+            contentLabel="Create Server Modal"
+            onRequestClose={this.handleClose}
             style={{
               content: {
                 top: '50%',
@@ -64,7 +64,8 @@ class ServerIndex extends React.Component {
               },
               overlay: {
                 position: 'fixed',
-                backgroundColor: 'rgba(0,0,0,0.7)'
+                backgroundColor: 'rgba(0,0,0,0.7)',
+                zIndex: '50'
               }
             }}
           >

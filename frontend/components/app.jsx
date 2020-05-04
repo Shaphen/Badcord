@@ -12,8 +12,6 @@ import MainContainer from './main/servers/main_container';
 
 const App = () => (
   <div className="splash">
-    <HeaderContainer />
-    
     <Switch>
       <ProtectedRoute path="/channels/@me" component={MainContainer} />
       <AuthRoute exact path="/login" component={LoginContainer} />
