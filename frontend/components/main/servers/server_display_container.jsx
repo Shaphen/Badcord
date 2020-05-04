@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import ServerDisplay from './server_display';
-import { fetchServer } from '../../../actions/server_actions';
-import { logout } from '../../../actions/session_actions';
+import { fetchServer, deleteServer } from '../../../actions/server_actions';
 
 const mSTP = state => {
   return {
@@ -11,6 +10,7 @@ const mSTP = state => {
 
 const mDTP = dispatch => ({
   getServer: serverId => dispatch(fetchServer(serverId)),
+  deleteServer: serverId => dispatch(deleteServer(serverId))
 });
 
 export default connect(mSTP, mDTP)(ServerDisplay)

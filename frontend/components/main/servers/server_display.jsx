@@ -11,8 +11,8 @@ class ServerDisplay extends React.Component {
     this.handleCloseModal = this.handleCloseModal.bind(this);
   }
 
-  componentDidMount() {
-    // this.props.getServers();
+  deleteServer(serverId) {
+    this.props.deleteServer(serverId).then(() => this.handleCloseModal())
   }
 
   handleOpenModal() {
@@ -25,10 +25,12 @@ class ServerDisplay extends React.Component {
   }
 
   render() {
+    let currentServer = this.props.servers[this.props.match.params.server_id]
+    let serverId = currentServer ? currentServer.id : null
     return (
       <div id="server-display-box">
         <div id='server-display-name' onClick={this.handleOpenModal}>
-          <p id="server-display-text">{this.props.servers[this.props.match.params.server_id] ? this.props.servers[this.props.match.params.server_id].name : null}</p>
+          <p id="server-display-text">{currentServer ? currentServer.name : null}</p>
           <label id="dropdown-server-name">⌄</label>
           <Modal
             isOpen={this.state.showDeleteModal}
@@ -57,7 +59,7 @@ class ServerDisplay extends React.Component {
               <label id="add-friends-button">Invite Criminals</label>
               <label>➕</label>
             </div>
-            <div id="delete-server-box" onClick={this.handleCloseModal}>
+            <div id="delete-server-box" onClick={this.deleteServer(serverId)}>
               <label id="delete-server-button">Burn Down Hideout</label>
               <label id="lighten-icon">🔥</label>
             </div>

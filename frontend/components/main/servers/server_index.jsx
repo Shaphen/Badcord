@@ -24,7 +24,7 @@ class ServerIndex extends React.Component {
   }
 
   handleCloseModal(e) {
-    e.stopPropagation();
+    // e.stopPropagation();
     this.setState({ showCreateModal: false })
   }
   
