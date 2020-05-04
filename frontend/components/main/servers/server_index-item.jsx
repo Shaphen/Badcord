@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, Redirect } from 'react-router-dom'
 
 const ServerIndexItem = ({ server, changeServer }) => {
   let words = server.name.split(" ")
@@ -9,8 +10,10 @@ const ServerIndexItem = ({ server, changeServer }) => {
 
   return (
     <div id="server-box">
+      <Link to={`${server.id}`} className="server-link">
         <p id="server-button2">{name}</p>
-        <p id="server-name-display">{server.name}</p>
+      </Link>
+      <p id="server-name-display">{server.name}</p>
     </div>
   )
 }

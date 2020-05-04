@@ -10,7 +10,7 @@ export default ({ currentUser, logout }) => {
 
   const display = currentUser ? (
     <div className="greeting-container">
-      <Redirect to="/main" />
+      <Redirect to="/channels/@me" />
       <button className="logout-button" onClick={logout}>LOGOUT</button>
     </div>
   ) : (

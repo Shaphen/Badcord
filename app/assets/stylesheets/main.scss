@@ -88,7 +88,7 @@
   cursor: pointer;
 }
 
-#server-button2:hover + #server-name-display {
+.server-link:hover + #server-name-display {
   display: block;
   opacity: 1;
 }

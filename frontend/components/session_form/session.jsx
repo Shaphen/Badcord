@@ -17,7 +17,7 @@ class Session extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processEntry(user).then(() => this.props.history.push("/main"))
+    this.props.processEntry(user).then(() => this.props.history.push("/channels/@me"))
   }
 
   demoLogin(e) {
@@ -26,7 +26,7 @@ class Session extends React.Component {
       username: "masterchef",
       password: "password"
     }
-    this.props.processEntry(user).then(() => this.props.history.push("/main"))
+    this.props.processEntry(user).then(() => this.props.history.push("/channels/@me"))
   }
 
   renderErrors() {

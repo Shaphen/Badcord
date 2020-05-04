@@ -9,7 +9,8 @@ class ServerDisplay extends React.Component {
     return (
       <div id="server-display-box">
         <div id='server-display-name'>
-          
+          {currentUser.id}
+          {/* <p>{this.props.servers[this.props.match.params.serverId] ? this.props.servers[this.props.match.params.serverId] : null }</p> */}
         </div>
       </div>
     )

@@ -15,7 +15,7 @@ const App = () => (
     <HeaderContainer />
     
     <Switch>
-      <ProtectedRoute path="/main" component={MainContainer} />
+      <ProtectedRoute path="/channels/@me" component={MainContainer} />
       <AuthRoute exact path="/login" component={LoginContainer} />
       <AuthRoute exact path="/signup" component={SignupContainer} />
       <Route exact path="/" component={ArtContainer} />
