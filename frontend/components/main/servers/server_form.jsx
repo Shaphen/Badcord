@@ -4,10 +4,15 @@ class ServerForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: `${currentUser.username}'s server`,
-      owner_id: currentUser.id
+      name: "",
+      owner_id: 0
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({ name: `${this.props.currentUser.username}'s server` })
+    this.setState({ owner_id: this.props.currentUser.id })
   }
 
   handleSubmit(e) {
