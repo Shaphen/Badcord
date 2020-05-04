@@ -73,6 +73,9 @@
 }
 
 #delete-server-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 90%;
   height: 20px;
   padding: 10px;
@@ -91,6 +94,9 @@
 }
 
 #add-friends-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 90%;
   height: 20px;
   padding: 10px;
@@ -108,4 +114,8 @@
 
 #add-friends-box:hover {
   background-color: #242529;
+}
+
+#lighten-icon {
+  opacity: 0.85;
 }

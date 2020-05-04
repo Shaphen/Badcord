@@ -54,10 +54,12 @@ class ServerDisplay extends React.Component {
             }}
           >
             <div id="add-friends-box" onClick={this.handleCloseModal}>
-              <label id="add-friends-button">Add Criminals</label>
+              <label id="add-friends-button">Invite Criminals</label>
+              <label>➕</label>
             </div>
             <div id="delete-server-box" onClick={this.handleCloseModal}>
-              <label id="delete-server-button">Burn Evidence</label>
+              <label id="delete-server-button">Burn Down Hideout</label>
+              <label id="lighten-icon">🔥</label>
             </div>
           </Modal>
         </div>
