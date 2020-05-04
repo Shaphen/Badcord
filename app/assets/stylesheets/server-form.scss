@@ -73,11 +73,33 @@
 }
 
 #delete-server-box {
-  width: 100%;
-  height: 40px;
-  background-color: red;
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  height: 20px;
+  color: red;
+  padding: 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
 }
 
-// #delete-server-button {
+#delete-server-button {
+  cursor: pointer;
+}
 
-// }
+#delete-server-box:hover {
+  background-color: rgb(43, 41, 41);
+}
+
+#add-friends-box {
+  width: 90%;
+  height: 20px;
+  color: red;
+  padding: 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+#add-friends-box:hover {
+  background-color: rgb(43, 41, 41);
+}
