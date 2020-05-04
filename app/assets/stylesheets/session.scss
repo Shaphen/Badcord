@@ -8,7 +8,7 @@
   justify-content: center;
   flex-wrap: wrap;
   width: 680px;
-  height: 350px;
+  height: 380px;
   background-color: #36393F;
   border-radius: 5px;
   padding: 30px 30px 12px 30px;
@@ -77,31 +77,36 @@
 
 .login-signup-form label p {
   width: 100%;
-  font-size: 13px;
-  margin-bottom: 10px;
+  font-size: 12px;
+  margin: 5px 0px 10px 0px;
 }
 
-.email {
+#email {
   width: 100%;
-  margin-bottom: 10px;
+  font-size: 12px;
+  margin: 5px 0px 10px 0px;
 }
 
 .login-signup-form label input {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.2);
+  color: rgb(220, 221, 222);
+  font-size: 15px;
   padding: 8px;
   padding-left: 10px;
   border-radius: 3px;
   width: 100%;
-  border: none;
   outline: none;
 }
 
 .email-box {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.2);
+  color: rgb(220, 221, 222);
   padding: 8px;
-  padding-left: 10px;
-  border-radius: 3px;
-  font-size: 12px;
+  padding-left: 10px;  border-radius: 3px;
+  font-size: 15px;
   margin-bottom: 5px;
-  border: none;
   outline: none;
   width: 100%;
 }

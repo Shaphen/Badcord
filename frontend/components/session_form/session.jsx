@@ -66,7 +66,7 @@ class Session extends React.Component {
                 <input type="text" value={this.state.username} onChange={this.handleChange('username')} />
               </label>
               {
-                this.props.formType === 'Create an account' ? <label className="email">EMAIL</label>: ''
+                this.props.formType === 'Create an account' ? <label id="email">EMAIL</label>: ''
               }
               {
                 this.props.formType === 'Create an account' ? <input type="email" className="email-box" value={this.state.email} onChange={this.handleChange('email')}/> : ''
