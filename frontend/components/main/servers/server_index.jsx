@@ -28,54 +28,48 @@ class ServerIndex extends React.Component {
   
   render() {
     return (
-      <div className="main-page">
-        <div id="server-index">
-          <div id="server-box">
-            <img id="server-button" src={window.logo_head_white} />
-            <p id="home-text-display">Home</p>
-          </div>
-          <ul>
-            {
-              this.props.servers.map((server) => (
-                <ServerIndexItem server={server} key={server.id} />
-              ))
-            }
-          </ul>
-          <div id="server-box">
-            <label id="new-server" onClick={this.handleOpenModal}>+</label>
-            <p id="add-server-text">Add a Server</p>
-            <Modal
-              isOpen={this.state.showModal}
-              contentLabel="Test Modal"
-              onRequestClose={this.handleCloseModal}
-              style={{
-                content: {
-                  top: '50%',
-                  left: '50%',
-                  right: '0',
-                  bottom: '0',
-                  marginLeft: "-245px",
-                  marginTop: "-175px",
-                  width: '490px',
-                  height: '350px',
-                  background: 'rgb(255, 255, 255)'
-                },
-                overlay: {
-                  position: 'fixed',
-                  backgroundColor: 'rgba(0,0,0,0.7)'
-                }
-              }}
-            >
-              {/* <label onClick={this.handleCloseModal} id="new-server-close">Close</label> */}
-              <h1 id="new-server-title">Greed is good</h1>
-              <ServerFormContainer closeModal={this.handleCloseModal} />
-              <label id="new-server-close" onClick={this.handleCloseModal}>BACK</label>
-            </Modal>
-          </div>
+      <div id="server-index">
+        <div id="server-box">
+          <img id="server-button" src={window.logo_head_white} />
+          <p id="home-text-display">Home</p>
         </div>
-        <div id="user-logout-container">
-          <p>{this.props.currentUser.username}</p>
-          <button className="logout-button" onClick={() => this.props.logout()}>LOGOUT</button>
+        <ul>
+          {
+            this.props.servers.map((server) => (
+              <ServerIndexItem server={server} key={server.id} />
+            ))
+          }
+        </ul>
+        <div id="server-box">
+          <label id="new-server" onClick={this.handleOpenModal}>+</label>
+          <p id="add-server-text">Add a Server</p>
+          <Modal
+            isOpen={this.state.showModal}
+            contentLabel="Test Modal"
+            onRequestClose={this.handleCloseModal}
+            style={{
+              content: {
+                top: '50%',
+                left: '50%',
+                right: '0',
+                bottom: '0',
+                marginLeft: "-245px",
+                marginTop: "-175px",
+                width: '490px',
+                height: '350px',
+                background: 'rgb(255, 255, 255)'
+              },
+              overlay: {
+                position: 'fixed',
+                backgroundColor: 'rgba(0,0,0,0.7)'
+              }
+            }}
+          >
+            {/* <label onClick={this.handleCloseModal} id="new-server-close">Close</label> */}
+            <h1 id="new-server-title">Greed is good</h1>
+            <ServerFormContainer closeModal={this.handleCloseModal} />
+            <label id="new-server-close" onClick={this.handleCloseModal}>BACK</label>
+          </Modal>
         </div>
       </div>
     )

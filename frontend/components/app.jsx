@@ -7,14 +7,15 @@ import ArtContainer from '../components/greeting/art_container';
 import SignupContainer from './session_form/signup_container'
 import { AuthRoute } from '../util/route_util';
 import { ProtectedRoute } from '../util/route_util';
-import ServerIndexContrainer from './main/servers/server_index_contrainer';
+import ServerIndexContainer from './main/servers/server_index_container';
+import MainContainer from './main/servers/main_container';
 
 const App = () => (
   <div className="splash">
     <HeaderContainer />
     
     <Switch>
-      <ProtectedRoute path="/main" component={ServerIndexContrainer} />
+      <ProtectedRoute path="/main" component={MainContainer} />
       <AuthRoute exact path="/login" component={LoginContainer} />
       <AuthRoute exact path="/signup" component={SignupContainer} />
       <Route exact path="/" component={ArtContainer} />
