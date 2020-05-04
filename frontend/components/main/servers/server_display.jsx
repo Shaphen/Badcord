@@ -44,7 +44,7 @@ class ServerDisplay extends React.Component {
                 padding: '7px',
                 width: '210px',
                 height: '85px',
-                background: 'black'
+                background: '#18191c'
               },
               overlay: {
                 position: 'fixed',

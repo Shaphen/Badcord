@@ -85,10 +85,11 @@
 
 #delete-server-button {
   cursor: pointer;
+  font-size: 14px;
 }
 
 #delete-server-box:hover {
-  background-color: rgb(43, 41, 41);
+  background-color: #242529;
 }
 
 #add-friends-box {
@@ -100,6 +101,11 @@
   cursor: pointer;
 }
 
+#add-friends-button {
+  cursor: pointer;
+  font-size: 14px;
+}
+
 #add-friends-box:hover {
-  background-color: rgb(43, 41, 41);
+  background-color: #242529;
 }
