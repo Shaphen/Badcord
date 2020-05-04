@@ -5,6 +5,8 @@
 .header-box {
   display: flex;
   justify-content: space-around;
+  // position: relative;
+  // top: -256px;
 }
 
 .login-box-side {
@@ -65,3 +67,4 @@
 .linkedin-icon:hover {
   opacity: 1;
 }
+

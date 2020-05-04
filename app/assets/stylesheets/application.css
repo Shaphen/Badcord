@@ -18,7 +18,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  overflow: hidden;
+  overflow: scroll;
   max-height: 100%;
  }
  
