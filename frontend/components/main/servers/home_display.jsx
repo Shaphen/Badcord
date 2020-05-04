@@ -8,7 +8,7 @@ class HomeDisplay extends React.Component {
   render() {
     return (
       <div id="server-display-box">
-        <div id='server-display-name'>
+        <div id='server-display-name-home'>
           <p id="server-display-text">Home</p>
         </div>
       </div>

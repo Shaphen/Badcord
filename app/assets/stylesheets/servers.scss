@@ -3,10 +3,10 @@
   position: absolute;
   background-color: #2f3136;
   left: 76px;
-  height: 890px;
+  height: 895px;
   width: 240px;
   color: white;
-  border-right: 1px solid black;
+  // border-right: 1px solid black;
 }
 
 #server-display-name {
@@ -15,6 +15,12 @@
   background-color: #2f3136;
   height: 48px;
   border-bottom: 1px solid black;
+  cursor: pointer;
+  transition: background-color .2s;
+}
+
+#server-display-name:hover {
+  background-color: #33363b;
 }
 
 .server-link {
@@ -23,8 +29,21 @@
 
 #server-display-text {
   padding: 0px 12px;
-  width: 160px;
+  width: 175px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+#server-display-name-home {
+  display: flex;
+  align-items: center;
+  background-color: #2f3136;
+  height: 48px;
+  border-bottom: 1px solid black;
+}
+
+#dropdown-server-name {
+  padding-bottom: 11px;
+  font-size: 24px;
 }
