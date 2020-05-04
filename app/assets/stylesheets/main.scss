@@ -116,7 +116,7 @@
   transition: opacity .2s;
 }
 
-#server-button:hover + #home-text-display {
+.home-link:hover + #home-text-display {
   display: block;
   opacity: 1;
 }

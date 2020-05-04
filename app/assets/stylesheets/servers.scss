@@ -1,5 +1,8 @@
 
 #server-display-box {
+  position: absolute;
+  background-color: #2f3136;
+  left: 76px;
   height: 890px;
   width: 240px;
   color: white;
@@ -7,6 +10,10 @@
 }
 
 #server-display-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2f3136;
   height: 48px;
   border-bottom: 1px solid black;
 }
@@ -14,3 +21,8 @@
 .server-link {
   text-decoration: none;
 }
+
+// #home-display {
+//   text-align: center;
+//   padding-top: 15px;
+// }

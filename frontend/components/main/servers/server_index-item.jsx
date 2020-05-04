@@ -10,7 +10,7 @@ const ServerIndexItem = ({ server, changeServer }) => {
 
   return (
     <div id="server-box">
-      <Link to={`${server.id}`} className="server-link">
+      <Link to={`/channels/@me/${server.id}`} className="server-link">
         <p id="server-button2">{name}</p>
       </Link>
       <p id="server-name-display">{server.name}</p>

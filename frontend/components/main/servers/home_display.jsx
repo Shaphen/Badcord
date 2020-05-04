@@ -1,6 +1,6 @@
 import React from 'react';
 
-class ServerDisplay extends React.Component {
+class HomeDisplay extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -9,11 +9,11 @@ class ServerDisplay extends React.Component {
     return (
       <div id="server-display-box">
         <div id='server-display-name'>
-          <p>{this.props.servers[this.props.match.params.server_id] ? this.props.servers[this.props.match.params.server_id].name : null}</p>
+          <p id="home-display">Home</p>
         </div>
       </div>
     )
   }
 }
 
-export default ServerDisplay;
+export default HomeDisplay;

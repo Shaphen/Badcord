@@ -1,6 +1,7 @@
 import React from 'react';
 import ServerIndexContainer from './server_index_container';
 import ServerDisplayContainer from "./server_display_container";
+import HomeDisplayContainer from "./home_display_container";
 import { Route, Switch } from 'react-router-dom';
 import { AuthRoute } from '../../../util/route_util';
 import { ProtectedRoute } from '../../../util/route_util';
@@ -14,13 +15,13 @@ class Main extends React.Component {
     return (
       <div className="main-page">
         <ServerIndexContainer />
-        < ServerDisplayContainer />
+        <HomeDisplayContainer />
         <div id="user-logout-container">
           <p>{this.props.currentUser.username}</p>
           <button className="logout-button" onClick={() => this.props.logout()}>LOGOUT</button>
         </div>
         <Switch>
-          <ProtectedRoute path="/serverId" component={ServerDisplayContainer} />
+          <ProtectedRoute path="/channels/@me/:server_id" component={ServerDisplayContainer} />
         </Switch>
       </div>
     )
