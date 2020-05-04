@@ -53,7 +53,7 @@
 
 .other-form {
   text-align: left;
-  width: 100%;
+  width: 73%;
   color: #7289DA;
   font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
   font-size: 12px;
@@ -228,4 +228,8 @@
 .demo-login-splash:hover {
   animation-duration: 1s;
     border: 1px solid rgb(233, 236, 245);
+}
+
+#other-form-text {
+  padding: 9px 3px 0px 0px;
 }

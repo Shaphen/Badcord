@@ -41,5 +41,9 @@ export const updateServer = server => dispatch => ApiUtil.updateServer(server)
     dispatch(receiveServerErrors(err.responseJSON))
   ));
     
-export const deleteServer = serverId => dispatch => ApiUtil.deleteServer(serverId)
-  .then(() => dispatch(removeServer(serverId)));
+export const deleteServer = serverId => dispatch =>(
+  ApiUtil.deleteServer(serverId)
+  .then(() => {
+    dispatch(removeServer(serverId))
+  }).fail((err) => console.log(err))
+  );

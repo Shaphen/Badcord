@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
+import { Redirect } from 'react-router-dom'
 
 class ServerDisplay extends React.Component {
   constructor(props) {
@@ -11,8 +12,11 @@ class ServerDisplay extends React.Component {
     this.handleCloseModal = this.handleCloseModal.bind(this);
   }
 
-  deleteServer(serverId) {
-    this.props.deleteServer(serverId).then(() => this.handleCloseModal())
+  deleteServer(e) {
+    e.preventDefault();
+    this.props.deleteServer(this.props.servers[this.props.match.params.server_id].id)
+      .then(() => this.handleCloseModal(e))
+      .then(() => this.props.history.push("/channels/@me"))
   }
 
   handleOpenModal() {
@@ -59,7 +63,7 @@ class ServerDisplay extends React.Component {
               <label id="add-friends-button">Invite Criminals</label>
               <label>➕</label>
             </div>
-            <div id="delete-server-box" onClick={this.deleteServer(serverId)}>
+            <div id="delete-server-box" onClick={(e) => this.deleteServer(e)}>
               <label id="delete-server-button">Burn Down Hideout</label>
               <label id="lighten-icon">🔥</label>
             </div>
