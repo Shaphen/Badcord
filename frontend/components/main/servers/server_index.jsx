@@ -23,7 +23,8 @@ class ServerIndex extends React.Component {
     this.setState({ showCreateModal: true })
   }
 
-  handleCloseModal() {
+  handleCloseModal(e) {
+    e.stopPropagation();
     this.setState({ showCreateModal: false })
   }
   
@@ -49,7 +50,7 @@ class ServerIndex extends React.Component {
           <Modal
             isOpen={this.state.showCreateModal}
             contentLabel="Create Server Modal"
-            onRequestClose={this.handleClose}
+            onRequestClose={this.handleCloseModal}
             style={{
               content: {
                 top: '50%',

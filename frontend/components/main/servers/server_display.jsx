@@ -11,11 +11,16 @@ class ServerDisplay extends React.Component {
     this.handleCloseModal = this.handleCloseModal.bind(this);
   }
 
+  componentDidMount() {
+    // this.props.getServers();
+  }
+
   handleOpenModal() {
     this.setState({ showDeleteModal: true })
   }
 
-  handleCloseModal() {
+  handleCloseModal(e) {
+    e.stopPropagation();
     this.setState({ showDeleteModal: false })
   }
 
@@ -48,7 +53,7 @@ class ServerDisplay extends React.Component {
               }
             }}
           >
-            <div id="delete-server-box">
+            <div id="delete-server-box" onClick={this.handleCloseModal}>
               {/* <label id="delete-server-button">Delete Server</label> */}
             </div>
           </Modal>
