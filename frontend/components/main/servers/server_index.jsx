@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom'
 import ServerIndexItem from './server_index-item';
 import ServerFormContainer from './server_form_container'
-import Modal from 'react-modal'
+import Modal from 'react-modal';
 
 
 class ServerIndex extends React.Component {

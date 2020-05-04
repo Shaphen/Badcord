@@ -1,4 +1,5 @@
 import React from 'react';
+import Modal from 'react-modal';
 
 class ServerDisplay extends React.Component {
   constructor(props) {
