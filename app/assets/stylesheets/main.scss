@@ -134,6 +134,7 @@
   align-self: flex-end;
   display: flex;
   justify-content: space-between;
+  z-index: 10;
 }
 
 #user-logout-container p {

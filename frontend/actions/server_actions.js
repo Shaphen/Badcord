@@ -32,15 +32,14 @@ export const fetchServer = serverId => dispatch => ApiUtil.fetchServer(serverId)
   .then(server => dispatch(receiveServer(server)));
 
 export const createServer = server => dispatch => ApiUtil.createServer(server)
-  .then(server => dispatch(receiveServer(server)), server => (
-    dispatch(receiveServer(server))
+  .then(server => dispatch(receiveServer(server)), err => (
+    dispatch(receiveServerErrors(err.responseJSON))
   ));
-
+  
 export const updateServer = server => dispatch => ApiUtil.updateServer(server)
   .then(server => dispatch(receiveServer(server)), err => (
     dispatch(receiveServerErrors(err.responseJSON))
   ));
-
+    
 export const deleteServer = serverId => dispatch => ApiUtil.deleteServer(serverId)
   .then(() => dispatch(removeServer(serverId)));
-  
