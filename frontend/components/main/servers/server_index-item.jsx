@@ -2,11 +2,13 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom'
 
 const ServerIndexItem = ({ server, changeServer }) => {
-  let words = server.name.split(" ")
   let name = "";
-  words.forEach((word) => {
-    name += word[0];
-  })
+  if (server !== undefined) {
+    let words = server.name.split(" ")
+    words.forEach((word) => {
+      name += word[0];
+    })
+  }
 
   return (
     <div id="server-box">

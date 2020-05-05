@@ -5,7 +5,7 @@ import Root from './components/root';
 import Modal from 'react-modal';
 
 // test code
-import { deleteServer } from './actions/server_actions';
+import { deleteServer, fetchServer } from './actions/server_actions';
 // import { fetchServers, fetchServer, createServer, updateServer, deleteServer } from './util/server_api_util';
 //end
 
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   // window.fetchServers = fetchServers
-  // window.fetchServer = fetchServer;
+  window.fetchServer = fetchServer;
   // window.createServer = createServer;
   // window.updateServer = updateServer;
   window.deleteServer = deleteServer;

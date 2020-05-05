@@ -27,7 +27,10 @@
 }
 
 #upload-server-photo {
-  width: 40%;
+  position: relative;
+  left: 210px;
+  bottom: 118px;
+  width: 39%;
   height: 150px;
   border: 1px solid #747f8d;
 }
@@ -44,6 +47,9 @@
 }
 
 #create-server-button {
+  position: relative;
+  bottom: 70px;
+  right: 39px;
   background-color: #7289DA;
   color: white;
   font-size: 13px;
@@ -58,7 +64,7 @@
 }
 
 #server-name-input {
-  margin: 10px 100px 0px 0px;
+  margin: 85px 100px 17px 23px;
   padding: 8px;
   border: none;
   border-bottom: 2px solid #e3e5e8;
@@ -66,7 +72,8 @@
 }
 
 #server-name-title {
-  margin-right: 200px;
+  min-width: 100px;
+  margin-right: -120px;
   font-size: 10px;
   font-weight: 700;
   color: #4f5660;
