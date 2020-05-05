@@ -8,7 +8,7 @@ class ServerDisplay extends React.Component {
     super(props);
     this.state = {
       showDeleteModal: false,
-      showEditServer: false
+      showEditModal: false
     };
     this.handleOpenDeleteModal = this.handleOpenDeleteModal.bind(this);
     this.handleCloseDeleteModal = this.handleCloseDeleteModal.bind(this);
@@ -19,6 +19,10 @@ class ServerDisplay extends React.Component {
     this.props.deleteServer(this.props.servers[this.props.match.params.server_id].id)
       .then(() => this.handleCloseDeleteModal(e))
       .then(() => this.props.history.push("/channels/@me"))
+  }
+
+  updateServer(e) {
+
   }
 
   handleOpenDeleteModal() {
@@ -50,7 +54,7 @@ class ServerDisplay extends React.Component {
           <Modal
             isOpen={this.state.showDeleteModal}
             contentLabel="Delete Server Modal"
-            onRequestClose={this.handleCloseModal}
+            onRequestClose={this.handleCloseDeleteModal}
             style={{
               content: {
                 top: '55px',
@@ -74,6 +78,29 @@ class ServerDisplay extends React.Component {
               <label id="edit-server-button">Modify Hideout</label>
               <label>✏️</label>
             </div>
+            <Modal
+              isOpen={this.state.showCreateModal}
+              contentLabel="Update Server Modal"
+              onRequestClose={this.handleCloseUpdateModal}
+              style={{
+                content: {
+                  top: '50%',
+                  left: '50%',
+                  right: '0',
+                  bottom: '0',
+                  marginLeft: "-245px",
+                  marginTop: "-175px",
+                  width: '490px',
+                  height: '350px',
+                  background: 'rgb(255, 255, 255)'
+                },
+                overlay: {
+                  position: 'fixed',
+                  backgroundColor: 'rgba(0,0,0,0.7)',
+                  zIndex: '50'
+                }
+              }}
+            ></Modal>
             <div id="delete-server-box" onClick={(e) => this.deleteServer(e)}>
               <label id="delete-server-button">Burn Down Hideout</label>
               <label id="lighten-icon">🔥</label>

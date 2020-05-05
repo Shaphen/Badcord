@@ -13,10 +13,12 @@ class Api::ServersController < ApplicationController
   end
 
   def create
+    # debugger
     @server = Server.new(server_params)
+    @server.photo.attach(params[:server][:photo])
 
     if @server.save
-      render json: @server, status: 200
+      render json: :show, status: 200
     else
       render json: @server.errors.full_messages
     end
@@ -42,6 +44,6 @@ class Api::ServersController < ApplicationController
 
   private
   def server_params
-    params.require(:server).permit(:name, :owner_id)
+    params.require(:server).permit(:name, :owner_id, :photo)
   end
 end

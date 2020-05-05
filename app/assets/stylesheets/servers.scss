@@ -53,4 +53,15 @@
 //   background-color: #33363b;
 // }
 
+#server-img {
+  border-radius: 25px;
+  border-radius: 100%;
+  height: 66px;
+  width: 64px;
+  transition: border-radius .4s;
+}
 
+#server-img:hover {
+  border-radius: 15px;
+  cursor: pointer;
+}

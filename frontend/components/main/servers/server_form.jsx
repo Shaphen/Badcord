@@ -6,7 +6,7 @@ class NewServerForm extends React.Component {
     this.state = {
       name: "",
       owner_id: 0,
-      // photo: null
+      photo: null
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
@@ -19,14 +19,15 @@ class NewServerForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // const formData = new FormData();
-    // formData.append('server[name]', this.state.name);
-    // formData.append('server[owner_id]', this.state.owner_id);
-    // if (this.state.photoFile) {
-    //   formData.append('server[photo]', this.state.photo);
-    // }
-    const server = Object.assign({}, this.state)
-    this.props.action(server).then(() => this.props.closeModal())
+    const formData = new FormData();
+    formData.append('server[name]', this.state.name);
+    formData.append('server[owner_id]', this.state.owner_id);
+    if (this.state.photo) {
+      formData.append('server[photo]', this.state.photo);
+    }
+    // const server = Object.assign({}, this.state)
+    // debugger
+    this.props.action(formData).then(() => this.props.closeModal())
   }
 
   handleChange(type){
@@ -40,13 +41,6 @@ class NewServerForm extends React.Component {
   }
 
   render() {
-    let displayName = "";
-    if (this.state.name !== undefined) {
-      let words = this.state.name.split(" ")
-      words.forEach((word) => {
-        name += word[0];
-      })
-    }
     return (
       <div id="server-form-container">
         <div id="new-server-description">
@@ -61,8 +55,8 @@ class NewServerForm extends React.Component {
               </div>
           </div>
           <div id="upload-server-photo">
-            <p id="name-display-photo">Feature TBH</p>
-            {/* <input type="file" onChange={this.handleFile} /> */}
+            {/* <p id="name-display-photo">Feature TBH</p> */}
+            <input type="file" onChange={this.handleFile} />
           </div>
           <button id="create-server-button" value={this.props.formType}>Create</button>
         </form>
