@@ -38,6 +38,12 @@
   bottom: 124px;
   width: 30%;
   height: 150px;
+  transition: background-color .3s;
+  cursor: pointer;
+}
+
+#upload-server-photo:hover {
+  background-color: rgb(80, 97, 156);
 }
 
 #create-server-button-container {
@@ -132,7 +138,20 @@
   opacity: 0.85;
 }
 
-#name-display-photo {
+#img-preview {
+  max-width: 100%;
+  position: absolute;
+  height: inherit;
+  border-radius: 100%;
+}
+
+#choose-server-photo-button {
+  display: none;
+}
+
+#change-icon-server {
   color: white;
-  font-size: 18px;
+  width: 68px;
+  font-size: 13px;
+  cursor: pointer;
 }

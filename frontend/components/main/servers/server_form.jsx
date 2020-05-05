@@ -6,10 +6,12 @@ class NewServerForm extends React.Component {
     this.state = {
       name: "",
       owner_id: 0,
-      photo: null
+      photo: null,
+      photoPreview: null
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
+    this.handleImageClick = this.handleImageClick.bind(this);
   }
 
   componentDidMount() {
@@ -25,8 +27,6 @@ class NewServerForm extends React.Component {
     if (this.state.photo) {
       formData.append('server[photo]', this.state.photo);
     }
-    // const server = Object.assign({}, this.state)
-    // debugger
     this.props.action(formData).then(() => this.props.closeModal())
   }
 
@@ -37,10 +37,23 @@ class NewServerForm extends React.Component {
   }
 
   handleFile(e) {
-    this.setState({ photo: e.currentTarget.files[0] })
+    const file = e.currentTarget.files[0]
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({ photo: file, photoPreview: fileReader.result })
+    }
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
+
+  handleImageClick() {
+    $("#choose-server-photo-button").trigger("click")
   }
 
   render() {
+    const preview = this.state.photoPreview ? <img id="img-preview" src={ this.state.photoPreview }/> : null
+    
     return (
       <div id="server-form-container">
         <div id="new-server-description">
@@ -54,9 +67,10 @@ class NewServerForm extends React.Component {
                 {/* <label id="new-server-close">BACK</label> */}
               </div>
           </div>
-          <div id="upload-server-photo">
-            {/* <p id="name-display-photo">Feature TBH</p> */}
-            <input type="file" onChange={this.handleFile} />
+          <div id="upload-server-photo" onClick={this.handleImageClick}>
+            { preview }
+            <p id="change-icon-server">CHANGE ICON</p>
+            <input type="file" id="choose-server-photo-button" onChange={this.handleFile} />
           </div>
           <button id="create-server-button" value={this.props.formType}>Create</button>
         </form>
