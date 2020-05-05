@@ -1,8 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
-import { Redirect } from 'react-router-dom'
 import ServerUpdateContainer from './server_update_container';
-import ServerCreateContainer from './server_create_container';
 
 class ServerDisplay extends React.Component {
   constructor(props) {
@@ -22,10 +20,6 @@ class ServerDisplay extends React.Component {
     this.props.deleteServer(this.props.servers[this.props.match.params.server_id].id)
       .then(() => this.handleCloseDeleteModal(e))
       .then(() => this.props.history.push("/channels/@me"))
-  }
-
-  updateServer(e) {
-
   }
 
   handleOpenDeleteModal() {
@@ -51,8 +45,8 @@ class ServerDisplay extends React.Component {
     return (
       <div id="server-display-box">
         <div id='server-display-name' onClick={this.handleOpenDeleteModal}>
-          <p id="server-display-text">{currentServer ? currentServer.name : null}</p>
-          <label id="dropdown-server-name">⌄</label>
+          <p id="server-display-text">{currentServer ? currentServer.name : "Home" }</p>
+          {currentServer ? <label id="dropdown-server-name">⌄</label> : null }
           <Modal
             isOpen={this.state.showDeleteModal}
             contentLabel="Delete Server Modal"
