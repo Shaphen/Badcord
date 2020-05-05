@@ -105,7 +105,7 @@ class ServerDisplay extends React.Component {
             >
               <h1 id="new-server-title">Picky villans come out ahead</h1>
               <ServerUpdateContainer server={this.props.servers[this.props.match.params.server_id]} closeModal={this.handleCloseUpdateModal} />
-              <label id="new-server-close" onClick={this.handleCloseUpdateModal}>BACK</label>
+              <label id="new-server-close2" onClick={this.handleCloseUpdateModal}>BACK</label>
             </Modal>
             <div id="delete-server-box" onClick={(e) => this.deleteServer(e)}>
               <label id="delete-server-button">Burn Down Hideout</label>

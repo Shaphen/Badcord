@@ -15,7 +15,8 @@ class Api::ServersController < ApplicationController
   def create
     # debugger
     @server = Server.new(server_params)
-    @server.photo.attach(params[:server][:photo])
+    @server.photo.attach(params[:server][:photo]) if params[:server][:photo]
+    # debugger
 
     if @server.save
       render :show

@@ -12,7 +12,7 @@ const mSTP = (state, ownProps) => {
 };
 
 const mDTP = dispatch => ({
-  action: server => dispatch(updateServer(server))
+  updateServer: server => dispatch(updateServer(server))
 });
 
 export default connect(mSTP, mDTP)(ServerUpdateForm);

@@ -7,6 +7,7 @@ class ServerUpdateForm extends React.Component {
       name: "",
       owner_id: 0,
     }
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   componentDidMount() {
@@ -16,8 +17,9 @@ class ServerUpdateForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    debugger
     const server = Object.assign({}, this.state)
-    this.props.action(formData).then(() => this.props.closeModal())
+    this.props.updateServer(server).then(() => this.props.closeModal())
   }
 
   handleChange(type) {

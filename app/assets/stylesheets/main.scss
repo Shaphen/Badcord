@@ -212,3 +212,20 @@
   color: rgba(236, 13, 13, 0.911);
   cursor: pointer;
 }
+
+#new-server-close2 {
+  position: absolute;
+  top: 270px;
+  left: -10px;
+  text-align: right;
+  padding: 7px;
+  color: #747f8d;
+  margin: 18px 20px 15px 50px;
+  font-size: 13px;
+  transition: color .5s;
+}
+
+#new-server-close2:hover {
+  color: rgba(236, 13, 13, 0.911);
+  cursor: pointer;
+}

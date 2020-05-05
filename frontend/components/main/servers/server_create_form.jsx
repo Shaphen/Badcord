@@ -27,7 +27,7 @@ class ServerCreateForm extends React.Component {
     if (this.state.photo) {
       formData.append('server[photo]', this.state.photo);
     }
-    this.props.action(formData).then(() => this.props.closeModal())
+    this.props.createServer(formData).then(() => this.props.closeModal())
   }
 
   handleChange(type){
