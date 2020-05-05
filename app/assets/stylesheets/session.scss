@@ -89,7 +89,8 @@
 
 .login-signup-form label input {
   background-color: rgba(0, 0, 0, 0.1);
-  border-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0,0,0,0.3);
+  // border-color: rgba(0, 0, 0, 0.2);
   color: rgb(220, 221, 222);
   font-size: 15px;
   padding: 8px;
@@ -97,6 +98,11 @@
   border-radius: 3px;
   width: 100%;
   outline: none;
+  transition: border-color .2s;
+}
+
+.login-signup-form label input:focus {
+  border-color: #7289da;
 }
 
 .email-box {
