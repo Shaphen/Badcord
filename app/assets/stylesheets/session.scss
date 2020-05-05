@@ -90,7 +90,6 @@
 .login-signup-form label input {
   background-color: rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(0,0,0,0.3);
-  // border-color: rgba(0, 0, 0, 0.2);
   color: rgb(220, 221, 222);
   font-size: 15px;
   padding: 8px;
@@ -107,14 +106,20 @@
 
 .email-box {
   background-color: rgba(0, 0, 0, 0.1);
-  border-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0,0,0,0.3);
   color: rgb(220, 221, 222);
-  padding: 8px;
-  padding-left: 10px;  border-radius: 3px;
   font-size: 15px;
+  padding: 8px;
+  padding-left: 10px;
+  border-radius: 3px;
   margin-bottom: 5px;
-  outline: none;
   width: 100%;
+  outline: none;
+  transition: border-color .2s;
+}
+
+.email-box:focus {
+  border-color: #7289da;
 }
 
 .session-submit-button {
