@@ -37,7 +37,7 @@ class ServerUpdateForm extends React.Component {
             <label id="server-name-title">SERVER NAME</label>
             <input id="server-name-input" type="text" onChange={this.handleChange('name')} value={this.state.name} />
           </div>
-          <button id="create-server-button" value={this.props.formType}>Update</button>
+          <button id="create-server-button2" value={this.props.formType}>Update</button>
         </form>
       </div>
     )
