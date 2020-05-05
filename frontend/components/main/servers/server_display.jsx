@@ -30,10 +30,14 @@ class ServerDisplay extends React.Component {
     this.setState({ showDeleteModal: false })
   }
 
-  // handleCloseUpdateModal(e) {
-  //   e.stopPropagation();
-  //   this.setState({ showDeleteModal: false })
-  // }
+  handleOpenUpdateModal() {
+    this.setState({ showEditModal: true })
+  }
+
+  handleCloseUpdateModal(e) {
+    e.stopPropagation();
+    this.setState({ showEditModal: false })
+  }
 
   render() {
     let currentServer = this.props.servers[this.props.match.params.server_id]
@@ -66,7 +70,7 @@ class ServerDisplay extends React.Component {
               }
             }}
           >
-            <div id="edit-server-box">
+            <div id="edit-server-box" onClick={this.handleOpenUpdateModal}>
               <label id="edit-server-button">Modify Hideout</label>
               <label>✏️</label>
             </div>
