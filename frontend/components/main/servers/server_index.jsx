@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom'
 import ServerIndexItem from './server_index-item';
-import ServerFormContainer from './server_form_container'
+import ServerCreateContainer from './server_create_container'
 import Modal from 'react-modal';
 
 
@@ -72,7 +72,7 @@ class ServerIndex extends React.Component {
           >
             {/* <label onClick={this.handleCloseModal} id="new-server-close">Close</label> */}
             <h1 id="new-server-title">Greed is good</h1>
-            <ServerFormContainer closeModal={this.handleCloseModal} />
+            <ServerCreateContainer closeModal={this.handleCloseModal} />
             <label id="new-server-close" onClick={this.handleCloseModal}>BACK</label>
           </Modal>
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-class ServerForm extends React.Component {
+class NewServerForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,8 +19,14 @@ class ServerForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    // const formData = new FormData();
+    // formData.append('server[name]', this.state.name);
+    // formData.append('server[owner_id]', this.state.owner_id);
+    // if (this.state.photoFile) {
+    //   formData.append('server[photo]', this.state.photo);
+    // }
     const server = Object.assign({}, this.state)
-    this.props.createServer(server).then(() => this.props.closeModal())
+    this.props.action(server).then(() => this.props.closeModal())
   }
 
   handleChange(type){
@@ -65,4 +71,4 @@ class ServerForm extends React.Component {
   }
 }
 
-export default ServerForm;
+export default NewServerForm;

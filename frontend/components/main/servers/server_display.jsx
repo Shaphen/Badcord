@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import { Redirect } from 'react-router-dom'
+import ServerUpdateContainer from './server_update_container';
 
 class ServerDisplay extends React.Component {
   constructor(props) {
@@ -59,9 +60,9 @@ class ServerDisplay extends React.Component {
               }
             }}
           >
-            <div id="add-friends-box" onClick={this.handleCloseModal}>
-              <label id="add-friends-button">Invite Criminals</label>
-              <label>➕</label>
+            <div id="edit-server-box" onClick={}>
+              <label id="edit-server-button">Modify Hideout</label>
+              <label>✏️</label>
             </div>
             <div id="delete-server-box" onClick={(e) => this.deleteServer(e)}>
               <label id="delete-server-button">Burn Down Hideout</label>

@@ -11,7 +11,7 @@ const mSTP = state => {
 };
 
 const mDTP = dispatch => ({
-  createServer: server => dispatch(createServer(server))
+  action: server => dispatch(createServer(server))
 });
 
 export default connect(mSTP, mDTP)(ServerForm);
