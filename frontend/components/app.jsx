@@ -13,7 +13,7 @@ import MainContainer from './main/servers/main_container';
 const App = () => (
   <div className="splash">
     <Switch>
-      <ProtectedRoute path="/channels/@me" component={MainContainer} />
+      <ProtectedRoute path="/channels/" component={MainContainer} />
       <AuthRoute exact path="/login" component={LoginContainer} />
       <AuthRoute exact path="/signup" component={SignupContainer} />
       <Route exact path="/" component={ArtContainer} />

@@ -3,8 +3,7 @@ import ServerIndexContainer from './server_index_container';
 import ServerDisplayContainer from "./server_display_container";
 import HomeDisplayContainer from "./home_display_container";
 import { Route, Switch } from 'react-router-dom';
-import { AuthRoute } from '../../../util/route_util';
-import { ProtectedRoute } from '../../../util/route_util';
+import { AuthRoute, ProtectedRoute } from '../../../util/route_util';
 
 class Main extends React.Component {
   constructor(props) {
@@ -21,7 +20,7 @@ class Main extends React.Component {
           <button className="logout-button" onClick={() => this.props.logout()}>LOGOUT</button>
         </div>
         <Switch>
-          <ProtectedRoute path="/channels/@me/:server_id" component={ServerDisplayContainer} />
+          <ProtectedRoute path="/channels/:server_id" component={ServerDisplayContainer} />
         </Switch>
       </div>
     )

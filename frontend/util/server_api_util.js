@@ -9,7 +9,6 @@ export const fetchServer = serverId => $.ajax({
 });
 
 export const createServer = server => {
-  // debugger
   return $.ajax({
     url: '/api/servers',
     method: 'POST',
@@ -22,9 +21,7 @@ export const createServer = server => {
 export const updateServer = server => $.ajax({
   url: `/api/servers/${server.id}`,
   method: 'PATCH',
-  data: server,
-  contentType: false,
-  processData: false
+  data: server
 });
 
 export const deleteServer = serverId => (

@@ -40,7 +40,7 @@ class ServerIndex extends React.Component {
         <ul>
           {
             this.props.servers.map((server) => (
-              <ServerIndexItem server={server} key={server.id} changeServer={this.handleChangeServer} />
+              <ServerIndexItem server={server} key={server.id} />
             ))
           }
         </ul>

@@ -7,7 +7,8 @@ class ServerCreateForm extends React.Component {
       name: "",
       owner_id: 0,
       photo: null,
-      photoPreview: null
+      photoPreview: null,
+      loading: false
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);

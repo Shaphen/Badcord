@@ -27,7 +27,7 @@ class Api::ServersController < ApplicationController
 
   def update
     if @server.update(server_params)
-      render :show
+      render json: ["it worked"] #:show
     else
       render json: @server.errors.full_messages, status: 422
     end
