@@ -2,6 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import { Redirect } from 'react-router-dom'
 import ServerUpdateContainer from './server_update_container';
+import ServerCreateContainer from './server_create_container';
 
 class ServerDisplay extends React.Component {
   constructor(props) {
@@ -12,6 +13,8 @@ class ServerDisplay extends React.Component {
     };
     this.handleOpenDeleteModal = this.handleOpenDeleteModal.bind(this);
     this.handleCloseDeleteModal = this.handleCloseDeleteModal.bind(this);
+    this.handleOpenUpdateModal = this.handleOpenUpdateModal.bind(this);
+    this.handleCloseUpdateModal = this.handleCloseUpdateModal.bind(this);
   }
 
   deleteServer(e) {
@@ -79,7 +82,7 @@ class ServerDisplay extends React.Component {
               <label>✏️</label>
             </div>
             <Modal
-              isOpen={this.state.showCreateModal}
+              isOpen={this.state.showEditModal}
               contentLabel="Update Server Modal"
               onRequestClose={this.handleCloseUpdateModal}
               style={{
@@ -91,7 +94,7 @@ class ServerDisplay extends React.Component {
                   marginLeft: "-245px",
                   marginTop: "-175px",
                   width: '490px',
-                  height: '350px',
+                  height: '295px',
                   background: 'rgb(255, 255, 255)'
                 },
                 overlay: {
@@ -100,7 +103,11 @@ class ServerDisplay extends React.Component {
                   zIndex: '50'
                 }
               }}
-            ></Modal>
+            >
+              <h1 id="new-server-title">Picky villans come out ahead</h1>
+              <ServerUpdateContainer closeModal={this.handleCloseUpdateModal} />
+              <label id="new-server-close" onClick={this.handleCloseUpdateModal}>BACK</label>
+            </Modal>
             <div id="delete-server-box" onClick={(e) => this.deleteServer(e)}>
               <label id="delete-server-button">Burn Down Hideout</label>
               <label id="lighten-icon">🔥</label>

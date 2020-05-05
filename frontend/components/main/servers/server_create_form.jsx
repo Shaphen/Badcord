@@ -1,6 +1,6 @@
 import React from 'react';
 
-class NewServerForm extends React.Component {
+class ServerCreateForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -79,4 +79,4 @@ class NewServerForm extends React.Component {
   }
 }
 
-export default NewServerForm;
+export default ServerCreateForm;

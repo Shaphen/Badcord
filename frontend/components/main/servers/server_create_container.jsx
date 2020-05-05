@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ServerForm from './server_form';
+import ServerCreateForm from './server_create_form';
 import { createServer } from '../../../actions/server_actions';
 
 const mSTP = state => {
@@ -14,4 +14,4 @@ const mDTP = dispatch => ({
   action: server => dispatch(createServer(server))
 });
 
-export default connect(mSTP, mDTP)(ServerForm);
+export default connect(mSTP, mDTP)(ServerCreateForm);

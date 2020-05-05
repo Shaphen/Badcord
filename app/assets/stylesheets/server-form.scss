@@ -64,7 +64,7 @@
   background-color: #7289DA;
   color: white;
   font-size: 13px;
-  margin: 15px 30px 12px 395px;
+  margin: 15px 30px 12px 325px;
   border-radius: 4px;
   padding: 8px 20px;
   transition: background-color .3s;
@@ -75,7 +75,7 @@
 }
 
 #server-name-input {
-  margin: 85px 100px 17px 23px;
+  margin: 85px 100px 17px 5px;
   padding: 8px;
   border: none;
   border-bottom: 2px solid #e3e5e8;
@@ -84,7 +84,8 @@
 
 #server-name-title {
   min-width: 100px;
-  margin-right: -120px;
+  margin-right: -100px;
+  margin-left: 40px;
   font-size: 10px;
   font-weight: 700;
   color: #4f5660;
