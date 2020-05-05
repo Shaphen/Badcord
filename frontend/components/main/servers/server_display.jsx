@@ -7,34 +7,40 @@ class ServerDisplay extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showDeleteModal: false
+      showDeleteModal: false,
+      showEditServer: false
     };
-    this.handleOpenModal = this.handleOpenModal.bind(this);
-    this.handleCloseModal = this.handleCloseModal.bind(this);
+    this.handleOpenDeleteModal = this.handleOpenDeleteModal.bind(this);
+    this.handleCloseDeleteModal = this.handleCloseDeleteModal.bind(this);
   }
 
   deleteServer(e) {
     e.preventDefault();
     this.props.deleteServer(this.props.servers[this.props.match.params.server_id].id)
-      .then(() => this.handleCloseModal(e))
+      .then(() => this.handleCloseDeleteModal(e))
       .then(() => this.props.history.push("/channels/@me"))
   }
 
-  handleOpenModal() {
+  handleOpenDeleteModal() {
     this.setState({ showDeleteModal: true })
   }
 
-  handleCloseModal(e) {
+  handleCloseDeleteModal(e) {
     e.stopPropagation();
     this.setState({ showDeleteModal: false })
   }
+
+  // handleCloseUpdateModal(e) {
+  //   e.stopPropagation();
+  //   this.setState({ showDeleteModal: false })
+  // }
 
   render() {
     let currentServer = this.props.servers[this.props.match.params.server_id]
     let serverId = currentServer ? currentServer.id : null
     return (
       <div id="server-display-box">
-        <div id='server-display-name' onClick={this.handleOpenModal}>
+        <div id='server-display-name' onClick={this.handleOpenDeleteModal}>
           <p id="server-display-text">{currentServer ? currentServer.name : null}</p>
           <label id="dropdown-server-name">⌄</label>
           <Modal
@@ -60,7 +66,7 @@ class ServerDisplay extends React.Component {
               }
             }}
           >
-            <div id="edit-server-box" onClick={}>
+            <div id="edit-server-box">
               <label id="edit-server-button">Modify Hideout</label>
               <label>✏️</label>
             </div>
