@@ -6,7 +6,7 @@ class ServerForm extends React.Component {
     this.state = {
       name: "",
       owner_id: 0,
-      photo: null
+      // photo: null
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
@@ -48,7 +48,7 @@ class ServerForm extends React.Component {
               </div>
           </div>
           <div id="upload-server-photo">
-            <input type="file" onChange={this.handleFile} />
+            {/* <input type="file" onChange={this.handleFile} /> */}
           </div>
           <button id="create-server-button" value={this.props.formType}>Create</button>
         </form>
