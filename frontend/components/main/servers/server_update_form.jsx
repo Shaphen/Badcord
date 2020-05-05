@@ -10,7 +10,7 @@ class ServerUpdateForm extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({ name: `${this.props.currentUser.username}'s server` })
+    this.setState({ name: this.props.server.name })
     this.setState({ owner_id: this.props.currentUser.id })
   }
 

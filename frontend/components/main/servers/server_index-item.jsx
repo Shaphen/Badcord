@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 const ServerIndexItem = (props) => {
   let name = "";
   if (props.server !== undefined) {
+    // debugger
     let words = props.server.name.split(" ")
     words.forEach((word) => {
       name += word[0];

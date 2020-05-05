@@ -18,7 +18,7 @@ class Api::ServersController < ApplicationController
     @server.photo.attach(params[:server][:photo])
 
     if @server.save
-      render json: :show, status: 200
+      render :show
     else
       render json: @server.errors.full_messages
     end

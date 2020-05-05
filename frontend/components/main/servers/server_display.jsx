@@ -48,7 +48,6 @@ class ServerDisplay extends React.Component {
 
   render() {
     let currentServer = this.props.servers[this.props.match.params.server_id]
-    let serverId = currentServer ? currentServer.id : null
     return (
       <div id="server-display-box">
         <div id='server-display-name' onClick={this.handleOpenDeleteModal}>
@@ -105,7 +104,7 @@ class ServerDisplay extends React.Component {
               }}
             >
               <h1 id="new-server-title">Picky villans come out ahead</h1>
-              <ServerUpdateContainer closeModal={this.handleCloseUpdateModal} />
+              <ServerUpdateContainer server={this.props.servers[this.props.match.params.server_id]} closeModal={this.handleCloseUpdateModal} />
               <label id="new-server-close" onClick={this.handleCloseUpdateModal}>BACK</label>
             </Modal>
             <div id="delete-server-box" onClick={(e) => this.deleteServer(e)}>

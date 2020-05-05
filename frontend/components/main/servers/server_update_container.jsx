@@ -5,7 +5,7 @@ import { updateServer } from '../../../actions/server_actions';
 const mSTP = (state, ownProps) => {
   return {
     currentUser: state.entities.users[state.session.id],
-    servers: ownProps.server,
+    server: ownProps.server,
     errors: state.errors.session,
     formType: "Picky Villans Come Ahead"
   }
