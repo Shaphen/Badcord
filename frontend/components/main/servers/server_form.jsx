@@ -34,6 +34,13 @@ class ServerForm extends React.Component {
   }
 
   render() {
+    let displayName = "";
+    if (this.state.name !== undefined) {
+      let words = this.state.name.split(" ")
+      words.forEach((word) => {
+        name += word[0];
+      })
+    }
     return (
       <div id="server-form-container">
         <div id="new-server-description">
@@ -48,6 +55,7 @@ class ServerForm extends React.Component {
               </div>
           </div>
           <div id="upload-server-photo">
+            <p id="name-display-photo">Feature TBH</p>
             {/* <input type="file" onChange={this.handleFile} /> */}
           </div>
           <button id="create-server-button" value={this.props.formType}>Create</button>

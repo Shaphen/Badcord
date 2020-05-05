@@ -27,12 +27,17 @@
 }
 
 #upload-server-photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7289DA;
+  border-radius: 100%;
+  border: 5px solid #e3e5e8;
   position: relative;
   left: 210px;
-  bottom: 118px;
-  width: 39%;
+  bottom: 124px;
+  width: 30%;
   height: 150px;
-  border: 1px solid #747f8d;
 }
 
 #create-server-button-container {
@@ -48,7 +53,7 @@
 
 #create-server-button {
   position: relative;
-  bottom: 70px;
+  bottom: 78px;
   right: 39px;
   background-color: #7289DA;
   color: white;
@@ -125,4 +130,9 @@
 
 #lighten-icon {
   opacity: 0.85;
+}
+
+#name-display-photo {
+  color: white;
+  font-size: 18px;
 }
