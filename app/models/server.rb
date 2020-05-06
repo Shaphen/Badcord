@@ -13,7 +13,7 @@ class Server < ApplicationRecord
     through: :memberships,
     source: :member
 
-  has_many :channels
+  has_many :channels,
     foreign_key: :server_id,
     class_name: :Channel
 
