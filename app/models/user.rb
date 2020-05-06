@@ -41,4 +41,8 @@ class User < ApplicationRecord
   has_many :servers,
     through: :server_memberships,
     source: :server
+
+  has_many :owned_channels,
+    through: :owned_servers,
+    source: :channels
 end

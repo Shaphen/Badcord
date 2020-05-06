@@ -2,12 +2,12 @@ class Api::ChannelsController < ApplicationController
   before_action :require_logged_in
   
   def index
-    @channels = current_user.owned_servers.find_by(id: params[:server_id]).channels #serverId?
+    @channels = Server.find(params[:serverId]).channels #serverId?
     render :index
   end
   
   def show
-    @channel = Channel.find(params[:id])
+    @channel = Channel.find_by(id: params[:id])
     render :show
   end
   
@@ -30,8 +30,7 @@ class Api::ChannelsController < ApplicationController
   end
 
   def destroy
-    @server = current_user.owned_servers.find_by(id: params[:server_id])
-    @channel = @server.channels.find_by(id: params[:id])
+    @channel = current_user.owned_channels.find_by(id: params[:id])
     if @channel
       @channel.destroy
       render json: ["It worked!"], status: 200

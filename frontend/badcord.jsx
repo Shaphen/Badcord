@@ -6,8 +6,7 @@ import { selectMembersByServer } from './reducers/selectors';
 import Modal from 'react-modal';
 
 // test code
-import { deleteServer, fetchServer, updateServer } from './actions/server_actions';
-// import { fetchServers, fetchServer, createServer, updateServer, deleteServer } from './util/server_api_util';
+import { deleteChannel, fetchChannel, fetchChannels, createChannel } from './actions/channel_actions';
 //end
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -32,11 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // test code
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  // window.fetchServers = fetchServers
-  window.fetchServer = fetchServer;
-  // window.createServer = createServer;
-  window.updateServer = updateServer;
-  window.deleteServer = deleteServer;
-  window.selectMembersByServer = selectMembersByServer;
+  window.selectMembersByServer = selectMembersByServer; //for future creating members list for servers
+  window.fetchChannels = fetchChannels;
+  window.fetchChannel = fetchChannel;
+  window.createChannel = createChannel;
+  window.deleteChannel = deleteChannel;
   // end
 });
