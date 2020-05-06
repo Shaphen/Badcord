@@ -98,7 +98,11 @@ class ServerDisplay extends React.Component {
               }}
             >
               <h1 id="new-server-title">Picky villans come out ahead</h1>
-              <ServerUpdateContainer server={this.props.servers[this.props.match.params.server_id]} closeModal={this.handleCloseUpdateModal} />
+              <ServerUpdateContainer 
+                server={this.props.servers[this.props.match.params.server_id]}
+                closeModal={this.handleCloseUpdateModal}
+                closeDropdown = {this.handleCloseDeleteModal}
+              />
               <label id="new-server-close2" onClick={this.handleCloseUpdateModal}>BACK</label>
             </Modal>
             <div id="delete-server-box" onClick={(e) => this.deleteServer(e)}>
