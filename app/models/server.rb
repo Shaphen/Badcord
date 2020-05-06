@@ -13,6 +13,10 @@ class Server < ApplicationRecord
     through: :memberships,
     source: :member
 
+  has_many :channels
+    foreign_key: :server_id,
+    class_name: :Channel
+
   has_one_attached :photo
 
 end
