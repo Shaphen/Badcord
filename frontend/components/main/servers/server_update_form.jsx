@@ -3,6 +3,7 @@ import React from 'react';
 class ServerUpdateForm extends React.Component {
   constructor(props) {
     super(props);
+    debugger
     this.state = {
       id: this.props.serverId,
       name: this.props.server.name,

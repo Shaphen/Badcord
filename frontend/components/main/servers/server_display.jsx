@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import ServerUpdateContainer from './server_update_container';
+import ChannelIndexContainer from '../channels/channel_display/channel_index_container';
 
 class ServerDisplay extends React.Component {
   constructor(props) {
@@ -101,7 +102,7 @@ class ServerDisplay extends React.Component {
             >
               <h1 id="new-server-title">Picky villans come out ahead</h1>
               <ServerUpdateContainer 
-                server={this.props.servers[this.props.match.params.server_id]}
+                server={currentServer}
                 closeModal={this.handleCloseUpdateModal}
                 closeDropdown = {this.handleCloseDeleteModal}
               />
@@ -113,6 +114,7 @@ class ServerDisplay extends React.Component {
             </div>
           </Modal>
         </div>
+        <ChannelIndexContainer server={currentServer} />
       </div>
     )
   }
