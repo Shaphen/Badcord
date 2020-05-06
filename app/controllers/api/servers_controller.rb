@@ -21,7 +21,7 @@ class Api::ServersController < ApplicationController
     if @server.save
       render :show
     else
-      render json: @server.errors.full_messages
+      render json: @server.errors.full_messages, status: 422
     end
   end
 
@@ -40,7 +40,7 @@ class Api::ServersController < ApplicationController
       @server.destroy
       render json: ["it worked!"], status: 200
     else
-      render json: ["not a valid server id"], status: 422
+      render json: ["not a valid server id. Big sad"], status: 404
     end
   end
 
