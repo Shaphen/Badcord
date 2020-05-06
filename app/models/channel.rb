@@ -7,7 +7,8 @@ class Channel < ApplicationRecord
 
   has_many :messages,
     foreign_key: :channel_id,
-    class_name: :ChannelMessage
+    class_name: :ChannelMessage,
+    dependent: :destroy
 
   belongs_to :owner,
     through: :server,
