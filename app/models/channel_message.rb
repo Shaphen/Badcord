@@ -1,0 +1,2 @@
+class ChannelMessage < ApplicationRecord
+end
