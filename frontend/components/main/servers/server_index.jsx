@@ -59,6 +59,7 @@ class ServerIndex extends React.Component {
                 bottom: '0',
                 marginLeft: "-245px",
                 marginTop: "-175px",
+                overflow: "hidden",
                 width: '490px',
                 height: '350px',
                 background: 'rgb(255, 255, 255)'
@@ -76,6 +77,11 @@ class ServerIndex extends React.Component {
             <label id="new-server-close" onClick={this.handleCloseModal}>BACK</label>
           </Modal>
         </div>
+          {/* {
+            setTimeout(() => {
+              this.props.getServers()
+            }, 3000)
+          } */}
       </div>
     )
   }

@@ -17,7 +17,7 @@
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
-  padding: 2px;
+  padding: 0px 4px;
 }
 
 #server-index div {
@@ -31,6 +31,7 @@
 }
 
 #server-name-display {
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
   background: #7289DA;
   color: white;
   font-weight: 600;
@@ -73,6 +74,7 @@
   padding: 0px 12px;
   text-align: center;
   border: 1px solid rgba(189, 186, 186, 0.8);
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
   height: 43px;
   border-radius: 25px;
   width: 60px;
@@ -128,7 +130,7 @@
 #user-logout-container {
   background-color: #292b2f;
   position: absolute;
-  left: 76px;
+  left: 80px;
   display: flex;
   justify-content: space-between;
   height: 52px;
@@ -144,6 +146,10 @@
   padding: 20px;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 #new-server {
   position: relative;
   color: white;
@@ -152,10 +158,11 @@
   text-align: center;
   border: 1px solid rgba(189, 186, 186, 0.8);
   height: 43px;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
   border-radius: 25px;
   width: 60px;
   margin: 5px 0px;
-  padding: 10px 0px;
+  padding: 7px 0px 13px 0px;
   transition: background-color, border-radius .5s;
   display: flex;
   justify-content: center;

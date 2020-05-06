@@ -64,6 +64,8 @@
 .username {
   display: flex;
   justify-content: center;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 500;
   padding-bottom: 5px;
   width: 100%;
 }
@@ -71,6 +73,8 @@
 .password {
   display: flex;
   justify-content: center;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 500;
   padding-bottom: 5px;
   width: 100%;
 }
@@ -82,7 +86,9 @@
 }
 
 #email {
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
   width: 100%;
+  font-weight: 500;
   font-size: 12px;
   margin: 5px 0px 10px 0px;
 }
@@ -128,6 +134,8 @@
   margin-top: 10px;
   border-radius: 3px;
   border-color: #7289DA;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  color: white;
   font-size: 15px;
   font-weight: 500;
   background-color: #7289DA;
@@ -218,6 +226,8 @@
   margin-top: 14px;
   border-radius: 3px;
   border-color: #7289DA;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  color: white;
   font-size: 15px;
   font-weight: 500;
   background-color: #7289DA;
@@ -247,6 +257,7 @@
 }
 
 #other-form-text {
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
   padding: 9px 3px 0px 0px;
   opacity: 0.7;
 }

@@ -22,6 +22,7 @@ class ServerCreateForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.refs.btn.setAttribute("disabled", "disabled");
     const formData = new FormData();
     formData.append('server[name]', this.state.name);
     formData.append('server[owner_id]', this.state.owner_id);
@@ -61,9 +62,9 @@ class ServerCreateForm extends React.Component {
           <p>By creating a server, you will have access to free text chat to make all your mischievous plans</p>
         </div>
         <form onSubmit={ this.handleSubmit }>
-          <div id="server-name-container">
-              <label id="server-name-title">SERVER NAME</label>
-              <input id="server-name-input" type="text" onChange={this.handleChange('name')} value={this.state.name}/>
+          <div id="server-name-container2">
+              <label id="server-name-title2">SERVER NAME</label>
+              <input id="server-name-input2" type="text" onChange={this.handleChange('name')} value={this.state.name}/>
               <div id="create-server-button-container">
                 {/* <label id="new-server-close">BACK</label> */}
               </div>
@@ -71,9 +72,9 @@ class ServerCreateForm extends React.Component {
           <div id="upload-server-photo" onClick={this.handleImageClick}>
             { preview }
             <p id="change-icon-server">CHANGE ICON</p>
-            <input type="file" id="choose-server-photo-button" onChange={this.handleFile} />
+            <input type="file" accept="image/*" id="choose-server-photo-button" onChange={this.handleFile} />
           </div>
-          <button id="create-server-button" value={this.props.formType}>Create</button>
+          <button ref="btn" id="create-server-button" value={this.props.formType}>Create</button>
         </form>
       </div>
     )

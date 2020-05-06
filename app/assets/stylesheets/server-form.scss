@@ -26,6 +26,16 @@
   // border: 1px solid #747f8d;
 }
 
+#server-name-container2 {
+  display: flex;
+  align-items: center;
+  width: 55%;
+  height: 150px;
+  margin-left: -25px;
+  // border: 1px solid #747f8d;
+}
+
+
 #upload-server-photo {
   display: flex;
   justify-content: center;
@@ -34,7 +44,7 @@
   border-radius: 100%;
   border: 5px solid #e3e5e8;
   position: relative;
-  left: 240px;
+  left: 260px;
   bottom: 124px;
   width: 34%;
   height: 150px;
@@ -95,10 +105,26 @@
   cursor: text;
 }
 
+#server-name-input2 {
+  margin: 100px 100px 17px 5px;
+  padding: 8px;
+  border: none;
+  border-bottom: 2px solid #e3e5e8;
+  cursor: text;
+}
+
 #server-name-title {
   min-width: 100px;
   margin-right: -100px;
   margin-left: 40px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #4f5660;
+}
+
+#server-name-title2 {
+  min-width: 100px;
+  margin: 18px -100px 0px 40px;
   font-size: 10px;
   font-weight: 700;
   color: #4f5660;
@@ -168,4 +194,8 @@
   width: 68px;
   font-size: 13px;
   cursor: pointer;
+}
+
+.btn:disabled {
+  background-color: red;
 }

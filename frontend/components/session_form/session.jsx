@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom'
+import { Link, Redirect, withRouter } from 'react-router-dom'
 import DemoLoginContainer from '../greeting/demo_login';
 
 class Session extends React.Component {
@@ -14,10 +14,15 @@ class Session extends React.Component {
     this.demoLogin = this.demoLogin.bind(this)
   }
 
+  // componentWillUnmount() {
+  //   this.props.clearErrors()
+  // }
+
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processEntry(user).then(() => this.props.history.push("/channels/@me"))
+    this.props.processEntry(user)
+      .then(() => this.props.history.push("/channels/@me"))
   }
 
   demoLogin(e) {
@@ -26,7 +31,11 @@ class Session extends React.Component {
       username: "masterchef",
       password: "password"
     }
-    this.props.processEntry(user).then(() => this.props.history.push("/channels/@me"))
+    if (this.props.formType === 'Welcome Back!') {
+      this.props.processEntry(user).then(() => this.props.history.push("/channels/@me"))
+    } else {
+      this.props.demoLogin(user).then(() => this.props.history.push("/channels/@me"))
+    }
   }
 
   renderErrors() {
@@ -42,6 +51,12 @@ class Session extends React.Component {
       );
     }
   }
+
+  // handleErrors() {
+  //   const errors = setTimeout(this.renderErrors(), 2000)
+
+  //   clearTimeout(errors)
+  // }
   
   handleChange(type) {
     return e => {
@@ -82,7 +97,7 @@ class Session extends React.Component {
             </form>
           </div>
           <div id="errors-box">
-            {this.renderErrors()}
+            { this.renderErrors() }
           </div>
         </div>
       </div>
