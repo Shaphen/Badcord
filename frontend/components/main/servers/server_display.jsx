@@ -42,9 +42,11 @@ class ServerDisplay extends React.Component {
 
   render() {
     let currentServer = this.props.servers[this.props.match.params.server_id]
+    const modalPresence = currentServer ? this.handleOpenDeleteModal : null
+    const stylePresence = currentServer ? "server-display-name" : "server-display-name2"
     return (
       <div id="server-display-box">
-        <div id='server-display-name' onClick={this.handleOpenDeleteModal}>
+        <div id={ stylePresence } onClick={ modalPresence }>
           <p id="server-display-text">{currentServer ? currentServer.name : "Home" }</p>
           {currentServer ? <label id="dropdown-server-name">⌄</label> : null }
           <Modal
