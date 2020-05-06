@@ -26,8 +26,9 @@ class Api::ServersController < ApplicationController
   end
 
   def update
+    @server = current_user.owned_servers.find_by(id: params[:id])
     if @server.update(server_params)
-      render json: ["it worked"] #:show
+      render :show
     else
       render json: @server.errors.full_messages, status: 422
     end

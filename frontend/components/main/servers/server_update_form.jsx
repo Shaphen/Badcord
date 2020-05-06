@@ -4,22 +4,17 @@ class ServerUpdateForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
-      owner_id: 0,
+      id: this.props.serverId,
+      name: this.props.server.name,
     }
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  componentDidMount() {
-    this.setState({ name: this.props.server.name })
-    this.setState({ owner_id: this.props.currentUser.id })
-  }
-
   handleSubmit(e) {
     e.preventDefault();
-    debugger
     const server = Object.assign({}, this.state)
-    this.props.updateServer(server).then(() => this.props.closeModal())
+    this.props.updateServer(server)
+      .then(() => this.props.closeModal(e))
   }
 
   handleChange(type) {

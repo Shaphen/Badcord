@@ -8,7 +8,7 @@ const serversReducer = (state = {}, action) => {
     case RECEIVE_ALL_SERVERS:
       return action.servers;
     case RECEIVE_SERVER:
-      const newServer = { [action.server.id]: action.server };
+      const newServer = { [action.server.server.id]: action.server.server };
       return Object.assign({}, nextState, newServer);
     case REMOVE_SERVER:
       delete nextState[action.serverId];

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store'
 import Root from './components/root';
+import { selectMembersByServer } from './reducers/selectors';
 import Modal from 'react-modal';
 
 // test code
@@ -36,5 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // window.createServer = createServer;
   window.updateServer = updateServer;
   window.deleteServer = deleteServer;
+  window.selectMembersByServer = selectMembersByServer;
   // end
 });
