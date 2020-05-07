@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ChannelChat from './server_display';
+import ChannelChat from './channel_chat';
 import { fetchChannel } from '../../../actions/channel_actions';
 
 const mSTP = state => {

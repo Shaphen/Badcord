@@ -71,7 +71,7 @@ class ChannelIndex extends React.Component {
           </div>
           {
             this.props.channels.map((channel, idx) => (
-              <ChannelIndexItem deleteChannel={this.props.deleteChannel} channel={channel} key={idx} />
+              <ChannelIndexItem deleteChannel={this.props.deleteChannel} serverId={this.props.serverId} channel={channel} key={idx} />
             ))
           }
         </div>
