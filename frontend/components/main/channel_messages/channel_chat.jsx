@@ -1,4 +1,5 @@
 import React from 'react';
+import ChatForm from './chat_form';
 import { BsFillPersonLinesFill } from 'react-icons/bs'
 
 class ChannelChat extends React.Component {
