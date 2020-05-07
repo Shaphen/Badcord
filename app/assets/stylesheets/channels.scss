@@ -80,7 +80,7 @@
   cursor: pointer;
 }
 
-#delete-channel-gear {
+#delete-channel-x {
   position: absolute;
   display: none;
   opacity: 0.5;
@@ -89,10 +89,29 @@
   cursor: pointer;
 }
 
-#channel-box:hover #delete-channel-gear {
+#channel-box:hover #delete-channel-x {
   display: block;
 }
 
-#delete-channel-gear:hover {
+#delete-channel-x:hover {
   opacity: 1;
+}
+
+#delete-channel-text {
+  position: absolute;
+  display: none;
+  // opacity: 0;
+  left: 235px;
+  font-size: 14px;
+  width: 96px;
+  padding: 7px;
+  border-radius: 5px;
+  background-color: black;
+  // transition: opacity 0.2s;
+  cursor: default;
+}
+
+#delete-channel-x:hover + #delete-channel-text {
+  display: block;
+  // opacity: 1;
 }
