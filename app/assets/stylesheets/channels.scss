@@ -72,6 +72,14 @@
   opacity: 1;
 }
 
+#channel-name {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 18px;
+  width: 165px;
+}
+
 #channel-hash {
   font-weight: 200;
   font-size: 25px;

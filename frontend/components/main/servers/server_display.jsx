@@ -2,6 +2,9 @@ import React from 'react';
 import Modal from 'react-modal';
 import ServerUpdateContainer from './server_update_container';
 import ChannelIndexContainer from '../channels/channel_display/channel_index_container';
+import { Switch } from 'react-router-dom';
+import { ProtectedRoute } from '../../../util/route_util';
+import ChannelChatContainer from '../channel_messages/channel_chat_container';
 
 class ServerDisplay extends React.Component {
   constructor(props) {
@@ -116,6 +119,10 @@ class ServerDisplay extends React.Component {
           </Modal>
         </div>
         <ChannelIndexContainer server={currentServer} />
+
+        <Switch>
+          <ProtectedRoute path="/:channel_id" component={ChannelChatContainer} />
+        </Switch>
       </div>
     )
   }

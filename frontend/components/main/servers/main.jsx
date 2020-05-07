@@ -2,8 +2,8 @@ import React from 'react';
 import ServerIndexContainer from './server_index_container';
 import ServerDisplayContainer from "./server_display_container";
 import HomeDisplayContainer from "./home_display_container";
-import { Route, Switch } from 'react-router-dom';
-import { AuthRoute, ProtectedRoute } from '../../../util/route_util';
+import { Switch } from 'react-router-dom';
+import { ProtectedRoute } from '../../../util/route_util';
 
 class Main extends React.Component {
   constructor(props) {

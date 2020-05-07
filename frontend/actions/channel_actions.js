@@ -34,13 +34,19 @@ export const fetchChannels = serverId => dispatch => ApiUtil.fetchChannels(serve
   .then(channels => dispatch(receiveAllChannels(channels)));
 
 export const fetchChannel = channelId => dispatch => ApiUtil.fetchChannel(channelId)
-  .then(channel => dispatch(receiveChannel(channel)), err => console.log(err));
-
-export const createChannel = channel => dispatch => ApiUtil.createChannel(channel)
-  .then(channel => dispatch(receiveChannel(channel)), err => console.log(err));
-
-export const updateChannel = channel => dispatch => ApiUtil.updateChannel(channel)
   .then(channel => dispatch(receiveChannel(channel)));
 
+export const createChannel = channel => dispatch => ApiUtil.createChannel(channel)
+  .then(channel => dispatch(receiveChannel(channel)), err => (
+    dispatch(receiveServerErrors(err.responseJSON))
+  ));
+
+export const updateChannel = channel => dispatch => ApiUtil.updateChannel(channel)
+  .then(channel => dispatch(receiveChannel(channel)), err => (
+    dispatch(receiveServerErrors(err.responseJSON))
+  ));
+
 export const deleteChannel = channelId => dispatch => ApiUtil.deleteChannel(channelId)
-  .then(() => dispatch(removeChannel(channelId)));
+  .then(() => dispatch(removeChannel(channelId)), err => (
+    dispatch(receiveServerErrors(err.responseJSON))
+  ));
