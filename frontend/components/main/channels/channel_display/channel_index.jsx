@@ -40,27 +40,27 @@ class ChannelIndex extends React.Component {
             <label id="add-channel-button" onClick={this.handleOpenAddModal}>+</label>
             <p id="add-channel-text">Create Channel</p>
             <Modal
-              isOpen={this.state.showDeleteModal}
+              isOpen={this.state.showAddModal}
               contentLabel="Delete Server Modal"
-              onRequestClose={this.handleCloseDeleteModal}
+              onRequestClose={this.handleCloseAddModal}
               style={{
                 content: {
-                  top: '55px',
-                  left: '85px',
+                  top: '50%',
+                  left: '50%',
                   right: '0',
                   bottom: '0',
-                  border: 'black',
-                  padding: '7px',
-                  width: '210px',
-                  height: '85px',
-                  background: '#18191c'
+                  marginLeft: "-245px",
+                  marginTop: "-175px",
+                  overflow: "hidden",
+                  width: '490px',
+                  height: '350px',
+                  background: 'rgb(255, 255, 255)'
                 },
                 overlay: {
                   position: 'fixed',
-                  backgroundColor: 'rgba(0,0,0,0.0)',
+                  backgroundColor: 'rgba(0,0,0,0.7)',
                   zIndex: '50'
-                }
-              }}
+                }}}
             >
               <p>CREATE TEXT CHANNEL</p>
             </Modal>
