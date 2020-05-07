@@ -31,6 +31,7 @@ class Api::ChannelsController < ApplicationController
 
   def destroy
     @channel = current_user.owned_channels.find_by(id: params[:id])
+    # debugger
     if @channel
       @channel.destroy
       render json: ["It worked!"], status: 200

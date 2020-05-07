@@ -13,8 +13,8 @@ class ChannelIndexItem extends React.Component {
   
   deleteChannel(e) {
     e.preventDefault();
-    props.deleteChannel(this.props.channel.id)
-      .then(() => this.handleCloseDeleteModal(e))
+    this.props.deleteChannel(this.props.channel.id)
+      .then(() => this.handleCloseModal(e))
   }
 
   handleOpenModal() {
@@ -69,7 +69,7 @@ class ChannelIndexItem extends React.Component {
             </div>
             <div id="create-channel-footer">
               <label id="delete-channel-cancel" onClick={this.handleCloseModal}>Cancel</label>
-              <button id="delete-channel-submit">Delete Channel</button>
+              <button id="delete-channel-submit" onClick={(e) => this.deleteChannel(e)}>Delete Channel</button>
             </div>
           </div>
         </Modal>

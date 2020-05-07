@@ -34,7 +34,7 @@ export const fetchChannels = serverId => dispatch => ApiUtil.fetchChannels(serve
   .then(channels => dispatch(receiveAllChannels(channels)));
 
 export const fetchChannel = channelId => dispatch => ApiUtil.fetchChannel(channelId)
-  .then(channel => dispatch(receiveChannel(channel)));
+  .then(channel => dispatch(receiveChannel(channel)), err => console.log(err));
 
 export const createChannel = channel => dispatch => ApiUtil.createChannel(channel)
   .then(channel => dispatch(receiveChannel(channel)), err => console.log(err));
