@@ -20,7 +20,7 @@ class ChannelChat extends React.Component {
           <div id="chat-box">
             <div id="chat-box-welcome">
               <p id="welcome-text-main">Welcome to #{nameDisplay }!</p>
-              <p id="welcome-text-sub">This is the state of the #{ nameDisplay } channel</p>
+              <p id="welcome-text-sub">This is the start of the #{ nameDisplay } channel</p>
               <label id="welcome-text-edit-channel">Edit Channel (placeholder)</label>
             </div>
             <div>

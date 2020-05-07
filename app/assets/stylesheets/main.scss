@@ -131,11 +131,11 @@
 
 #user-logout-container {
   background-color: #292b2f;
-  position: relative;
+  position: absolute;
   display: flex;
   justify-content: space-between;
   margin-left: 79px;
-  padding-right: 18px;
+  // padding-right: 18px;
   height: 52px;
   width: 242px;
   align-self: flex-end;
