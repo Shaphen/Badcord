@@ -53,7 +53,7 @@ class ChannelIndex extends React.Component {
                   marginLeft: "-245px",
                   marginTop: "-175px",
                   overflow: "hidden",
-                  "margin-top": "-260px",
+                  marginTop: "-170px",
                   width: "440px",
                   height: "255px",
                   backgroundColor: "#36393f",
@@ -71,7 +71,7 @@ class ChannelIndex extends React.Component {
           </div>
           {
             this.props.channels.map((channel, idx) => (
-              <ChannelIndexItem channel={channel} key={idx} />
+              <ChannelIndexItem deleteChannel={this.props.deleteChannel} channel={channel} key={idx} />
             ))
           }
         </div>

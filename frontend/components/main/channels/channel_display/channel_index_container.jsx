@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ChannelIndex from './channel_index';
-import { fetchChannels, fetchChannel } from '../../../../actions/channel_actions'
+import { fetchChannels, fetchChannel, deleteChannel } from '../../../../actions/channel_actions'
 import { withRouter } from 'react-router-dom'; //gives access to history, location, match(path params)
 
 const mSTP = (state, ownProps) => {
@@ -21,7 +21,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => ({
   getChannels: serverId => dispatch(fetchChannels(serverId)),
-  getChannel: channelId => dispatch(fetchChannel(channelId))
+  getChannel: channelId => dispatch(fetchChannel(channelId)),
+  deleteChannel: channelId => dispatch(deleteChannel(channelId))
 })
 
 export default withRouter(connect(mSTP, mDTP)(ChannelIndex))

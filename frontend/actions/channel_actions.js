@@ -37,7 +37,7 @@ export const fetchChannel = channelId => dispatch => ApiUtil.fetchChannel(channe
   .then(channel => dispatch(receiveChannel(channel)));
 
 export const createChannel = channel => dispatch => ApiUtil.createChannel(channel)
-  .then(channel => dispatch(receiveChannel(channel)));
+  .then(channel => dispatch(receiveChannel(channel)), err => console.log(err));
 
 export const updateChannel = channel => dispatch => ApiUtil.updateChannel(channel)
   .then(channel => dispatch(receiveChannel(channel)));

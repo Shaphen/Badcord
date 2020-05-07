@@ -17,9 +17,9 @@ class CreateChannelForm extends React.Component {
       .then(() => this.props.closeModal(e))
   }
 
-  handleChange() {
+  handleChange(type) {
     return e => {
-      this.setState({ name: e.target.value })
+      this.setState({ [type]: e.target.value })
     }
   }
 
@@ -34,10 +34,10 @@ class CreateChannelForm extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <div id="create-channel-name-box">
               <label id="create-channel-text">CHANNEL NAME</label>
-              <input id="create-channel-input" type="text" onChange={this.handleChange} value={this.state.name} />
+              <input id="create-channel-input" type="text" onChange={this.handleChange('name')} value={this.state.name} />
             </div>
             <div id="create-channel-footer">
-              <label id="create-channel-cancel">Cancel</label>
+              <label id="create-channel-cancel" onClick={this.props.closeModal}>Cancel</label>
               <button id="create-channel-submit">Create Channel</button>
             </div>
           </form>

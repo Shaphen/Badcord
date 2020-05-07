@@ -9,10 +9,10 @@ export const fetchChannel = channelId => $.ajax({
   url: `/api/channels/${channelId}`,
 });
 
-export const createChannel = channel => $.ajax({
+export const createChannel = ({name, serverId}) => $.ajax({
   url: '/api/channels',
   method: 'POST',
-  data: { channel }
+  data: { channel: {name: name, server_id: serverId}}
 });
 
 export const updateChannel = channel => $.ajax({
@@ -20,6 +20,8 @@ export const updateChannel = channel => $.ajax({
   method: 'PATCH',
   data: { channel }
 });
+
+// data: {channel: {name: 'asd', serverId: 12}}
 
 export const deleteChannel = channelId => $.ajax({
   url: `/api/channels/${channelId}`,
