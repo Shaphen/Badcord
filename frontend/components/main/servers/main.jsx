@@ -4,6 +4,7 @@ import ServerDisplayContainer from "./server_display_container";
 import HomeDisplayContainer from "./home_display_container";
 import { Switch } from 'react-router-dom';
 import { ProtectedRoute } from '../../../util/route_util';
+import ChannelChatContainer from '../channel_messages/channel_chat_container';
 
 class Main extends React.Component {
   constructor(props) {
@@ -19,9 +20,8 @@ class Main extends React.Component {
           <p>{this.props.currentUser.username}</p>
           <button className="logout-button" onClick={() => this.props.logout()}>LOGOUT</button>
         </div>
-        <Switch>
-          <ProtectedRoute path="/channels/:server_id" component={ServerDisplayContainer} />
-        </Switch>
+        <ProtectedRoute path="/channels/:server_id" component={ServerDisplayContainer} />
+        <ProtectedRoute path="/channels/:serverId/:channelId" component={ChannelChatContainer} />
       </div>
     )
   }

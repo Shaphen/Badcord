@@ -119,10 +119,6 @@ class ServerDisplay extends React.Component {
           </Modal>
         </div>
         <ChannelIndexContainer server={currentServer} />
-
-        <Switch>
-          <ProtectedRoute path="/channels/:serverId/:channel_id" component={ChannelChatContainer} />
-        </Switch>
       </div>
     )
   }

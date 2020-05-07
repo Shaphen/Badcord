@@ -7,8 +7,16 @@ class ChannelChat extends React.Component {
 
   render() {
     return (
-      <div>
-        THIS IS THE CHAT PALCEHOLDER
+      <div id="channel-chat-container">
+        <div id="channel-chat-header">
+
+        </div>
+        <div id="channel-chat-box">
+          <p>Welcome to the chat channel!</p>
+        </div>
+        <div id="channel-chat-new-message-box">
+
+        </div>
       </div>
     )
   }

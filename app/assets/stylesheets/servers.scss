@@ -1,12 +1,12 @@
 
 #server-display-box {
+  display: flex;
   position: absolute;
   background-color: #2f3136;
-  left: 80px;
+  left: 79px;
   height: 895px;
   width: 242px;
   color: white;
-  // border-right: 1px solid black;
 }
 
 #server-display-name {
