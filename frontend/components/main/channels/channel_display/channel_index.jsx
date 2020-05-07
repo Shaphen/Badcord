@@ -1,6 +1,7 @@
 import React from 'react';
 import ChannelIndexItem from './channel_index-item';
 import Modal from 'react-modal';
+import CreateChannelContainer from '../channel_CRUD/create_channel_container';
 
 class ChannelIndex extends React.Component {
   constructor(props) {
@@ -52,9 +53,12 @@ class ChannelIndex extends React.Component {
                   marginLeft: "-245px",
                   marginTop: "-175px",
                   overflow: "hidden",
-                  width: '490px',
-                  height: '350px',
-                  background: 'rgb(255, 255, 255)'
+                  "margin-top": "-260px",
+                  width: "440px",
+                  height: "255px",
+                  backgroundColor: "#36393f",
+                  border: "none",
+                  color: "white"
                 },
                 overlay: {
                   position: 'fixed',
@@ -62,7 +66,7 @@ class ChannelIndex extends React.Component {
                   zIndex: '50'
                 }}}
             >
-              <p>CREATE TEXT CHANNEL</p>
+              <CreateChannelContainer closeModal={this.handleCloseAddModal} serverId={this.props.match.params.server_id} />
             </Modal>
           </div>
           {
