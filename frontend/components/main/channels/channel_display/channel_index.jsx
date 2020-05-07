@@ -1,4 +1,5 @@
 import React from 'react';
+import ChannelIndexItem from './channe_index-item';
 
 class ChannelIndex extends React.Component {
   constructor(props) {
@@ -6,7 +7,6 @@ class ChannelIndex extends React.Component {
   }
 
   componentDidMount() {
-    debugger
     this.props.getChannels(this.props.match.params.server_id)
   }
 
@@ -14,7 +14,12 @@ class ChannelIndex extends React.Component {
     return (
       <div id="channel-index-container">
         <div id="text-channels-tab-container">
-          <p id="text-channels-tab-text">Text Channels</p>
+          <p id="text-channels-tab-text">TEXT CHANNELS</p>
+          {
+            this.props.channels.map((channel, idx) => (
+              <ChannelIndexItem channel={channel} key={idx} />
+            ))
+          }
         </div>
       </div>
     )

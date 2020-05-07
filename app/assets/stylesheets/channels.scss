@@ -1,3 +1,26 @@
-// Place all the styles related to the Channels controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#text-channels-tab-container {
+  padding: 8px;
+  width: 226px;
+}
+
+#text-channels-tab-text {
+  opacity: 0.5;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  padding-top: 15px;
+}
+
+#channel-box {
+  display: flex;
+  padding: 8px 5px 5px 5px;
+  opacity: 0.5;
+}
+
+#channel-box:hover {
+  opacity: 0.8;
+}
+
+#channel-box:focus {
+  opacity: 1;
+}
