@@ -5,11 +5,46 @@ import { BsFillPersonLinesFill } from 'react-icons/bs'
 class ChannelChat extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      messages: []
+    };
+    this.bottom = React.createRef();
   }
 
+  componentDidMount() {
+    App.cable.subscriptions.create(
+      { channel: "ChatChannel", channelId: this.props.channels[this.props.match.params.channelId] }, // channelId to find channel in backend. Additional k-v pairs become additional params
+      {
+        received: data => {
+          this.setState({
+            messages: this.state.messages.concat(data.message)
+          });
+          // take received message dispatch action to send to reducers and update state
+          // make a redux cycle for channel messages
+        },
+        speak: function(data) {
+          return this.perform("speak", data)
+        }
+      }
+    );
+  }
+
+  // componentDidUpdate() {
+  //   this.bottom.current.scrollIntoView();
+  // }
+  
   render() {
     let currentChannel = this.props.channels[this.props.match.params.channelId]
     let nameDisplay = currentChannel ? currentChannel.name : null
+    const messageList = this.state.messages.map(message => {
+      return (
+        <li key={ message.id }>
+          { message }
+          <div ref={ this.bottom } />
+        </li>
+      );
+    });
+
     return (
       <div id="channel-chat-container">
         <div id="channel-chat-header">
@@ -25,10 +60,12 @@ class ChannelChat extends React.Component {
               <label id="welcome-text-edit-channel">Edit Channel (placeholder)</label>
             </div>
             <div>
-              {/* -real chat goes here- */}
+              { messageList }
             </div>
           </div>
-            <input type="text" id="channel-chat-new-message-box" placeholder="Message channel" />
+          <div>
+            <ChatForm />
+          </div>
         </div>
       </div>
     )
