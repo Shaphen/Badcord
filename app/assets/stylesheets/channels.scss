@@ -3,24 +3,96 @@
   width: 226px;
 }
 
-#text-channels-tab-text {
+#text-channels-tab {
+  display: flex;
+  align-items: center;
   opacity: 0.5;
+}
+
+#text-channels-tab-text {
   font-size: 14px;
   font-weight: 500;
   font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
-  padding-top: 15px;
+  padding: 15px 0px 10px;
+  cursor: default;
+}
+
+#text-channels-tab:hover {
+  opacity: 1;
+}
+
+#add-channel-button {
+  margin-left: 75px;
+  padding: 2px 5px;
+  font-size: 22px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+#add-channel-button:hover {
+  opacity: 1;
+}
+
+#add-channel-text {
+  position: absolute;
+  // display: none;
+  opacity: 0;
+  z-index: 0;
+  width: 98px;
+  left: 155px;
+  font-size: 14px;
+  top: 37px;
+  background-color: black;
+  padding: 8px;
+  border-radius: 6px;
+  transition: opacity 0.2s;
+}
+
+#add-channel-button:hover + #add-channel-text {
+  display: block;
+  opacity: 1;
+  z-index: 30;
 }
 
 #channel-box {
   display: flex;
-  padding: 8px 5px 5px 5px;
+  align-items: center;
+  width: 210px;
+  padding: 7px 2px 7px 10px;
   opacity: 0.5;
+  cursor: pointer;
 }
 
 #channel-box:hover {
   opacity: 0.8;
+  background-color: #393b41;
 }
 
 #channel-box:focus {
+  opacity: 1;
+}
+
+#channel-hash {
+  font-weight: 200;
+  font-size: 25px;
+  font-family: -webkit-pictograph;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+#delete-channel-gear {
+  position: absolute;
+  display: none;
+  opacity: 0.5;
+  margin-left: 185px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#channel-box:hover #delete-channel-gear {
+  display: block;
+}
+
+#delete-channel-gear:hover {
   opacity: 1;
 }

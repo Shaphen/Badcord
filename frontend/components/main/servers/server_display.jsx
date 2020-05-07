@@ -42,6 +42,7 @@ class ServerDisplay extends React.Component {
   }
 
   render() {
+    // debugger
     let currentServer = this.props.servers[this.props.match.params.server_id]
     const modalPresence = currentServer ? this.handleOpenDeleteModal : null
     const stylePresence = currentServer ? "server-display-name" : "server-display-name2"
