@@ -1,4 +1,5 @@
 # README
+## Table of Contents
 
 ## Live Site
 [Badcord](https://badcord.herokuapp.com/#/)
@@ -17,6 +18,7 @@ Badcord is a full-stack single-paged web application that closely follows the de
 ## Features
 ### Live Chat
 Users are able to chat in real-time with each other through server channels.
+
 ![live-chat](https://github.com/Shaphen/Badcord/blob/master/app/assets/images/readme/live_chat.png)
 Live chat is the primary focus of this application. It utilizes Rails Action Cable to allow users to subscribe to a channel that organizes new information and broadcasts back to all known subscribers.
 ```ruby
@@ -46,3 +48,9 @@ App.cable.subscriptions.create(
    }
 );
 ```
+
+### Servers
+Users are able to create new servers and upload an image from their local storage as the server's photo using AWS's S3 Storage System to security save their media
+
+![server-photo](https://github.com/Shaphen/Badcord/blob/master/app/assets/images/readme/server_photo_upload.png)
+Users are also able to create/delete new channels within' servers in order to diversify their conversations!
