@@ -13,9 +13,10 @@ class ChannelChat extends React.Component {
 
   componentDidMount() {
     App.cable.subscriptions.create(
-      { channel: "ChatChannel", channelId: this.props.channels[this.props.match.params.channelId] }, // channelId to find channel in backend. Additional k-v pairs become additional params
+      { channel: "ChatChannel" }, //channelId: this.props.channels[this.props.match.params.channelId] | channelId to find channel in backend. Additional k-v pairs become additional params
       {
         received: data => {
+          console.log("show up please")
           this.setState({
             messages: this.state.messages.concat(data.message)
           });
@@ -29,9 +30,9 @@ class ChannelChat extends React.Component {
     );
   }
 
-  // componentDidUpdate() {
-  //   this.bottom.current.scrollIntoView();
-  // }
+  componentDidUpdate() {
+    this.bottom.current.scrollIntoView();
+  }
   
   render() {
     let currentChannel = this.props.channels[this.props.match.params.channelId]
@@ -40,7 +41,6 @@ class ChannelChat extends React.Component {
       return (
         <li key={ message.id }>
           { message }
-          <div ref={ this.bottom } />
         </li>
       );
     });
@@ -59,11 +59,10 @@ class ChannelChat extends React.Component {
               <p id="welcome-text-sub">This is the start of the #{ nameDisplay } channel</p>
               <label id="welcome-text-edit-channel">Edit Channel (placeholder)</label>
             </div>
-            <div>
+            <div id="message-list">
               { messageList }
+              <div ref={this.bottom} />
             </div>
-          </div>
-          <div>
             <ChatForm />
           </div>
         </div>

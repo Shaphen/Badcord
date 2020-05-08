@@ -1,8 +1,8 @@
 class Api::ChannelMessagesController < ApplicationController
-  def index
-    @messages = Channel.find(params[:channelId]).channel_messages
-    render :index
-  end #most important to get
+  # def index
+  #   @messages = Channel.find(params[:channelId]).channel_messages
+  #   render :index
+  # end #most important to get
   
   # def create
   #   @message = ChannelMessage.new(channel_message_params)
@@ -11,7 +11,7 @@ class Api::ChannelMessagesController < ApplicationController
   #   else
   #     render json: @message.errors.full_messages, status: 422
   #   end
-  # end rails channel handles this
+  # end #rails channel handles this
 
   # def update
   #   @message = ChannelMessage.find_by(id: params[:id])
@@ -32,8 +32,8 @@ class Api::ChannelMessagesController < ApplicationController
   #   end
   # end
 
-  private
-  def channel_message_params
-    params.require(:channel_messages).permit(:body, :author_id, :channel_id)
-  end
+  # private
+  # def channel_message_params
+  #   params.require(:channel_messages).permit(:body, :author_id, :channel_id)
+  # end
 end

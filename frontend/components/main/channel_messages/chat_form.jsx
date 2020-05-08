@@ -8,6 +8,7 @@ class ChatForm extends React.Component {
       authorId: null,
       channelId: null
     }
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(type){
@@ -24,14 +25,17 @@ class ChatForm extends React.Component {
   
   render() {
     return (
-      <div>
-        <input
-          type="text"
-          onChange={this.handleChange('body')}
-          value={this.state.body}
-          id="channel-chat-new-message-box"
-          placeholder="Message channel"
-        />
+      <div id="chat-form">
+        <form onSubmit={this.handleSubmit}>
+          <input
+            type="text"
+            onChange={this.handleChange('body')}
+            value={this.state.body}
+            id="channel-chat-new-message-box"
+            placeholder="Message channel"
+          />
+          <input type="submit" id="submit-message" />
+        </form>
       </div>
     )
   }

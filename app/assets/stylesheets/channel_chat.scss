@@ -96,3 +96,23 @@
 #welcome-text-edit-channel:hover {
   text-decoration: underline;
 }
+
+// #chat-form {
+//   height: 300px;
+//   width: 300px;
+//   background-color: red;
+//   opacity: 0.5;
+// }
+
+#submit-message {
+  display: none;
+}
+
+#message-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+  height: 300px;
+  background-color: #282a2e;
+}
