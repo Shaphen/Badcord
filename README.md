@@ -1,6 +1,11 @@
 # README
 ## Table of Contents
-
+* [What is Badcord?](#what-is-badcord)
+* [Technologies](#relevant-technologies)
+* Features
+  * [Live Chat](#live-chat)
+  * [Servers](#servers)
+* [Future Directions](#future-directions)
 ## Live Site
 [Badcord](https://badcord.herokuapp.com/#/)
 
@@ -53,4 +58,8 @@ App.cable.subscriptions.create(
 Users are able to create new servers and upload an image from their local storage as the server's photo using AWS's S3 Storage System to security save their media
 
 ![server-photo](https://github.com/Shaphen/Badcord/blob/master/app/assets/images/readme/server_photo_upload.png)
-Users are also able to create/delete new channels within' servers in order to diversify their conversations!
+Users are also able to create/delete new channels within' servers to diversify their conversations!
+
+### Future Directions
+* Add members list with online/offline status
+* Persist chat history for users
