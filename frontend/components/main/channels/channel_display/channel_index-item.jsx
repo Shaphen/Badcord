@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 class ChannelIndexItem extends React.Component {
   constructor(props){
@@ -30,7 +30,11 @@ class ChannelIndexItem extends React.Component {
   render() {
     return (
       <div>
-        <Link to={`/channels/${this.props.serverId}/${this.props.channel.id}`} className="server-link2">
+        <NavLink
+          to={`/channels/${this.props.serverId}/${this.props.channel.id}`}
+          className="server-link2"
+          activeStyle={{ fontWeight: 'bold' }}
+        >
           <div id="channel-box">
             <label id="channel-hash">#</label>
             <p id="channel-name">{this.props.channel.name}</p>
@@ -77,7 +81,7 @@ class ChannelIndexItem extends React.Component {
               </div>
             </Modal>
           </div>
-        </Link>
+        </NavLink>
       </div>
     )
   }

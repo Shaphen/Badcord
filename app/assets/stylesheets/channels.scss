@@ -67,15 +67,16 @@
   width: 210px;
   padding: 7px 2px 7px 10px;
   opacity: 0.5;
+  transition: opacity, background-color 0.2s;
   cursor: pointer;
 }
 
 #channel-box:hover {
-  opacity: 0.8;
+  opacity: 0.9;
   background-color: #393b41;
 }
 
-#channel-box:focus {
+#channel-box:active {
   opacity: 1;
 }
 
