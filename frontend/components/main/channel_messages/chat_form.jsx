@@ -33,6 +33,7 @@ class ChatForm extends React.Component {
             value={this.state.body}
             id="channel-chat-new-message-box"
             placeholder="Message channel"
+            autoComplete="off"
           />
           <input type="submit" id="submit-message" />
         </form>

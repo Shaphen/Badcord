@@ -30,7 +30,7 @@ class ChannelChat extends React.Component {
   }
 
   componentDidUpdate() {
-    this.bottom.current.scrollIntoView();
+    this.bottom.current.scrollIntoView(); // ({ behavior: 'smooth', block: 'nearest', inline: 'start' });
   }
   
   render() {
@@ -41,7 +41,7 @@ class ChannelChat extends React.Component {
         <div key={idx} id="new-message">
             <img id="message-deafult-logo" src={window.logo_head_white} />
             <div id="message-content-box">
-              <p id="sender-name">{this.props.currentUser.username}</p>
+              <p id="sender-name">Anonymous</p>
               <p id="sender-message">{message}</p>
             </div>
         </div>
@@ -58,7 +58,7 @@ class ChannelChat extends React.Component {
         <div id="channel-chat-box">
           <div id="chat-box">
             <div id="chat-box-welcome">
-              <p id="welcome-text-main">Welcome to #{nameDisplay }!</p>
+              <p id="welcome-text-main">Welcome to #{ nameDisplay }!</p>
               <p id="welcome-text-sub">This is the start of the #{ nameDisplay } channel</p>
               <label id="welcome-text-edit-channel">Edit Channel</label>
             </div>
