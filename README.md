@@ -1,5 +1,48 @@
 # README
-![alt text](https://github.com/Shaphen/Dabcord/blob/master/app/assets/images/logos/git_versions/cover_bottom.png "badcord")
 
+## Live Site
+[Badcord](https://badcord.herokuapp.com/#/)
 
-* [Design Documents](https://github.com/Shaphen/Dabcord/wiki)
+## What is Badcord?
+Badcord is a full-stack single-paged web application that closely follows the design and features of the popular gaming live-chat system, Discord. users can securely log in, create/edit/delete servers and channels, and chat in real time with other logged-in users.
+
+### Relevant Technologies
+* Frontend
+  * React-Redux - Javascript library with reusable UI components
+  * HTML/CSS - style and formatting
+* Backend
+  * Ruby on Rails - MVC framework
+  * PostgreSQL - database
+  
+## Features
+### Live Chat
+Users are able to chat in real-time with each other through server channels.
+![live-chat](https://github.com/Shaphen/Badcord/blob/master/app/assets/images/readme/live_chat.png)
+Live chat is the primary focus of this application. It utilizes Rails Action Cable to allow users to subscribe to a channel that organizes new information and broadcasts back to all known subscribers.
+```ruby
+def subscribed
+  stream_for "chat_channel" # @channel
+end
+
+def speak(data)
+  message = ChannelMessage.create(body: data['message'])
+  socket = { message: message.body }
+  ChatChannel.broadcast_to('chat_channel', socket)
+end
+```
+The fronend component for the chat system then grabs this organized information and updates state to trigger an instant re-render and display the new message along with the previous ones
+```javascript
+App.cable.subscriptions.create(
+  { channel: "ChatChannel" },
+  {
+     received: data => {
+       this.setState({
+         messages: this.state.messages.concat(data.message)
+       });
+     },
+     speak: function(data) {
+       return this.perform("speak", data)
+     }
+   }
+);
+```
