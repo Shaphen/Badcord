@@ -41,7 +41,7 @@ class ChannelChat extends React.Component {
         <div key={idx} id="new-message">
             <img id="message-deafult-logo" src={window.logo_head_white} />
             <div id="message-content-box">
-              <p id="sender-name">Anonymous</p>
+              <p id="sender-name">{this.props.currentUser.username}</p>
               <p id="sender-message">{message}</p>
             </div>
         </div>
