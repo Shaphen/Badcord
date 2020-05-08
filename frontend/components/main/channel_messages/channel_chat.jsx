@@ -39,8 +39,11 @@ class ChannelChat extends React.Component {
     const messageList = this.state.messages.map((message, idx) => {
       return (
         <div key={idx} id="new-message">
-            <p id="sender-name">{this.props.currentUser.username}</p>
-            <p id="sender-message">{message}</p>
+            <img id="message-deafult-logo" src={window.logo_head_white} />
+            <div id="message-content-box">
+              <p id="sender-name">{this.props.currentUser.username}</p>
+              <p id="sender-message">{message}</p>
+            </div>
         </div>
       );
     });
