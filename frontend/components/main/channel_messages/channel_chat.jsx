@@ -16,7 +16,6 @@ class ChannelChat extends React.Component {
       { channel: "ChatChannel" }, //channelId: this.props.channels[this.props.match.params.channelId] | channelId to find channel in backend. Additional k-v pairs become additional params
       {
         received: data => {
-          console.log("show up please")
           this.setState({
             messages: this.state.messages.concat(data.message)
           });
@@ -37,11 +36,12 @@ class ChannelChat extends React.Component {
   render() {
     let currentChannel = this.props.channels[this.props.match.params.channelId]
     let nameDisplay = currentChannel ? currentChannel.name : null
-    const messageList = this.state.messages.map(message => {
+    const messageList = this.state.messages.map((message, idx) => {
       return (
-        <li key={ message.id }>
-          { message }
-        </li>
+        <div key={idx} id="new-message">
+            <p id="sender-name">{this.props.currentUser.username}</p>
+            <p id="sender-message">{message}</p>
+        </div>
       );
     });
 
