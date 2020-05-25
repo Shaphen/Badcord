@@ -7,9 +7,11 @@
   * [Servers](#servers)
 * [Future Directions](#future-directions)
 ## Live Site
-[Badcord](https://badcord.herokuapp.com/#/)
+[Badcord](https://badcord.herokuapp.com/)
 
 ## What is Badcord?
+![Splash](https://github.com/Shaphen/Badcord/blob/master/app/assets/images/gifs/badcord.gif)
+
 Badcord is a full-stack single-paged web application that closely follows the design and features of the popular gaming live-chat system, Discord. users can securely log in, create/edit/delete servers and channels, and chat in real time with other logged-in users.
 
 ### Relevant Technologies
@@ -24,7 +26,8 @@ Badcord is a full-stack single-paged web application that closely follows the de
 ### Live Chat
 Users are able to chat in real-time with each other through server channels.
 
-![live-chat](https://github.com/Shaphen/Badcord/blob/master/app/assets/images/readme/live_chat.png)
+![live-chat](https://github.com/Shaphen/Badcord/blob/master/app/assets/images/gifs/badcord_messages1.gif)
+
 Live chat is the primary focus of this application. It utilizes Rails Action Cable to allow users to subscribe to a channel that organizes new information and broadcasts back to all known subscribers.
 ```ruby
 def subscribed
