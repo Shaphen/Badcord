@@ -10,7 +10,7 @@
 [Badcord](https://badcord.herokuapp.com/)
 
 ## What is Badcord?
-![Splash](https://github.com/Shaphen/Badcord/blob/master/app/assets/images/gifs/badcord.gif)
+![Splash](https://github.com/Shaphen/Badcord/blob/master/app/assets/images/gifs/badcord_splash.gif)
 
 Badcord is a full-stack single-paged web application that closely follows the design and features of the popular gaming live-chat system, Discord. users can securely log in, create/edit/delete servers and channels, and chat in real time with other logged-in users.
 
