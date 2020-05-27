@@ -12,7 +12,7 @@
 ## What is Badcord?
 ![Splash](https://github.com/Shaphen/Badcord/blob/master/app/assets/images/gifs/badcord_splash.gif)
 
-Badcord is a full-stack single-paged web application that closely follows the design and features of the popular gaming live-chat system, Discord. users can securely log in, create/edit/delete servers and channels, and chat in real time with other logged-in users.
+Badcord is a fullstack single-paged web application that closely follows the design and features of the popular gaming live-chat system, Discord. Users can securely log in, create/edit/delete servers and channels, and chat in real time with other logged-in users.
 
 ### Relevant Technologies
 * Frontend
@@ -28,7 +28,7 @@ Users are able to chat in real-time with each other through server channels.
 
 ![live-chat](https://github.com/Shaphen/Badcord/blob/master/app/assets/images/gifs/badcord_messages1.gif)
 
-Live chat is the primary focus of this application. It utilizes Rails Action Cable to allow users to subscribe to a channel that organizes new information and broadcasts back to all known subscribers.
+Live chat is the primary feature of this application. It utilizes Rails Action Cable to allow users to subscribe to a chat channel that constantly scans for and organizes new information to broadcast back to all known subscribers.
 ```ruby
 def subscribed
   stream_for "chat_channel" # @channel
@@ -58,10 +58,10 @@ App.cable.subscriptions.create(
 ```
 
 ### Servers
-Users are able to create new servers and upload an image from their local storage as the server's photo using AWS's S3 Storage System to security save their media
+Users are able to create, edit, and delete servers as well as upload an image from their local storage as a server's cover photo using AWS's S3 Storage System, securily saving their media.
 
 ![server-photo](https://github.com/Shaphen/Badcord/blob/master/app/assets/images/readme/server_photo_upload.png)
-Users are also able to create/delete new channels within' servers to diversify their conversations!
+Users are also able to create, edit, and delete channels within' servers to diversify their conversation funnels!
 
 ### Future Directions
 * Add members list with online/offline status
