@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Main from './main';
-import { fetchServers, fetchServer } from '../../../actions/server_actions';
-import { logout } from '../../../actions/session_actions';
+import { fetchServers, fetchServer } from '../../actions/server_actions';
+import { logout } from '../../actions/session_actions';
 
 const mSTP = state => {
   let res
