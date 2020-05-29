@@ -5,10 +5,6 @@ import Root from './components/root';
 import { selectMembersByServer } from './reducers/selectors';
 import Modal from 'react-modal';
 
-// test code
-import { deleteChannel, fetchChannel, fetchChannels, createChannel } from './actions/channel_actions';
-//end
-
 document.addEventListener("DOMContentLoaded", () => {
   Modal.setAppElement('#root');
 
@@ -32,9 +28,4 @@ document.addEventListener("DOMContentLoaded", () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.selectMembersByServer = selectMembersByServer; //for future creating members list for servers
-  window.fetchChannels = fetchChannels;
-  window.fetchChannel = fetchChannel;
-  window.createChannel = createChannel;
-  window.deleteChannel = deleteChannel;
-  // end
 });

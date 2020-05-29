@@ -33,6 +33,7 @@ class ChannelIndex extends React.Component {
   }
 
   render() {
+    // debugger
     return (
       <div id="channel-index-container">
         <div id="text-channels-tab-container">

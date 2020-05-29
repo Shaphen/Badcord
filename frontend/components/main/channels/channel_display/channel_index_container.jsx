@@ -8,6 +8,7 @@ const mSTP = (state, ownProps) => {
   if (state.entities.channels) {
     channels = Object.values(state.entities.channels)
   }
+  debugger
   let res2
   if (ownProps.server) {
     res2 = ownProps.server.id
