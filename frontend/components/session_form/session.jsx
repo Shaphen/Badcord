@@ -100,6 +100,9 @@ class Session extends React.Component {
               <Link to={address} className="other-form">{name}</Link>
             </form>
           </div>
+          <div id="qr-box">
+            <img className="linkedin-qr" src={window.linkedin_qr} />
+          </div>
           <div id="errors-box">
             { this.renderErrors() }
           </div>
