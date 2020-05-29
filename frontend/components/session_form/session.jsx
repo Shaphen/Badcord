@@ -15,7 +15,7 @@ class Session extends React.Component {
   }
 
   // componentWillUnmount() {
-  //   this.props.clearErrors()
+  //   this.props.clearErrors();
   // }
 
   handleSubmit(e) {
@@ -41,7 +41,7 @@ class Session extends React.Component {
   renderErrors() {
     if (this.props.errors){
       return (
-        <ul>
+        <ul id="error-list">
           {this.props.errors.map((error, i) => (
             <li className="errors" key={`error-${i}`}>
               {error}

@@ -3,7 +3,6 @@ import Session from './session';
 import { login, receiveErrors } from '../../actions/session_actions'
 
 const mSTP = state => {
-  // debugger
   return {
     errors: state.errors.session,
     formType: 'Welcome Back!'
