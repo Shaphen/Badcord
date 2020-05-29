@@ -14,15 +14,19 @@ class Session extends React.Component {
     this.demoLogin = this.demoLogin.bind(this)
   }
 
-  // componentWillUnmount() {
-  //   this.props.clearErrors();
-  // }
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processEntry(user)
-      .then(() => this.props.history.push("/channels/@me"))
+      .then(({type}) => {
+        if (type !== "RECEIVE_ERRORS") {
+          this.props.history.push("/channels/@me")
+        }
+      })
   }
 
   demoLogin(e) {
