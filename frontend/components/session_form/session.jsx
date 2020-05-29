@@ -73,7 +73,7 @@ class Session extends React.Component {
     const name = this.props.formType === 'Welcome Back!' ? 'Register' : 'Already have an account?'
     return (
       <div className="login-signup-background">
-        <img className="login-signup-bg-img" src={window.login_signup_bg}/>
+        <img className="login-signup-bg-img" src={window.login_signup_bg} />
           <img className="login-signup-bg-logo" src={window.mono_logo} />
         <div id="session">
           <Link to="/" className="login-signup-go-back">X</Link>
@@ -102,6 +102,8 @@ class Session extends React.Component {
           </div>
           <div id="qr-box">
             <img className="linkedin-qr" src={window.linkedin_qr} />
+            <p id="qr-title">This is a QR Code</p>
+            <p id="qr-note">Scan to go somewhere even better than here</p>
           </div>
           <div id="errors-box">
             { this.renderErrors() }

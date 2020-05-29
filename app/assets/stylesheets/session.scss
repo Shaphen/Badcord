@@ -266,3 +266,33 @@
   padding: 9px 3px 0px 0px;
   opacity: 0.7;
 }
+
+#qr-box {
+  position: absolute;
+  width: 190px;
+  height: auto;
+  left: 500px;
+  top: 90px;
+}
+
+.linkedin-qr {
+  width: 100%;
+  border-radius: 10px;
+  opacity: 0.9;
+}
+
+#qr-title {
+  margin-top: 20px;
+  color: white;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+#qr-note {
+  color: white;
+  text-align: center;
+  margin-top: 8px;
+  font-size: 18px;
+  opacity: 0.6;
+}
