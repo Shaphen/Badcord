@@ -46,13 +46,16 @@ class Session extends React.Component {
 
   renderErrors() {
     if (this.props.errors){
+      // debugger
       return (
         <ul id="error-list">
-          {this.props.errors.map((error, i) => (
-            <li className="errors" key={`error-${i}`}>
-              {error}
-            </li>
-          ))}
+          <div id="error-list-box">
+            {this.props.errors.map((error, i) => (
+              <li className="errors" key={`error-${i}`}>
+                {error}
+              </li>
+            ))}
+          </div>
         </ul>
       );
     }
@@ -102,9 +105,11 @@ class Session extends React.Component {
             <p id="qr-note">Scan to go somewhere even better than here</p>
           </div>
           <div id="errors-box">
-            { this.renderErrors() }
+            { this.props.errors.length ? this.renderErrors() : null }
           </div>
-          <div></div>
+          {/* <div>
+            <ToastContainer />
+          </div> */}
         </div>
       </div>
     )

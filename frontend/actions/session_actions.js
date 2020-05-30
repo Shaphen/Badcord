@@ -1,6 +1,6 @@
 import { signupUser, loginUser, logoutUser } from '../util/session_api_util';
-import { toast } from 'react-toastify';
-// import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
+// import "react-toastify/scss/main.scss";
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
@@ -21,24 +21,19 @@ export const receiveErrors = errors => ({
   errors
 });
 
-// const notifySucess = message => {
-//   toast.success(message);
+// const notifyError = message => {
+//   toast.error(message);
 // }
 
-const notifyError = message => {
-  toast.error(message);
-}
-
-// export const clearSessionErrors = () => ({
-//   type: CLEAR_SESSION_ERRORS
-// });
+export const clearSessionErrors = () => ({
+  type: CLEAR_SESSION_ERRORS
+});
 
 export const login = user => dispatch => loginUser(user)
   .then(user => dispatch(receiveCurrentUser(user)), err => {
-    // debugger
-    err.responseJSON.map(error => {
-      return notifyError(error);
-    });
+    // err.responseJSON.map((error) => {
+    //   return notifyError(error);
+    // });
     dispatch(receiveErrors(err.responseJSON))
   });
 
@@ -47,9 +42,8 @@ export const logout = () => dispatch => logoutUser()
 
 export const signup = user => dispatch => signupUser(user)
   .then(user => dispatch(receiveCurrentUser(user)), err => {
-    // debugger
-    err.responseJSON.map((error) => {
-      return notifyError(error);
-    });
+    // err.ResponseJSON.map((error) => {
+    //   return notifyError(error);
+    // });
     dispatch(receiveErrors(err.responseJSON))
   });

@@ -30,7 +30,22 @@
 }
 
 #error-list {
+  display: flex;
+  justify-content: center;
   margin-bottom: 45px;
+  position: absolute;
+  bottom: 400px;
+  right: 0px;
+  width: 100%;
+  font-weight: 600;
+}
+
+#error-list-box {
+  width: 50%;
+  background: #36393F;
+  padding: 15px 10px 8px;
+  border-radius: 8px;
+  box-shadow: -5px 5px 7px black;
 }
 
 .form-type {
@@ -188,6 +203,7 @@
   color: red;
   text-align: center;
   padding-bottom: 10px;
+  opacity: 0.85;
 }
 
 .login-signup-background {
