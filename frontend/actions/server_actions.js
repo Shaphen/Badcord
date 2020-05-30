@@ -1,4 +1,6 @@
 import * as ApiUtil from '../util/server_api_util';
+import { toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 export const RECEIVE_ALL_SERVERS = "RECEIVE_ALL_SERVERS";
 export const RECEIVE_SERVER = "RECEIVE_SERVER";
@@ -26,6 +28,10 @@ export const receiveServerErrors = errors => ({
   errors
 });
 
+const notifyError = message => {
+  toast.error(message);
+}
+
 export const clearServerErrors = () => ({
   type: CLEAR_SERVER_ERRORS
 });
@@ -37,18 +43,25 @@ export const fetchServer = serverId => dispatch => ApiUtil.fetchServer(serverId)
   .then(server => dispatch(receiveServer(server)));
 
 export const createServer = server => dispatch => ApiUtil.createServer(server)
-  .then(server => dispatch(receiveServer(server)), err => (
+  .then(server => dispatch(receiveServer(server)), err => {
+    err.responseJSON.map(error => {
+      return notifyError(error);
+    });
     dispatch(receiveServerErrors(err.responseJSON))
-  ));
+  });
   
 export const updateServer = server => dispatch => ApiUtil.updateServer(server)
-  .then(server => dispatch(receiveServer(server)), err => (
+  .then(server => dispatch(receiveServer(server)), err => {
+    err.responseJSON.map(error => {
+      return notifyError(error);
+    });
     dispatch(receiveServerErrors(err.responseJSON))
-  ));
+  });
     
 export const deleteServer = serverId => dispatch =>(
   ApiUtil.deleteServer(serverId)
-  .then(() => {
-    dispatch(removeServer(serverId))
-  }).fail((err) => console.log(err))
-  );
+  .then(() => dispatch(removeServer(serverId)), err => {
+    err.responseJSON.map(error => {
+      return notifyError(error)
+    });
+  }))

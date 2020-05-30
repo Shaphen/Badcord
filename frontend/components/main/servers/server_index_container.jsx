@@ -10,7 +10,8 @@ const mSTP = state => {
   }
   return {
     servers: res,
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id],
+    errors: state.errors.session
   }
 };
 

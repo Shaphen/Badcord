@@ -36,9 +36,8 @@ class Api::ServersController < ApplicationController
     @server = current_user.owned_servers.find_by(id: params[:id])
     if @server
       @server.destroy
-      render json: ["it worked!"], status: 200
     else
-      render json: ["not a valid server id. Big sad"], status: 404
+      render json: ["Only the owner can delete this server"], status: 404
     end
   end
 

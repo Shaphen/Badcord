@@ -3,8 +3,10 @@ import { Link, Redirect } from 'react-router-dom'
 import ServerIndexItem from './server_index-item';
 import ServerCreateContainer from './server_create_container'
 import Modal from 'react-modal';
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-
+toast.configure();
 class ServerIndex extends React.Component {
   constructor(props){
     super(props);
@@ -53,6 +55,8 @@ class ServerIndex extends React.Component {
           }
         </ul>
         <div id="server-box">
+          <ToastContainer id="toast" position="top-center" />
+
           <label id="new-server" onClick={this.handleOpenModal}>+</label>
           <p id="add-server-text">New Hideout</p>
           <Modal
