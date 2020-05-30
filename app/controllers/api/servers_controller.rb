@@ -25,10 +25,15 @@ class Api::ServersController < ApplicationController
 
   def update
     @server = current_user.owned_servers.find_by(id: params[:id])
-    if @server.update(server_params)
-      render :show
+    # debugger
+    if @server
+      if @server.update(server_params)
+        render :show
+      else
+        render json: ["invalid input, we have standards too"], status: 422
+      end
     else
-      render json: @server.errors.full_messages, status: 422
+      render json: ["Only the owner can modify this hideout"], status: 404
     end
   end
 
