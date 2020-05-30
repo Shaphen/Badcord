@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
+import "react-toastify/dist/ReactToastify.css";
 
 toast.configure();
 class Session extends React.Component {
@@ -44,22 +44,22 @@ class Session extends React.Component {
     }
   }
 
-  renderErrors() {
-    if (this.props.errors){
-      // debugger
-      return (
-        <ul id="error-list">
-          <div id="error-list-box">
-            {this.props.errors.map((error, i) => (
-              <li className="errors" key={`error-${i}`}>
-                {error}
-              </li>
-            ))}
-          </div>
-        </ul>
-      );
-    }
-  }
+  // renderErrors() {
+  //   if (this.props.errors){
+  //     // debugger
+  //     return (
+  //       <ul id="error-list">
+  //         <div id="error-list-box">
+  //           {this.props.errors.map((error, i) => (
+  //             <li className="errors" key={`error-${i}`}>
+  //               {error}
+  //             </li>
+  //           ))}
+  //         </div>
+  //       </ul>
+  //     );
+  //   }
+  // }
   
   handleChange(type) {
     return e => {
@@ -105,11 +105,8 @@ class Session extends React.Component {
             <p id="qr-note">Scan to go somewhere even better than here</p>
           </div>
           <div id="errors-box">
-            { this.props.errors.length ? this.renderErrors() : null }
+            {/* { this.props.errors.length ? this.renderErrors() : null } */}
           </div>
-          {/* <div>
-            <ToastContainer />
-          </div> */}
         </div>
       </div>
     )
