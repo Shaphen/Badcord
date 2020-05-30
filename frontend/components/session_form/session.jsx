@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import DemoLoginContainer from '../greeting/demo_login';
+import { toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 
+toast.configure();
 class Session extends React.Component {
   constructor(props) {
     super (props)
@@ -55,12 +57,6 @@ class Session extends React.Component {
       );
     }
   }
-
-  // handleErrors() {
-  //   const errors = setTimeout(this.renderErrors(), 2000)
-
-  //   clearTimeout(errors)
-  // }
   
   handleChange(type) {
     return e => {
@@ -108,6 +104,7 @@ class Session extends React.Component {
           <div id="errors-box">
             { this.renderErrors() }
           </div>
+          <div></div>
         </div>
       </div>
     )
