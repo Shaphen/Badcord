@@ -82,6 +82,7 @@
 }
 
 #create-server-button2 {
+  border: none;
   position: relative;
   bottom: 78px;
   right: 24px;
@@ -95,6 +96,10 @@
 }
 
 #create-server-button:hover {
+  background-color: rgb(100, 121, 194);
+}
+
+#create-server-button2:hover {
   background-color: rgb(100, 121, 194);
 }
 

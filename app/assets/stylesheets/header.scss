@@ -4,13 +4,13 @@
 
 .header-box {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   // position: relative;
   // top: -256px;
 }
 
 .login-box-side {
-  width: 30px;
+  width: 100%;
   display: flex;
   justify-content: flex-end;
   padding-right: 90px;
@@ -23,7 +23,7 @@
 }
 
 .header-logo-side {
-  width: 30px;
+  width: 100%;
   display: flex;
   justify-content: flex-start;
   padding-left: 90px;

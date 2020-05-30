@@ -90,7 +90,7 @@ class ServerDisplay extends React.Component {
                   marginLeft: "-245px",
                   marginTop: "-175px",
                   width: '490px',
-                  height: '295px',
+                  height: '275px',
                   background: 'rgb(255, 255, 255)'
                 },
                 overlay: {
