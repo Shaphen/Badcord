@@ -18,5 +18,5 @@ class Server < ApplicationRecord
     class_name: :Channel
 
   has_one_attached :photo
-
+  
 end

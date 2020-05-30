@@ -26,6 +26,7 @@
 
 #server-display-name2 {
   display: flex;
+  width: 100%;
   align-items: center;
   background-color: #2f3136;
   height: 48px;
@@ -77,4 +78,13 @@
 #server-img:hover {
   border-radius: 15px;
   cursor: pointer;
+}
+
+
+#server-line {
+  width: 44px;
+  height: 2px;
+  margin-bottom: 3px;
+  background: white;
+  opacity: 0.06;
 }

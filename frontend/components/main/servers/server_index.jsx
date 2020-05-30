@@ -37,6 +37,7 @@ class ServerIndex extends React.Component {
           </Link>
           <p id="home-text-display">Home</p>
         </div>
+          <div id="server-line"></div>
         <ul>
           {
             this.props.servers.map((server) => (
