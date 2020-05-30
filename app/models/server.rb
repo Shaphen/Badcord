@@ -1,5 +1,5 @@
 class Server < ApplicationRecord
-  validates :name, presence: true, length: { minimum: 2 }
+  validates :name, presence: true
   
   belongs_to :owner,
     foreign_key: :owner_id,

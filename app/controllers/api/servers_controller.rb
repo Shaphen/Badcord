@@ -19,7 +19,7 @@ class Api::ServersController < ApplicationController
     if @server.save
       render :show
     else
-      render json: @server.errors.full_messages, status: 422
+      render json: ["The extra effort to delete even the default name got you nothing. RIP"], status: 422
     end
   end
 
@@ -30,10 +30,10 @@ class Api::ServersController < ApplicationController
       if @server.update(server_params)
         render :show
       else
-        render json: ["invalid input, we have standards too"], status: 422
+        render json: ["Really? A blank name?"], status: 422
       end
     else
-      render json: ["Only the owner can modify this hideout"], status: 404
+      render json: ["How would you feel if I tried to change YOUR hideout? Yeah, didn't think so"], status: 404
     end
   end
 
@@ -42,7 +42,7 @@ class Api::ServersController < ApplicationController
     if @server
       @server.destroy
     else
-      render json: ["Only the owner can delete this server"], status: 404
+      render json: ["Don't burn down someone else's hideout! That's rude"], status: 404
     end
   end
 
