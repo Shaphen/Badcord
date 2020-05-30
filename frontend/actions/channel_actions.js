@@ -1,4 +1,6 @@
 import * as ApiUtil from '../util/channel_api_util';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const RECEIVE_ALL_CHANNELS = 'RECEIVE_ALL_CHANNELS';
 export const RECEIVE_CHANNEL = 'RECEIVE_CHANNEL';
@@ -26,6 +28,10 @@ export const receiveChannelErrors = errors => ({
   errors
 });
 
+const notifyError = message => {
+  toast.error(message);
+}
+
 export const clearChannelErrors = () => ({
   type: CLEAR_CHANNEL_ERRORS
 });
@@ -37,16 +43,25 @@ export const fetchChannel = channelId => dispatch => ApiUtil.fetchChannel(channe
   .then(channel => dispatch(receiveChannel(channel)));
 
 export const createChannel = channel => dispatch => ApiUtil.createChannel(channel)
-  .then(channel => dispatch(receiveChannel(channel)), err => (
-    dispatch(receiveServerErrors(err.responseJSON))
-  ));
+  .then(channel => dispatch(receiveChannel(channel)), err => {
+    err.responseJSON.map((error) => {
+      return notifyError(error);
+    });
+    dispatch(receiveChannelErrors(err.responseJSON))
+  });
 
 export const updateChannel = channel => dispatch => ApiUtil.updateChannel(channel)
-  .then(channel => dispatch(receiveChannel(channel)), err => (
-    dispatch(receiveServerErrors(err.responseJSON))
-  ));
+  .then(channel => dispatch(receiveChannel(channel)), err => {
+    err.responseJSON.map((error) => {
+      return notifyError(error);
+    });
+    dispatch(receiveChannelErrors(err.responseJSON))
+  });
 
 export const deleteChannel = channelId => dispatch => ApiUtil.deleteChannel(channelId)
-  .then(() => dispatch(removeChannel(channelId)), err => (
-    dispatch(receiveServerErrors(err.responseJSON))
-  ));
+  .then(() => dispatch(removeChannel(channelId)), err => {
+    err.responseJSON.map((error) => {
+      return notifyError(error);
+    });
+    dispatch(receiveChannelErrors(err.responseJSON))
+  });

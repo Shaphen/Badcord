@@ -6,6 +6,7 @@ const mSTP = state => {
   return {
     currentUser: state.entities.users[state.session.id],
     channels: state.entities.channels,
+    errors: state.errors.session,
   }
 };
 

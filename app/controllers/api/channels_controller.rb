@@ -2,7 +2,7 @@ class Api::ChannelsController < ApplicationController
   before_action :require_logged_in
   
   def index
-    @channels = Server.find(params[:serverId]).channels #serverId?
+    @channels = Server.find(params[:serverId]).channels
     render :index
   end
   
@@ -33,9 +33,8 @@ class Api::ChannelsController < ApplicationController
     @channel = current_user.owned_channels.find_by(id: params[:id])
     if @channel
       @channel.destroy
-      render json: ["It worked!"], status: 200
     else
-      render json: ["Could not find channel. Big sad"], status: 404
+      render json: ["Only the owner can delete channels"], status: 404
     end
   end
 
