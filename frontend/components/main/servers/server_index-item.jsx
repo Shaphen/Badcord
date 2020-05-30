@@ -10,6 +10,7 @@ const ServerIndexItem = (props) => {
     })
   }
 
+  // debugger
   return (
     <div id="server-box">
       <Link to={`/channels/${props.server.id}`} className="server-link">

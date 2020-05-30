@@ -19,6 +19,13 @@ class ServerIndex extends React.Component {
     this.props.getServers();
   }
 
+  componentDidUpdate(prevProps) {
+    // debugger
+    if ((prevProps.servers.length) !== (this.props.servers.length)) {
+      this.props.getServers();
+    }
+  }
+
   handleOpenModal() {
     this.setState({ showCreateModal: true })
   }
