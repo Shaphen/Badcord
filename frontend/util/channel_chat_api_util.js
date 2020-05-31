@@ -1,7 +1,7 @@
 
 export const fetchChatMessages = () => {
   return $.ajax ({
-    method: 'GET',
-    url: '/api/channel_messages'
+    url: '/api/channel_messages',
+    method: 'GET'
   });
 }

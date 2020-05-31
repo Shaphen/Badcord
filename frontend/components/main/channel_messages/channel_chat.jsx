@@ -44,6 +44,7 @@ class ChannelChat extends React.Component {
   render() {
     let currentChannel = this.props.channels[this.props.match.params.channelId]
     let nameDisplay = currentChannel ? currentChannel.name : null
+    debugger
     const messageList = this.state.messages.map((message, idx) => {
       return (
         <div key={idx} id="new-message">
