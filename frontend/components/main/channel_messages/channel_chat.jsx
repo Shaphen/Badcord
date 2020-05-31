@@ -15,8 +15,9 @@ class ChannelChat extends React.Component {
   }
 
   componentDidMount() {
+    let channelId = this.props.channels[this.props.match.params.channelId]
     App.cable.subscriptions.create(
-      { channel: "ChatChannel" }, //channelId: this.props.channels[this.props.match.params.channelId] | channelId to find channel in backend. Additional k-v pairs become additional params
+      { channel: "ChatChannel", channelId: channelId }, //channelId: this.props.channels[this.props.match.params.channelId] | channelId to find channel in backend. Additional k-v pairs become additional params
       {
         received: data => {
           this.setState({
@@ -70,7 +71,7 @@ class ChannelChat extends React.Component {
               { messageList }
               <div ref={this.bottom} />
             </div>
-            <ChatForm />
+            <ChatForm authorId={this.props.currentUser.id} channel={currentChannel} />
           </div>
         </div>
       </div>

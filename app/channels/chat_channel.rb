@@ -2,11 +2,12 @@ class ChatChannel < ApplicationCable::Channel
   def subscribed
     # find channel that is currently making subscription (@channel)
     # @channel = Channel.find_by(id: params[:channelId])
+    # debugger
     stream_for "chat_channel" # @channel
   end
 
   def speak(data)
-    message = ChannelMessage.create(body: data['message'], author_id: 46, channel_id: 28) # author_id: data['authorId'], channel_id: data['channelId']
+    message = ChannelMessage.create(body: data['message'], author_id: data["authorId"], channel_id: data["channelId"]) # author_id: data['authorId'], channel_id: data['channelId']
     socket = { message: message.body }
     ChatChannel.broadcast_to('chat_channel', socket)
   end

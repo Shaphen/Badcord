@@ -5,10 +5,16 @@ class ChatForm extends React.Component {
     super(props);
     this.state = {
       body: "",
-      authorId: null,
+      authorId: this.props.authorId,
       channelId: null
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  
+  componentDidUpdate(prevProps) {
+    if (this.props.channel !== prevProps.channel) {
+      this.setState({ channelId: this.props.channel.id })
+    }
   }
 
   handleChange(type){
@@ -19,7 +25,11 @@ class ChatForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    App.cable.subscriptions.subscriptions[0].speak({ message: this.state.body });
+    App.cable.subscriptions.subscriptions[0].speak({
+      message: this.state.body,
+      authorId: this.state.authorId,
+      channelId: this.state.channelId
+    });
     this.setState({ body: "" });
   }
   
