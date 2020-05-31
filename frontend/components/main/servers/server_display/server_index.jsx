@@ -19,6 +19,7 @@ class ServerIndex extends React.Component {
 
   componentDidMount() {
     this.props.getServers();
+    this.props.getUsers();
   }
 
   componentDidUpdate(prevProps) {

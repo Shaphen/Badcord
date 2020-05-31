@@ -20,6 +20,7 @@ const mSTP = (state, ownProps) => {
   
   return {
     currentUser: state.entities.users[state.session.id],
+    users: state.entities.users,
     channels: state.entities.channels,
     errors: state.errors.session,
     messages: messages,
