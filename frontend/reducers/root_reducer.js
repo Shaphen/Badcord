@@ -5,7 +5,7 @@ import errorsReducer from './errors_reducer';
 
 const rootReducer = combineReducers({
   session: sessionReducer, // login, logout
-  entities: entitiesReducer, // users, servers
+  entities: entitiesReducer, // users, servers, channels, channelChat
   errors: errorsReducer // session, servers
 });
 
