@@ -1,4 +1,4 @@
-import { fetchMessages } from '../util/channel_chat_api_util';
+import { fetchChatMessages } from '../util/channel_chat_api_util';
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -19,7 +19,7 @@ const notifyError = message => {
   toast.error(message);
 }
 
-export const fetchMessages = () => dispatch => fetchMessages()
+export const fetchMessages = () => dispatch => fetchChatMessages()
   .then(messages => dispatch(receiveAllMessages(messages)), err => {
     err.reponseJSON.map(error => {
       return notifyError(error);
