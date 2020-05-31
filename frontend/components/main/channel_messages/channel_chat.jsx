@@ -36,22 +36,22 @@ class ChannelChat extends React.Component {
   componentDidUpdate(prevProps) {
     this.bottom.current.scrollIntoView(); // ({ behavior: 'smooth', block: 'nearest', inline: 'start' });
 
-    if (this.state.messages !== this.props.messageTexts) {
-      this.setState({ messages: this.props.messageTexts })
-    }
+    // if (this.state.messages !== this.props.messageTexts) {
+    //   this.setState({ messages: this.props.messageTexts })
+    // }
   }
   
   render() {
     let currentChannel = this.props.channels[this.props.match.params.channelId]
     let nameDisplay = currentChannel ? currentChannel.name : null
-    // debugger
-    const messageList = this.state.messages.map((message, idx) => {
+    debugger
+    const messageList = this.props.messages.map((message, idx) => {
       return (
         <div key={idx} id="new-message">
             <img id="message-deafult-logo" src={window.logo_head_white} />
             <div id="message-content-box">
               <p id="sender-name">{this.props.currentUser.username}</p>
-              <p id="sender-message">{message}</p>
+              <p id="sender-message">{message.body}</p>
             </div>
         </div>
       );

@@ -9,14 +9,14 @@ const mSTP = (state, ownProps) => {
     messages = Object.values(state.entities.channelChat)
   }
 
-  let messageTexts = []
-  if (messages.length) {
-    messages.map(message => {
-      if (ownProps.match.params.channelId == message.channel_id) {
-        messageTexts.push(message.body)
-      }
-    });
-  }
+  // let messageTexts = []
+  // if (messages.length) {
+  //   messages.map(message => {
+  //     if (ownProps.match.params.channelId == message.channel_id) {
+  //       messageTexts.push(message.body)
+  //     }
+  //   });
+  // }
   
   return {
     currentUser: state.entities.users[state.session.id],
@@ -24,7 +24,7 @@ const mSTP = (state, ownProps) => {
     channels: state.entities.channels,
     errors: state.errors.session,
     messages: messages,
-    messageTexts: messageTexts
+    // messageTexts: messageTexts
   }
 };
 
