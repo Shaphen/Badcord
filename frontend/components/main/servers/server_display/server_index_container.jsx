@@ -20,7 +20,7 @@ const mDTP = dispatch => ({
   getServers: () => dispatch(fetchServers()),
   getServer: serverId => dispatch(fetchServer(serverId)),
   logout: () => dispatch(logout()),
-  getUsers: () => dispatch(fetchUsers)
+  getUsers: () => dispatch(fetchUsers())
 });
 
 export default connect(mSTP, mDTP)(ServerIndex)
