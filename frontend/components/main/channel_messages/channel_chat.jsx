@@ -44,18 +44,26 @@ class ChannelChat extends React.Component {
   render() {
     let currentChannel = this.props.channels[this.props.match.params.channelId]
     let nameDisplay = currentChannel ? currentChannel.name : null
-    debugger
-    const messageList = this.props.messages.map((message, idx) => {
-      return (
-        <div key={idx} id="new-message">
+    let messageList;
+    if (currentChannel) {
+      let filteredMessages = this.props.messages.filter(message => {
+        return message.channel_id === currentChannel.id
+      });
+      
+      messageList = filteredMessages.map((message, idx) => {
+        // const currentChannelId = currentChannel ? currentChannel.id : null
+        debugger
+        return (
+          <div key={idx} id="new-message">
             <img id="message-deafult-logo" src={window.logo_head_white} />
             <div id="message-content-box">
               <p id="sender-name">{this.props.currentUser.username}</p>
               <p id="sender-message">{message.body}</p>
             </div>
-        </div>
-      );
-    });
+          </div>
+        );
+      });
+    }
 
     return (
       <div id="channel-chat-container">
