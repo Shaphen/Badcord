@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom'
 import ServerIndexItem from './server_index-item';
-import ServerCreateContainer from './server_create_container'
+import ServerCreateContainer from '../server_CRUD/server_create_container'
 import Modal from 'react-modal';
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

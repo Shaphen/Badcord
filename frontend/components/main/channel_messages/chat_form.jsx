@@ -13,7 +13,9 @@ class ChatForm extends React.Component {
   
   componentDidUpdate(prevProps) {
     if (this.props.channel !== prevProps.channel) {
-      this.setState({ channelId: this.props.channel.id })
+      if (this.props.channel) {
+        this.setState({ channelId: this.props.channel.id })
+      }
     }
   }
 

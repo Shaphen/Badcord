@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ServerCreateForm from './server_create_form';
-import { createServer } from '../../../actions/server_actions';
+import { createServer } from '../../../../actions/server_actions';
 
 const mSTP = state => {
   return {

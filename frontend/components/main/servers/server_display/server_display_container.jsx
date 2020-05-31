@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ServerDisplay from '../server_display';
+import ServerDisplay from './server_display';
 import { fetchServers, fetchServer, deleteServer } from '../../../../actions/server_actions';
 
 const mSTP = state => {

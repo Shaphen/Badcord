@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
-import ServerUpdateContainer from './server_update_container';
-import ChannelIndexContainer from '../channels/channel_display/channel_index_container';
+import ServerUpdateContainer from '../server_CRUD/server_update_container';
+import ChannelIndexContainer from '../../channels/channel_display/channel_index_container';
 
 class ServerDisplay extends React.Component {
   constructor(props) {

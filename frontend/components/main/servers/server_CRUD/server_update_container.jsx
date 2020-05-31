@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ServerUpdateForm from './server_update_form';
-import { updateServer } from '../../../actions/server_actions';
+import { updateServer } from '../../../../actions/server_actions';
 
 const mSTP = (state, ownProps) => {
   return {

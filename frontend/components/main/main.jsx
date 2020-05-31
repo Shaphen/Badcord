@@ -1,6 +1,6 @@
 import React from 'react';
-import ServerIndexContainer from './servers/server_index_container';
-import ServerDisplayContainer from "./servers/server_display_container";
+import ServerIndexContainer from './servers/server_display/server_index_container';
+import ServerDisplayContainer from "./servers/server_display/server_display_container";
 import HomeDisplayContainer from "./servers/home_display_container";
 import { ProtectedRoute } from '../../util/route_util';
 import ChannelChatContainer from './channel_messages/channel_chat_container';
