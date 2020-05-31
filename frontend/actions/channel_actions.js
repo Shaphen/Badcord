@@ -47,7 +47,7 @@ export const createChannel = channel => dispatch => ApiUtil.createChannel(channe
     err.responseJSON.map((error) => {
       return notifyError(error);
     });
-    dispatch(receiveChannelErrors(err.responseJSON))
+    dispatch(receiveChannelErrors(err.responseJSON));
   });
 
 export const updateChannel = channel => dispatch => ApiUtil.updateChannel(channel)
@@ -55,7 +55,7 @@ export const updateChannel = channel => dispatch => ApiUtil.updateChannel(channe
     err.responseJSON.map((error) => {
       return notifyError(error);
     });
-    dispatch(receiveChannelErrors(err.responseJSON))
+    dispatch(receiveChannelErrors(err.responseJSON));
   });
 
 export const deleteChannel = channelId => dispatch => ApiUtil.deleteChannel(channelId)
@@ -63,5 +63,5 @@ export const deleteChannel = channelId => dispatch => ApiUtil.deleteChannel(chan
     err.responseJSON.map((error) => {
       return notifyError(error);
     });
-    dispatch(receiveChannelErrors(err.responseJSON))
+    dispatch(receiveChannelErrors(err.responseJSON));
   });
