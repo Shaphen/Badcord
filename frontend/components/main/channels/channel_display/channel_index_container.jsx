@@ -2,9 +2,10 @@ import { connect } from 'react-redux';
 import ChannelIndex from './channel_index';
 import { fetchChannels, fetchChannel, deleteChannel } from '../../../../actions/channel_actions'
 import { withRouter } from 'react-router-dom'; //gives access to history, location, match(path params)
+import { fetchMessages } from '../../../../actions/channel_chat_actions';
 
 const mSTP = (state, ownProps) => {
-  let channels
+  let channels;
   if (state.entities.channels) {
     channels = Object.values(state.entities.channels)
   }
@@ -22,7 +23,8 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => ({
   getChannels: serverId => dispatch(fetchChannels(serverId)),
   getChannel: channelId => dispatch(fetchChannel(channelId)),
-  deleteChannel: channelId => dispatch(deleteChannel(channelId))
+  deleteChannel: channelId => dispatch(deleteChannel(channelId)),
+  getMessages: () => dispatch(fetchMessages())
 })
 
 export default withRouter(connect(mSTP, mDTP)(ChannelIndex))

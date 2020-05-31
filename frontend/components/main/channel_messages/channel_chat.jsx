@@ -33,8 +33,12 @@ class ChannelChat extends React.Component {
     );
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     this.bottom.current.scrollIntoView(); // ({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+
+    if (this.state.messages !== this.props.messageTexts) {
+      this.setState({ messages: this.props.messageTexts })
+    }
   }
   
   render() {

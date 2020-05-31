@@ -21,6 +21,7 @@ class ChannelIndex extends React.Component {
 
   componentDidMount() {
     this.props.getChannels(this.props.match.params.server_id)
+    this.props.getMessages();
   }
 
   handleOpenAddModal() {

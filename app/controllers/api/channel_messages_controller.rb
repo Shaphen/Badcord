@@ -1,8 +1,8 @@
 class Api::ChannelMessagesController < ApplicationController
-  # def index
-  #   @messages = Channel.find(params[:channelId]).channel_messages
-  #   render :index
-  # end #most important to get
+  def index
+    @messages = ChannelMessage.all
+    render :index
+  end
   
   # def create
   #   @message = ChannelMessage.new(channel_message_params)

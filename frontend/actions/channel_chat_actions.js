@@ -21,7 +21,7 @@ const notifyError = message => {
 
 export const fetchMessages = () => dispatch => fetchChatMessages()
   .then(messages => dispatch(receiveAllMessages(messages)), err => {
-    err.reponseJSON.map(error => {
+    err.responseJSON.map(error => {
       return notifyError(error);
     });
     dispatch(receiveMessageErrors(err.responseJSON));
