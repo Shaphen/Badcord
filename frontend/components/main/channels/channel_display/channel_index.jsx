@@ -14,13 +14,16 @@ class ChannelIndex extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if ((prevProps.location.pathname) !== (this.props.location.pathname)){
+    if ((prevProps.location.pathname) !== (this.props.location.pathname) && this.props.match.params.server_id !== "@me"){
       this.props.getChannels(this.props.match.params.server_id)
     }
   }
 
   componentDidMount() {
-    this.props.getChannels(this.props.match.params.server_id)
+    debugger
+    if (this.props.match.params.server_id !== "@me") {
+      this.props.getChannels(this.props.match.params.server_id)
+    }
     this.props.getMessages();
   }
 
@@ -72,9 +75,9 @@ class ChannelIndex extends React.Component {
             </Modal>
           </div>
           {
-            this.props.channels.map((channel, idx) => (
+            this.props.server ? this.props.channels.map((channel, idx) => (
               <ChannelIndexItem deleteChannel={this.props.deleteChannel} serverId={this.props.serverId} channel={channel} key={idx} />
-            ))
+            )) : null
           }
         </div>
       </div>
