@@ -2,22 +2,13 @@ import { connect } from 'react-redux';
 import ChannelChat from './channel_chat';
 import { fetchChannel } from '../../../actions/channel_actions';
 import { fetchMessages } from '../../../actions/channel_chat_actions';
-import { selectMessagesByChannel } from '../../../reducers/selectors';
+import { selectMessagesByChannel } from '../../../reducers/selectors'; // add in cleanup
 
-const mSTP = (state, ownProps) => {
+const mSTP = (state) => {
   let messages
   if (state.entities.channelChat) {
     messages = Object.values(state.entities.channelChat)
   }
-
-  // let messageTexts = []
-  // if (messages.length) {
-  //   messages.map(message => {
-  //     if (ownProps.match.params.channelId == message.channel_id) {
-  //       messageTexts.push(message.body)
-  //     }
-  //   });
-  // }
   
   return {
     currentUser: state.entities.users[state.session.id],
@@ -25,7 +16,6 @@ const mSTP = (state, ownProps) => {
     channels: state.entities.channels,
     errors: state.errors.session,
     messages: messages,
-    // channelMessages: selectMessagesByChannel(state)
   }
 };
 

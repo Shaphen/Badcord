@@ -1,8 +1,5 @@
 class ChatChannel < ApplicationCable::Channel
   def subscribed
-    # find channel that is currently making subscription (@channel)
-    # @channel = Channel.find_by(id: params[:channelId])
-    # debugger
     stream_for "chat_channel" # @channel
   end
 
