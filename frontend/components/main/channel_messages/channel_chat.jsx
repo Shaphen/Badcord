@@ -44,11 +44,10 @@ class ChannelChat extends React.Component {
     let nameDisplay = currentChannel ? currentChannel.name : null
     let messageList;
     if (currentChannel) {
-      let filteredMessages = this.props.messages.filter(message => {
+      let filteredMessages = this.props.messages.concat(this.state.messages).filter(message => {
         return message.channel_id === currentChannel.id
       });
-      debugger
-      messageList = filteredMessages.concat(this.state.messages).map((message, idx) => {
+      messageList = filteredMessages.map((message, idx) => {
         return (
           <div key={idx} id="new-message">
             <img id="message-deafult-logo" src={window.logo_head_white} />
