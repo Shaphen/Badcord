@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import ChannelChat from './channel_chat';
 import { fetchChannel } from '../../../actions/channel_actions';
-import { fetchMessages } from '../../../actions/channel_chat_actions'
+import { fetchMessages } from '../../../actions/channel_chat_actions';
+import { selectMessagesByChannel } from '../../../reducers/selectors';
 
 const mSTP = (state, ownProps) => {
   let messages
@@ -24,7 +25,7 @@ const mSTP = (state, ownProps) => {
     channels: state.entities.channels,
     errors: state.errors.session,
     messages: messages,
-    // messageTexts: messageTexts
+    // channelMessages: selectMessagesByChannel(state)
   }
 };
 

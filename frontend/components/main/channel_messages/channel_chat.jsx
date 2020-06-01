@@ -21,10 +21,8 @@ class ChannelChat extends React.Component {
       {
         received: data => {
           this.setState({
-            messages: this.state.messages.concat(data.message)
+            messages: this.state.messages.concat(data)
           });
-          // take received message dispatch action to send to reducers and update state
-          // make a redux cycle for channel messages
         },
         speak: function(data) {
           return this.perform("speak", data)
@@ -49,8 +47,8 @@ class ChannelChat extends React.Component {
       let filteredMessages = this.props.messages.filter(message => {
         return message.channel_id === currentChannel.id
       });
-      
-      messageList = filteredMessages.map((message, idx) => {
+      debugger
+      messageList = filteredMessages.concat(this.state.messages).map((message, idx) => {
         return (
           <div key={idx} id="new-message">
             <img id="message-deafult-logo" src={window.logo_head_white} />
