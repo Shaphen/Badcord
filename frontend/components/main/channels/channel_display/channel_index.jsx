@@ -20,7 +20,6 @@ class ChannelIndex extends React.Component {
   }
 
   componentDidMount() {
-    debugger
     if (this.props.match.params.server_id !== "@me") {
       this.props.getChannels(this.props.match.params.server_id)
     }

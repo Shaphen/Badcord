@@ -13,6 +13,9 @@ class Main extends React.Component {
   render() {
     return (
       <div className="main-page">
+        <div id="chat-room-intro-box">
+          <p id="chat-room-text-intro">CHAT ROOMS APPEAR HERE</p>
+        </div>
         <ServerIndexContainer />
         <HomeDisplayContainer />
         <div id="user-logout-container">

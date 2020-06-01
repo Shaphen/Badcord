@@ -13,7 +13,8 @@
 #text-channels-tab {
   display: flex;
   align-items: center;
-  opacity: 0.5;
+  // opacity: 0.5;
+  // transition: opacity 0.2s;
 }
 
 #text-channels-tab-text {
@@ -21,6 +22,8 @@
   font-weight: 500;
   font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
   padding: 15px 0px 10px;
+  opacity: 0.5;
+  transition: opacity 0.2s;
   cursor: default;
 }
 
@@ -28,12 +31,17 @@
   font-size: 14px;
   font-weight: 500;
   font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
-  margin: 35vh 24px 50vh;
-  padding: 15px 0px 10px;
+  margin: 38vh 24px 50vh;
+  opacity: 0.5;
+  transition: opacity 0.2s;
   cursor: default;
 }
 
-#text-channels-tab:hover {
+#text-channels-tab-text:hover {
+  opacity: 1;
+}
+
+#text-channels-tab-intro:hover {
   opacity: 1;
 }
 
@@ -267,4 +275,21 @@
 
 #delete-channel-cancel:hover {
   color: rgba(255, 255, 255, 0.698);
+}
+
+#chat-room-intro-box {
+  position: absolute;
+  top: 45%;
+  left: 55%;
+  color: white;
+  cursor: default;
+}
+
+#chat-room-text-intro {
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+#chat-room-text-intro:hover {
+  opacity: 1;
 }
