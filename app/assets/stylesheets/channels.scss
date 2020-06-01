@@ -24,6 +24,15 @@
   cursor: default;
 }
 
+#text-channels-tab-intro {
+  font-size: 14px;
+  font-weight: 500;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  margin: 35vh 24px 50vh;
+  padding: 15px 0px 10px;
+  cursor: default;
+}
+
 #text-channels-tab:hover {
   opacity: 1;
 }
@@ -48,11 +57,12 @@
   width: 98px;
   left: 155px;
   font-size: 14px;
-  top: 37px;
+  top: -12px;
   background-color: black;
   padding: 8px;
   border-radius: 6px;
   transition: opacity 0.2s;
+  cursor: default;
 }
 
 #add-channel-button:hover + #add-channel-text {
