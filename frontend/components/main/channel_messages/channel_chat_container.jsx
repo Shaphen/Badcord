@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import ChannelChat from './channel_chat';
-import { withRouter } from 'react-router-dom'; //gives access to history, location, match(path params)
 import { fetchChannel } from '../../../actions/channel_actions';
 import { fetchMessages } from '../../../actions/channel_chat_actions';
 import { selectMessagesByChannel } from '../../../reducers/selectors'; // add in cleanup
@@ -25,4 +24,4 @@ const mDTP = dispatch => ({
   getMessages: () => dispatch(fetchMessages())
 });
 
-export default withRouter(connect(mSTP, mDTP)(ChannelChat))
+export default connect(mSTP, mDTP)(ChannelChat)
