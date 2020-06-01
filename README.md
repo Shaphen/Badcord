@@ -60,7 +60,7 @@ App.cable.subscriptions.create(
 ### Servers
 Users are able to create, edit, and delete servers as well as upload an image from their local storage as a server's cover photo using AWS's S3 Storage System, securily saving their media.
 
-![server-photo](https://github.com/Shaphen/Badcord/blob/master/app/assets/images/readme/server_photo_upload.png)
+![server-photo](https://github.com/Shaphen/Badcord/blob/master/app/assets/images/gifs/badcord_AWS.gif)
 Users are also able to create, edit, and delete channels within' servers to diversify their conversation funnels!
 
 ### Future Directions
