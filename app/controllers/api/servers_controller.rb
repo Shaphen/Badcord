@@ -19,7 +19,7 @@ class Api::ServersController < ApplicationController
     if @server.save
       render :show
     else
-      render json: ["The extra effort to delete even the default name results in nothing. RIP"], status: 422
+      render json: ["Thought you'd get away with that, huh?"], status: 422
     end
   end
 
