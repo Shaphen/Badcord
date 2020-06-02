@@ -24,13 +24,13 @@ class ChannelChat extends React.Component {
     App.cable.subscriptions.create(
       { channel: "ChatChannel", channelId: channelId },
       {
-        received: data => {
+        received: message => {
           this.setState({
-            messages: this.state.messages.concat(data)
+            messages: this.state.messages.concat(message)
           });
         },
-        speak: function(data) {
-          return this.perform("speak", data)
+        speak: function(message) {
+          return this.perform("speak", message)
         }
       }
     );
@@ -50,7 +50,7 @@ class ChannelChat extends React.Component {
   
   render() {
     let currentChannel = this.props.channels[this.props.match.params.channelId]
-    let nameDisplay = currentChannel?.name // ? currentChannel.name : null
+    let nameDisplay = currentChannel?.name // same as currentChannel ? currentChannel.name : null
     let messageList;
     if (currentChannel) {
       let filteredMessages = this.props.messages.concat(this.state.messages).filter(message => {
