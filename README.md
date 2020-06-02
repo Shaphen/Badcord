@@ -45,13 +45,13 @@ The fronend component for the chat system then grabs this organized information 
 App.cable.subscriptions.create(
   { channel: "ChatChannel" },
   {
-     received: data => {
+     received: message => {
        this.setState({
-         messages: this.state.messages.concat(data.message)
+         messages: this.state.messages.concat(message)
        });
      },
-     speak: function(data) {
-       return this.perform("speak", data)
+     speak: function(message) {
+       return this.perform("speak", message)
      }
    }
 );
