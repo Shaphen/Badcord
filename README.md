@@ -31,12 +31,12 @@ Users are able to chat in real-time with each other through server channels.
 Live chat is the primary feature of this application. It utilizes Rails Action Cable to allow users to subscribe to a chat channel that constantly scans for and organizes new information to broadcast back to all known subscribers.
 ```ruby
 def subscribed
-  stream_for "chat_channel" # @channel
+  stream_for "chat_channel"
 end
 
 def speak(data)
-  message = ChannelMessage.create(body: data['message'])
-  socket = { message: message.body }
+  message = ChannelMessage.create(body: data['message'], author_id: data["authorId"], channel_id: data["channelId"])
+  socket = { body: message.body, author_id: message.author_id, channel_id: message.channel_id }
   ChatChannel.broadcast_to('chat_channel', socket)
 end
 ```
