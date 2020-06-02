@@ -145,6 +145,9 @@
 }
 
 #user-logout-container p {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   color: white;
   padding: 20px;
 }

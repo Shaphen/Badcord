@@ -14,17 +14,21 @@ Server.create!([
   {name: "Extra Thicc Trashbags", owner_id: User.first.id}, #masterchef
   {name: "Peaches and Gravy Team", owner_id: User.first.id}, #masterchef
   {name: "Obama Sama Lama", owner_id: User.fourth.id}, #tsunderezan
-  {name: "Secret Cave Goats", owner_id: User.second.id} #TAwalker
+  {name: "Secret Cave Goats", owner_id: User.second.id} #TAVanessa
 ])
 
 ServerMember.create!([
-  {member_id: User.first.id, server_id: Server.third.id},
   {member_id: User.first.id, server_id: Server.fourth.id},
+  {member_id: User.first.id, server_id: Server.first.id},
   {member_id: User.second.id, server_id: Server.first.id},
   {member_id: User.third.id, server_id: Server.first.id},
   {member_id: User.fourth.id, server_id: Server.first.id},
+  {member_id: User.first.id, server_id: Server.second.id},
+  {member_id: User.second.id, server_id: Server.second.id},
   {member_id: User.third.id, server_id: Server.second.id},
   {member_id: User.fourth.id, server_id: Server.second.id},
+  {member_id: User.first.id, server_id: Server.third.id},
+  {member_id: User.fourth.id, server_id: Server.third.id},
   {member_id: User.third.id, server_id: Server.fourth.id},
   {member_id: User.fourth.id, server_id: Server.fourth.id}
 ])
