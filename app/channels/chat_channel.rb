@@ -1,6 +1,6 @@
 class ChatChannel < ApplicationCable::Channel
   def subscribed
-    stream_for "chat_channel" # @channel
+    stream_for "chat_channel"
   end
 
   def speak(data)
