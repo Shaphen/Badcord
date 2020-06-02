@@ -8,6 +8,9 @@
 }
 
 #channel-chat-header {
+  position: absolute;
+  width: 100%;
+  background: #36393f;
   display: flex;
   height: 48px;
   color: white;
@@ -53,7 +56,7 @@
 
 #members-list-icon {
   opacity: 0.5;
-  padding: 13px 20px 10px 5px;
+  padding: 13px 340px 10px 5px;
   transition: opacity 0.3s;
   cursor: pointer;
 }
@@ -69,11 +72,12 @@
   justify-content: flex-end;
   overflow: scroll;
   color: white;
-  padding: 5px;
+  padding: 50px 5px 5px;
 }
 
 #chat-box-welcome {
   height: 100px;
+  margin: 15px 0px;
 }
 
 #welcome-text-main {
@@ -144,12 +148,13 @@
 }
 
 #chat-seperator {
-  height: 92.5%;
+  height: 100%;
   display: flex;
 }
 
 #members-box {
   width: 310px;
+  padding-top: 50px;
   background: #2f3136;
 }
 
@@ -157,21 +162,20 @@
   display: flex;
   align-items: center;
   margin: 10px 12px;
+  opacity: 0.5;
+  transition: opacity 0.2s;
 }
 
 #members-default-logo {
   width: 25px;
   padding-right: 14px;
-  opacity: 0.5;
 }
 
 #member-username {
   color: white;
-  opacity: 0.6;
   cursor: default;
-  transition: opacity 0.2s;
 }
 
-#member-username:hover {
+#member-bar:hover {
   opacity: 1;
 }

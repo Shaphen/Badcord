@@ -50,7 +50,7 @@ class ChannelChat extends React.Component {
   
   render() {
     let currentChannel = this.props.channels[this.props.match.params.channelId]
-    let nameDisplay = currentChannel ? currentChannel.name : null
+    let nameDisplay = currentChannel?.name // ? currentChannel.name : null
     let messageList;
     if (currentChannel) {
       let filteredMessages = this.props.messages.concat(this.state.messages).filter(message => {
@@ -131,12 +131,13 @@ class ChannelChat extends React.Component {
                 <div key={idx} id="member-bar">
                   <img id="members-default-logo" src={window.logo_head_white} />
                   <p id="member-username">
-                    { member.username }
+                    { member?.username }
                   </p>
                 </div>
               )) : null
             }
           </div>
+          <div id="filler" />
         </div>
       </div>
     )
