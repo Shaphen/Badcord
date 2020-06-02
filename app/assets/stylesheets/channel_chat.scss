@@ -137,7 +137,7 @@
   font-weight: 400;
 }
 
-#message-deafult-logo {
+#message-default-logo {
   width: 40px;
   padding-right: 14px;
   opacity: 0.5;
@@ -151,4 +151,27 @@
 #members-box {
   width: 310px;
   background: #2f3136;
+}
+
+#member-bar {
+  display: flex;
+  align-items: center;
+  margin: 10px 12px;
+}
+
+#members-default-logo {
+  width: 25px;
+  padding-right: 14px;
+  opacity: 0.5;
+}
+
+#member-username {
+  color: white;
+  opacity: 0.6;
+  cursor: default;
+  transition: opacity 0.2s;
+}
+
+#member-username:hover {
+  opacity: 1;
 }

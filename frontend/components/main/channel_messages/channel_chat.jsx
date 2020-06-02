@@ -59,7 +59,7 @@ class ChannelChat extends React.Component {
       messageList = filteredMessages.map((message, idx) => {
         return (
           <div key={idx} id="new-message">
-            <img id="message-deafult-logo" src={window.logo_head_white} />
+            <img id="message-default-logo" src={window.logo_head_white} />
             <div id="message-content-box">
               <p id="sender-name">{this.props.users[message.author_id].username}</p>
               <p id="sender-message">{message.body}</p>
@@ -126,15 +126,16 @@ class ChannelChat extends React.Component {
             </div>
           </div>
           <div id="members-box">
-            <ul>
-              {
-                this.props.members.map(member => (
-                  <li>
+            {
+              this.props.members.length ? this.props.members.map((member, idx) => (
+                <div key={idx} id="member-bar">
+                  <img id="members-default-logo" src={window.logo_head_white} />
+                  <p id="member-username">
                     { member.username }
-                  </li>
-                ))
-              }
-            </ul>
+                  </p>
+                </div>
+              )) : null
+            }
           </div>
         </div>
       </div>
