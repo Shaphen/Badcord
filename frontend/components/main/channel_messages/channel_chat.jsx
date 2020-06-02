@@ -77,51 +77,64 @@ class ChannelChat extends React.Component {
           <p id="channel-chat-header-name">{ nameDisplay }</p>
           <p id="members-list-icon"><BsFillPersonLinesFill size={ 22 } /></p>
         </div>
-        <div id="channel-chat-box">
-          <div id="chat-box">
-            <div id="message-list">
-              <div id="chat-box-welcome">
-                <p id="welcome-text-main">Welcome to #{nameDisplay}!</p>
-                <p id="welcome-text-sub">This is the start of the #{nameDisplay} channel</p>
-                <Modal
-                  isOpen={this.state.showEditModal}
-                  contentLabel="Delete Server Modal"
-                  onRequestClose={this.handleCloseEditModal}
-                  style={{
-                    content: {
-                      top: '50%',
-                      left: '50%',
-                      right: '0',
-                      bottom: '0',
-                      marginLeft: "-245px",
-                      marginTop: "-175px",
-                      overflow: "hidden",
-                      marginTop: "-170px",
-                      width: "410px",
-                      height: "220px",
-                      backgroundColor: "#36393f",
-                      border: "none",
-                      color: "white"
-                    },
-                    overlay: {
-                      position: 'fixed',
-                      backgroundColor: 'rgba(0,0,0,0.7)',
-                      zIndex: '50'
-                    }
-                  }}
-                >
-                  <EditChannelContainer
-                    channelName={currentChannel ? currentChannel.name : null}
-                    channelId={currentChannel ? currentChannel.id : null}
-                    closeModal={this.handleCloseEditModal}
-                  />
-                </Modal>
-                <label id="welcome-text-edit-channel" onClick={this.handleOpenEditModal}>Edit Channel</label>
+        <div id="chat-seperator">
+          <div id="channel-chat-box">
+            <div id="chat-box">
+              <div id="message-list">
+                <div id="chat-box-welcome">
+                  <p id="welcome-text-main">Welcome to #{nameDisplay}!</p>
+                  <p id="welcome-text-sub">This is the start of the #{nameDisplay} channel</p>
+                  <Modal
+                    isOpen={this.state.showEditModal}
+                    contentLabel="Delete Server Modal"
+                    onRequestClose={this.handleCloseEditModal}
+                    style={{
+                      content: {
+                        top: '50%',
+                        left: '50%',
+                        right: '0',
+                        bottom: '0',
+                        marginLeft: "-245px",
+                        marginTop: "-175px",
+                        overflow: "hidden",
+                        marginTop: "-170px",
+                        width: "410px",
+                        height: "220px",
+                        backgroundColor: "#36393f",
+                        border: "none",
+                        color: "white"
+                      },
+                      overlay: {
+                        position: 'fixed',
+                        backgroundColor: 'rgba(0,0,0,0.7)',
+                        zIndex: '50'
+                      }
+                    }}
+                  >
+                    <EditChannelContainer
+                      channelName={currentChannel ? currentChannel.name : null}
+                      channelId={currentChannel ? currentChannel.id : null}
+                      closeModal={this.handleCloseEditModal}
+                    />
+                  </Modal>
+                  <label id="welcome-text-edit-channel" onClick={this.handleOpenEditModal}>Edit Channel</label>
+                </div>
+                { messageList }
+                <div ref={this.bottom} />
               </div>
-              { messageList }
-              <div ref={this.bottom} />
+              <ChatForm authorId={this.props.currentUser.id} channel={currentChannel} />
             </div>
-            <ChatForm authorId={this.props.currentUser.id} channel={currentChannel} />
+          </div>
+          <div id="members-box">
+            <ul>
+              {
+                this.props.members.map(member => (
+                  <li>
+                    { member.username }
+                  </li>
+                ))
+              }
+            </ul>
           </div>
         </div>
       </div>

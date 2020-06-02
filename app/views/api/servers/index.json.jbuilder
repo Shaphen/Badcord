@@ -1,7 +1,7 @@
 
 @servers.each do |server|
   json.set! server.id do
-    json.extract! server, :id, :name
+    json.extract! server, :id, :name, :member_ids
     if server.photo.attached?
       json.photoUrl url_for(server.photo)
     end
