@@ -29,6 +29,7 @@ ServerMember.create!([
   {member_id: User.fourth.id, server_id: Server.second.id},
   {member_id: User.first.id, server_id: Server.third.id},
   {member_id: User.fourth.id, server_id: Server.third.id},
+  {member_id: User.second.id, server_id: Server.fourth.id},
   {member_id: User.third.id, server_id: Server.fourth.id},
   {member_id: User.fourth.id, server_id: Server.fourth.id}
 ])

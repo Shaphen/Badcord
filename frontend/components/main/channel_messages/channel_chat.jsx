@@ -34,6 +34,7 @@ class ChannelChat extends React.Component {
         }
       }
     );
+    // this.props.getServer(parseInt(this.props.match.params.serverId))
   }
 
   componentDidUpdate() {
@@ -50,6 +51,7 @@ class ChannelChat extends React.Component {
   
   render() {
     let currentChannel = this.props.channels[this.props.match.params.channelId]
+    let currentServer = this.props.servers[this.props.match.params.serverId]
     let nameDisplay = currentChannel?.name // same as currentChannel ? currentChannel.name : null
     let messageList;
     if (currentChannel) {
@@ -133,6 +135,9 @@ class ChannelChat extends React.Component {
                   <p id="member-username">
                     { member?.username }
                   </p>
+                  {
+                    member?.id == currentServer?.owner_id ? <p id="server-owner-title">(owner)</p> : null
+                  }
                 </div>
               )) : null
             }
