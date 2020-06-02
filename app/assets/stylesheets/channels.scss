@@ -293,3 +293,26 @@
 #chat-room-text-intro:hover {
   opacity: 1;
 }
+
+#update-channel-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #2f3136;
+  margin-top: 25px;
+  height: 78px;
+  width: 450px;
+  right: 0px;
+  position: absolute;
+}
+
+#update-channel-name-box {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px 10px 10px 9px;
+}
+
+#update-channel-text-main {
+  padding: 4px;
+  font-weight: 600;
+}

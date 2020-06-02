@@ -24,16 +24,16 @@ class ServerDisplay extends React.Component {
   }
 
   handleOpenDeleteModal() {
-    this.setState({ showDeleteModal: true })
+    this.setState({ showDeleteModal: true });
   }
 
   handleCloseDeleteModal(e) {
     e.stopPropagation();
-    this.setState({ showDeleteModal: false })
+    this.setState({ showDeleteModal: false });
   }
 
   handleOpenUpdateModal() {
-    this.setState({ showEditModal: true })
+    this.setState({ showEditModal: true });
   }
 
   handleCloseUpdateModal(e) {

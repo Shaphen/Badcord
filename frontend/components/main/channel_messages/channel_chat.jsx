@@ -1,5 +1,7 @@
 import React from 'react';
 import ChatForm from './chat_form';
+import Modal from 'react-modal'
+import EditChannelContainer from '../channels/channel_CRUD/edit_channel_container';
 import { BsFillPersonLinesFill } from 'react-icons/bs'
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -9,9 +11,12 @@ class ChannelChat extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      messages: []
+      messages: [],
+      showEditModal: false
     };
     this.bottom = React.createRef();
+    this.handleCloseEditModal = this.handleCloseEditModal.bind(this);
+    this.handleOpenEditModal = this.handleOpenEditModal.bind(this);
   }
 
   componentDidMount() {
@@ -33,6 +38,14 @@ class ChannelChat extends React.Component {
 
   componentDidUpdate() {
     this.bottom.current.scrollIntoView(); // ({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+  }
+
+  handleOpenEditModal() {
+    this.setState({ showEditModal: true });
+  }
+
+  handleCloseEditModal() {
+    this.setState({ showEditModal: false });
   }
   
   render() {
@@ -70,7 +83,40 @@ class ChannelChat extends React.Component {
               <div id="chat-box-welcome">
                 <p id="welcome-text-main">Welcome to #{nameDisplay}!</p>
                 <p id="welcome-text-sub">This is the start of the #{nameDisplay} channel</p>
-                <label id="welcome-text-edit-channel">Edit Channel</label>
+                <Modal
+                  isOpen={this.state.showEditModal}
+                  contentLabel="Delete Server Modal"
+                  onRequestClose={this.handleCloseEditModal}
+                  style={{
+                    content: {
+                      top: '50%',
+                      left: '50%',
+                      right: '0',
+                      bottom: '0',
+                      marginLeft: "-245px",
+                      marginTop: "-175px",
+                      overflow: "hidden",
+                      marginTop: "-170px",
+                      width: "410px",
+                      height: "220px",
+                      backgroundColor: "#36393f",
+                      border: "none",
+                      color: "white"
+                    },
+                    overlay: {
+                      position: 'fixed',
+                      backgroundColor: 'rgba(0,0,0,0.7)',
+                      zIndex: '50'
+                    }
+                  }}
+                >
+                  <EditChannelContainer
+                    channelName={currentChannel ? currentChannel.name : null}
+                    channelId={currentChannel ? currentChannel.id : null}
+                    closeModal={this.handleCloseEditModal}
+                  />
+                </Modal>
+                <label id="welcome-text-edit-channel" onClick={this.handleOpenEditModal}>Edit Channel</label>
               </div>
               { messageList }
               <div ref={this.bottom} />

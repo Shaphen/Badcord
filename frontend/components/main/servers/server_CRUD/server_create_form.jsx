@@ -59,7 +59,7 @@ class ServerCreateForm extends React.Component {
     return (
       <div id="server-form-container">
         <div id="new-server-description">
-          <p>By creating a server, you will have access to free text chat to make all your mischievous plans</p>
+          <p>By creating a server, you will have access to free text chats to make all of your mischievous plans</p>
         </div>
         <form onSubmit={ this.handleSubmit }>
           <div id="server-name-container2">
