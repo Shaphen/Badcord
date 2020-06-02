@@ -7,6 +7,7 @@ class EditChannelForm extends React.Component {
       id: this.props.channelId,
       name: this.props.channelName
     }
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(type) {

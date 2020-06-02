@@ -21,7 +21,7 @@ class Api::ChannelsController < ApplicationController
   end
 
   def update
-    @channel = Channel.find(params[:channel][:name])
+    @channel = Channel.find_by(id: params[:id])
     if @channel.update(channel_params)
       render :show
     else
