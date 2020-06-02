@@ -16,16 +16,20 @@ class Api::ChannelsController < ApplicationController
     if @channel.save
       render :show
     else
-      render json: @channel.errors.full_messages, status: 422
+      render json: ["We can't call it the 'nothing' channel. Unless you name it that. Then we will"], status: 422
     end
   end
 
   def update
-    @channel = Channel.find_by(id: params[:id])
-    if @channel.update(channel_params)
-      render :show
+    @channel = current_user.owned_channels.find_by(id: params[:id])
+    if @channel
+      if @channel.update(channel_params)
+        render :show
+      else
+        render json: ["I see we have a rebellious user today"], status: 422
+      end
     else
-      render json: @channel.errors.full_messages, status: 422
+      render json: ["Don't change other people's channel names just cause they suck at naming"], status: 422
     end
   end
 
@@ -34,7 +38,7 @@ class Api::ChannelsController < ApplicationController
     if @channel
       @channel.destroy
     else
-      render json: ["Only the owner can delete channels"], status: 404
+      render json: ["Only the owner can delete channels. Duh."], status: 404
     end
   end
 

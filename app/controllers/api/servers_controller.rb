@@ -19,18 +19,17 @@ class Api::ServersController < ApplicationController
     if @server.save
       render :show
     else
-      render json: ["The extra effort to delete even the default name got you nothing. RIP"], status: 422
+      render json: ["The extra effort to delete even the default name results in nothing. RIP"], status: 422
     end
   end
 
   def update
     @server = current_user.owned_servers.find_by(id: params[:id])
-    # debugger
     if @server
       if @server.update(server_params)
         render :show
       else
-        render json: ["Really? A blank name?"], status: 422
+        render json: ["Really? A blank name? No."], status: 422
       end
     else
       render json: ["How would you feel if I tried to change YOUR hideout? Yeah, didn't think so"], status: 404
