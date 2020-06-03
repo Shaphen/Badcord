@@ -65,6 +65,10 @@
   opacity: 0.8;
 }
 
+#members-list-icon:focus ~ #members-box {
+  background: green;
+}
+
 #chat-box {
   height: 100%;
   display: flex;
