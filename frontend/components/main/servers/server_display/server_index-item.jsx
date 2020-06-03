@@ -13,9 +13,11 @@ const ServerIndexItem = (props) => {
   return (
     <div id="server-box">
       <Link to={`/channels/${props.server.id}/${props.server.channel_ids[0] ? props.server.channel_ids[0] : null }`} className="server-link">
-        <p id="server-button2">{props.server.photoUrl ? <img id="server-img" src={props.server.photoUrl} alt=""/> : name }</p>
+        <div id="server-button2">
+          <p id="server-name-abb">{props.server.photoUrl ? <img id="server-img" src={props.server.photoUrl} alt="" /> : name}</p>
+        </div>
       </Link>
-      <p id="server-name-display">{props.server.name}</p>
+      <div id="server-name-display">{props.server.name}</div>
     </div>
   )
 }

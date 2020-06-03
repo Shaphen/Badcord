@@ -32,7 +32,7 @@
 }
 
 #server-name-display {
-  background: #7289DA;
+  background: black;
   color: white;
   font-weight: 600;
   position: absolute;
@@ -91,6 +91,13 @@
   cursor: pointer;
 }
 
+#server-name-abb {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 60px;
+}
+
 .server-link:hover + #server-name-display {
   display: block;
   opacity: 1;
@@ -108,7 +115,7 @@
 }
 
 #home-text-display {
-  background: #7289DA;
+  background: black;
   color: white;
   font-weight: 600;
   position: absolute;
@@ -179,7 +186,7 @@
 }
 
 #add-server-text {
-  background: #7289DA;
+  background: black;
   color: white;
   font-weight: 600;
   position: absolute;
@@ -266,7 +273,7 @@
 }
 
 #join-server-text {
-  background: #7289DA;
+  background: black;
   color: white;
   font-weight: 600;
   position: absolute;

@@ -5,9 +5,10 @@ class ServerCreateForm extends React.Component {
     super(props);
     this.state = {
       name: "",
-      owner_id: 0,
+      ownerId: this.props.currentUser.id,
       photo: null,
       photoPreview: null,
+      inviteCode: Math.random().toString(18).toUpperCase().slice(5),
       loading: false
     }
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,10 +26,11 @@ class ServerCreateForm extends React.Component {
     this.refs.btn.setAttribute("disabled", "disabled");
     const formData = new FormData();
     formData.append('server[name]', this.state.name);
-    formData.append('server[owner_id]', this.state.owner_id);
+    formData.append('server[owner_id]', this.state.ownerId);
     if (this.state.photo) {
       formData.append('server[photo]', this.state.photo);
     }
+    formData.append('server[invite_code]', this.state.inviteCode)
     this.props.createServer(formData)
       .then((res) => res ? this.props.history.push(`/channels/${res.server.server.id}/${res.server.server.channel_ids[0]}`) : this.props.history.push(`/channels/@me`))
       .then(() => this.props.closeModal())
