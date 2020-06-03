@@ -6,6 +6,7 @@ import Modal from 'react-modal';
 import { GiEntryDoor } from 'react-icons/gi'
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ServerJoinContainer from '../server_CRUD/server_join_container';
 
 toast.configure();
 class ServerIndex extends React.Component {
@@ -117,13 +118,7 @@ class ServerIndex extends React.Component {
                 }
               }}
             >
-              <h1 id="invite-grunts-title">Partners in Crime</h1>
-              <div id="invite-code-box">
-                <p id="invite-code-title">Secret Code</p>
-                <div id="invite-code-container" tabIndex="1">
-                  <p id="invite-code">Enter code here</p>
-                </div>
-              </div>
+              <ServerJoinContainer />
               <label id="invite-grunts-close" onClick={this.toggleJoinModal}>DONE</label>
             </Modal>
         </div>
