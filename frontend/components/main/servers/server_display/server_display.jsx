@@ -1,5 +1,8 @@
 import React from 'react';
 import Modal from 'react-modal';
+import { FaRegHandshake } from 'react-icons/fa';
+import { FiEdit2 } from 'react-icons/fi';
+import { GiBurningDot } from 'react-icons/gi';
 import ServerUpdateContainer from '../server_CRUD/server_update_container';
 import ChannelIndexContainer from '../../channels/channel_display/channel_index_container';
 
@@ -88,7 +91,7 @@ class ServerDisplay extends React.Component {
           >
             <div id="invite-grunts-box" onClick={this.handleOpenInviteModal}>
               <label id="invite-grunts-button">Invite Partners</label>
-              <label>😈</label>
+              <label><FaRegHandshake size={22} color="white" opacity={0.9} /></label>
             </div>
             <Modal
               isOpen={this.state.showInviteModal}
@@ -125,7 +128,7 @@ class ServerDisplay extends React.Component {
             </Modal>
             <div id="edit-server-box" onClick={this.handleOpenUpdateModal}>
               <label id="edit-server-button">Modify Hideout</label>
-              <label>✏️</label>
+              <label>✏<FiEdit2 size={21} color="white" opacity={0.9} /></label>
             </div>
             <Modal
               isOpen={this.state.showEditModal}
@@ -159,8 +162,8 @@ class ServerDisplay extends React.Component {
               <label id="new-server-close2" onClick={this.handleCloseUpdateModal}>BACK</label>
             </Modal>
             <div id="delete-server-box" onClick={(e) => this.deleteServer(e)}>
-              <label id="delete-server-button">Burn Down Hideout</label>
-              <label id="lighten-icon">🔥</label>
+              <label id="delete-server-button">Destroy Hideout</label>
+              <label id="lighten-icon"><GiBurningDot size={23} color="white" opacity={0.9} /></label>
             </div>
           </Modal>
         </div>
