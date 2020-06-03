@@ -24,6 +24,14 @@ export const updateServer = server => $.ajax({
   data: { server }
 });
 
+export default joinServer = inviteCode => {
+  return $.ajax({
+    method: 'POST',
+    url: 'api/servers/join',
+    data: { inviteCode }
+  })
+}
+
 export const deleteServer = serverId => (
   $.ajax({
     url: `/api/servers/${serverId}`,

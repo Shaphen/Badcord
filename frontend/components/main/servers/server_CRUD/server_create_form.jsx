@@ -10,7 +10,7 @@ class ServerCreateForm extends React.Component {
       photoPreview: null,
       inviteCode: Math.random().toString(18).toUpperCase().slice(5),
       loading: false
-    }
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
     this.handleImageClick = this.handleImageClick.bind(this);

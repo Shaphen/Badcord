@@ -119,7 +119,7 @@ class ServerIndex extends React.Component {
               }}
             >
               <ServerJoinContainer />
-              <label id="invite-grunts-close" onClick={this.toggleJoinModal}>DONE</label>
+              <label id="join-server-close" onClick={this.toggleJoinModal}>close</label>
             </Modal>
         </div>
       </div>
