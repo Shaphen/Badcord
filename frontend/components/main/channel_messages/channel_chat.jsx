@@ -144,7 +144,7 @@ class ChannelChat extends React.Component {
                     { member?.username }
                   </p>
                   {
-                    member?.id == currentServer?.owner_id ? <p id="server-owner-title">(owner)</p> : null
+                    member?.id == currentServer?.owner_id ? <p id="server-owner-title">( owner )</p> : null
                   }
                 </div>
               )) : null
