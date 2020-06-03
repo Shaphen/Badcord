@@ -16,6 +16,7 @@
 
 #new-server-description p {
   color: #747f8d;
+  cursor: default;
 }
 
 #server-name-container {
@@ -117,6 +118,11 @@
   border: none;
   border-bottom: 2px solid #e3e5e8;
   cursor: text;
+  transition: border-color 0.2s;
+}
+
+#server-name-input2:focus {
+  border-color: #7289DA;
 }
 
 #server-name-title {
@@ -143,7 +149,9 @@
   width: 90%;
   height: 20px;
   padding: 10px;
+  margin: 4px 0px;
   cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 #delete-server-button {
@@ -164,8 +172,9 @@
   width: 90%;
   height: 20px;
   padding: 10px;
-  margin-bottom: 5px;
+  margin: 4px 0px;
   cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 #edit-server-button {
@@ -178,6 +187,56 @@
 
 #edit-server-box:hover {
   background-color: #242529;
+}
+
+#invite-grunts-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  height: 20px;
+  padding: 10px;
+  margin: 4px 0px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#invite-grunts-box:hover {
+  background-color: #242529;
+}
+
+#invite-grunts-button {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  opacity: 0.7;
+}
+
+#invite-grunts-close {
+  display: flex;
+  position: absolute;
+  top: 200px;
+  left: 0px;
+  margin: 0px 199px;
+  text-align: right;
+  color: #979faa;
+  font-size: 15px;
+  transition: color .3s;
+}
+
+#invite-grunts-close:hover {
+  color: #676e79;
+  cursor: pointer;
+}
+
+#invite-grunts-title {
+  color: #7289DA;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 10px 20px 15px;
+  cursor: default;
 }
 
 #lighten-icon {
@@ -204,4 +263,41 @@
 
 .btn:disabled {
   background-color: red;
+}
+
+#invite-code-box {
+  width: 100%;
+  height: 200px;
+}
+
+#invite-code-title {
+  color: white;
+  opacity: 0.5;
+  margin: 40px 30px 20px;
+  font-size: 18px;
+  text-align: center;
+  cursor: default;
+}
+
+#invite-code-container {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0,0,0,0.3);
+  color: rgb(220, 221, 222);
+  font-size: 15px;
+  padding: 8px;
+  margin-top: 25px;
+  text-align: center;
+  padding-left: 10px;
+  border-radius: 3px;
+  width: 380px;
+  outline: none;
+  transition: border-color .2s;
+}
+
+#invite-code-container:focus {
+  border-color: #7289DA;
+}
+
+#invite-code {
+
 }

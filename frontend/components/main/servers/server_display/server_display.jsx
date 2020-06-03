@@ -8,12 +8,15 @@ class ServerDisplay extends React.Component {
     super(props);
     this.state = {
       showDeleteModal: false,
-      showEditModal: false
+      showEditModal: false,
+      showInviteModal: false
     };
     this.handleOpenDeleteModal = this.handleOpenDeleteModal.bind(this);
     this.handleCloseDeleteModal = this.handleCloseDeleteModal.bind(this);
     this.handleOpenUpdateModal = this.handleOpenUpdateModal.bind(this);
     this.handleCloseUpdateModal = this.handleCloseUpdateModal.bind(this);
+    this.handleOpenInviteModal = this.handleOpenInviteModal.bind(this);
+    this.handleCloseInviteModal = this.handleCloseInviteModal.bind(this);
   }
 
   deleteServer(e) {
@@ -41,6 +44,16 @@ class ServerDisplay extends React.Component {
     this.setState({ showEditModal: false })
   }
 
+  handleOpenInviteModal(e) {
+    e.stopPropagation();
+    this.setState({ showInviteModal: true })
+  }
+
+  handleCloseInviteModal(e) {
+    e.stopPropagation();
+    this.setState({ showInviteModal: false })
+  }
+
   render() {
     let currentServer = this.props.servers[this.props.match.params.server_id]
     const modalPresence = currentServer ? this.handleOpenDeleteModal : null
@@ -63,7 +76,7 @@ class ServerDisplay extends React.Component {
                 border: 'black',
                 padding: '7px',
                 width: '210px',
-                height: '85px',
+                height: '134px',
                 background: '#18191c'
               },
               overlay: {
@@ -73,6 +86,43 @@ class ServerDisplay extends React.Component {
               }
             }}
           >
+            <div id="invite-grunts-box" onClick={this.handleOpenInviteModal}>
+              <label id="invite-grunts-button">Invite Partners</label>
+              <label>😈</label>
+            </div>
+            <Modal
+              isOpen={this.state.showInviteModal}
+              contentLabel="Invite Grunts Modal"
+              onRequestClose={this.handleCloseInviteModal}
+              style={{
+                content: {
+                  top: '50%',
+                  left: '50%',
+                  right: '0',
+                  bottom: '0',
+                  marginLeft: "-245px",
+                  marginTop: "-175px",
+                  width: '400px',
+                  height: '210px',
+                  background: 'rgb(54, 57, 63)',
+                  border: '1px solid rgb(54, 57, 63)'
+                },
+                overlay: {
+                  position: 'fixed',
+                  backgroundColor: 'rgba(0,0,0,0.7)',
+                  zIndex: '50'
+                }
+              }}
+            >
+              <h1 id="invite-grunts-title">Partners in Crime</h1>
+              <div id="invite-code-box">
+                <p id="invite-code-title">Secret Code</p>
+                <div id="invite-code-container" contentEditable tabIndex="1">
+                  <p id="invite-code">{ currentServer?.invite_code }</p>
+                </div>
+              </div>
+              <label id="invite-grunts-close" onClick={this.handleCloseInviteModal}>DONE</label>
+            </Modal>
             <div id="edit-server-box" onClick={this.handleOpenUpdateModal}>
               <label id="edit-server-button">Modify Hideout</label>
               <label>✏️</label>
