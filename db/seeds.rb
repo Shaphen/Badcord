@@ -11,10 +11,10 @@ User.create!([
   ])
   
 Server.create!([
-  {name: "Extra Thicc Trashbags", owner_id: User.first.id, invite_code: Math.random().toString(18).toUpperCase().slice(5)}, #masterchef
-  {name: "Peaches and Gravy Team", owner_id: User.first.id, invite_code: Math.random().toString(18).toUpperCase().slice(5)}, #masterchef
-  {name: "Obama Sama Lama", owner_id: User.fourth.id, invite_code: Math.random().toString(18).toUpperCase().slice(5)}, #tsunderezan
-  {name: "Secret Cave Goats", owner_id: User.second.id, invite_code: Math.random().toString(18).toUpperCase().slice(5)} #TAVanessa
+  {name: "Extra Thicc Trashbags", owner_id: User.first.id, invite_code: SecureRandom.hex(5).upcase}, #masterchef
+  {name: "Peaches and Gravy Team", owner_id: User.first.id, invite_code: SecureRandom.hex(5).upcase}, #masterchef
+  {name: "Obama Sama Lama", owner_id: User.fourth.id, invite_code: SecureRandom.hex(5).upcase}, #tsunderezan
+  {name: "Secret Cave Goats", owner_id: User.second.id, invite_code: SecureRandom.hex(5).upcase} #TAVanessa
 ])
 
 ServerMember.create!([

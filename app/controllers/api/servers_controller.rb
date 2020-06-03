@@ -38,6 +38,17 @@ class Api::ServersController < ApplicationController
     end
   end
 
+  def join
+    @server = Server.find_by(invite_code: params[:inviteCode])
+
+    if @server
+      ServerMember.create({member_id: current_user.id, server_id: @server.id})
+      render :show
+    else
+      render json: ["Incorrect code. big womp"]
+    end
+  end
+
   def destroy
     @server = current_user.owned_servers.find_by(id: params[:id])
     if @server
@@ -49,6 +60,6 @@ class Api::ServersController < ApplicationController
 
   private
   def server_params
-    params.require(:server).permit(:name, :owner_id, :photo)
+    params.require(:server).permit(:name, :owner_id, :photo, :invite_code)
   end
 end
