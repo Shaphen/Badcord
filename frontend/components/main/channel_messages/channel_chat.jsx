@@ -130,7 +130,7 @@ class ChannelChat extends React.Component {
                   <label id="welcome-text-edit-channel" onClick={this.handleOpenEditModal}>Edit Channel</label>
                 </div>
                 { messageList }
-                <div ref={this.bottom} />
+                <div ref={this.bottom} id="spacer"/>
               </div>
               <ChatForm authorId={this.props.currentUser.id} channel={currentChannel} />
             </div>
