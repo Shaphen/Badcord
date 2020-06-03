@@ -118,7 +118,7 @@ class ServerIndex extends React.Component {
                 }
               }}
             >
-              <ServerJoinContainer />
+              <ServerJoinContainer closeModal={this.toggleJoinModal} />
               <label id="join-server-close" onClick={this.toggleJoinModal}>close</label>
             </Modal>
         </div>

@@ -16,7 +16,6 @@ class Api::ServersController < ApplicationController
     @server = Server.new(server_params)
     @server.photo.attach(params[:server][:photo]) if params[:server][:photo]
 
-    debugger
     if @server.save
       ServerMember.create({member_id: @server.owner_id, server_id: @server.id})
       Channel.create({name: "general", server_id: @server.id})
@@ -41,7 +40,8 @@ class Api::ServersController < ApplicationController
 
   def join
     @server = Server.find_by(invite_code: params[:inviteCode])
-
+    debugger
+    
     if @server
       ServerMember.create({member_id: current_user.id, server_id: @server.id})
       render :show

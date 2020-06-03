@@ -4,14 +4,23 @@ class ServerJoinForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      invite_code: ""
+      inviteCode: ""
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(type) {
     return e => {
       this.setState({ [type]: e.target.value })
+      console.log(this.state.inviteCode)
     }
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const server = Object.assign({}, this.state)
+    this.props.joinServer(server)
+      .then(() => this.props.closeModal(e))
   }
 
   render(){
@@ -21,7 +30,7 @@ class ServerJoinForm extends React.Component {
         <div id="join-server-box">
           <p id="invite-code-title">What's the Secret Code?</p>
           <form onSubmit={ this.handleSubmit }>
-            <input id="join-server-container" tabIndex="1" placeholder="Enter code here"></input>
+            <input id="join-server-container" tabIndex="1" placeholder="Enter code here" onChange={this.handleChange('inviteCode')}></input>
             <div id="join-server-footer">
               <button id="join-server-button">Join</button>
             </div>
