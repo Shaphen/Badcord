@@ -30,7 +30,7 @@ class ServerCreateForm extends React.Component {
       formData.append('server[photo]', this.state.photo);
     }
     this.props.createServer(formData)
-      .then((res) => this.props.history.push(`/channels/${res.server.server.id}/${res.server.server.channel_ids[0]}`))
+      .then((res) => res ? this.props.history.push(`/channels/${res.server.server.id}/${res.server.server.channel_ids[0]}`) : this.props.history.push(`/channels/@me`))
       .then(() => this.props.closeModal())
   }
 

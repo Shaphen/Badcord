@@ -11,10 +11,11 @@ class ServerIndex extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      showCreateModal: false
+      showCreateModal: false,
+      showJoinModal: false
     };
-    this.handleOpenModal = this.handleOpenModal.bind(this);
-    this.handleCloseModal = this.handleCloseModal.bind(this);
+    this.toggleCreateModal = this.toggleCreateModal.bind(this);
+    this.toggleJoinModal = this.toggleJoinModal.bind(this);
   }
 
   componentDidMount() {
@@ -23,24 +24,25 @@ class ServerIndex extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    // debugger
     if ((prevProps.servers.length) !== (this.props.servers.length)) {
       this.props.getServers();
     }
   }
 
-  handleOpenModal() {
-    this.setState({ showCreateModal: true })
+  toggleCreateModal() {
+    const prevState = this.state.showCreateModal;
+    this.setState({ showCreateModal: !prevState });
   }
 
-  handleCloseModal() {
-    // e.stopPropagation();
-    this.setState({ showCreateModal: false })
+  toggleJoinModal() {
+    const prevState = this.state.showJoinModal;
+    this.setState({ showJoinModal: !prevState });
   }
   
   render() {
     return (
       <div id="server-index">
+      <ToastContainer id="toast" position="top-center" />
         <div id="server-box">
           <Link to="/channels/@me" className="home-link">
             <img id="server-button" src={window.logo_head_white} />
@@ -56,14 +58,12 @@ class ServerIndex extends React.Component {
           }
         </ul>
         <div id="server-box">
-          <ToastContainer id="toast" position="top-center" />
-
-          <label id="new-server" onClick={this.handleOpenModal}>+</label>
+          <label id="new-server" onClick={this.toggleCreateModal}>+</label>
           <p id="add-server-text">New Hideout</p>
           <Modal
             isOpen={this.state.showCreateModal}
             contentLabel="Create Server Modal"
-            onRequestClose={this.handleCloseModal}
+            onRequestClose={this.toggleCreateModal}
             style={{
               content: {
                 top: '50%',
@@ -84,17 +84,48 @@ class ServerIndex extends React.Component {
               }
             }}
           >
-            {/* <label onClick={this.handleCloseModal} id="new-server-close">Close</label> */}
             <h1 id="new-server-title">Greed is good</h1>
-            <ServerCreateContainer closeModal={this.handleCloseModal} />
-            <label id="new-server-close" onClick={this.handleCloseModal}>BACK</label>
+            <ServerCreateContainer closeModal={this.toggleCreateModal} />
+            <label id="new-server-close" onClick={this.toggleCreateModal}>BACK</label>
           </Modal>
         </div>
-          {/* {
-            setTimeout(() => {
-              this.props.getServers()
-            }, 3000)
-          } */}
+        <div id="server-box">
+            <label id="new-server" onClick={this.toggleJoinModal}>🥔</label>
+            <p id="add-server-text">Join Hideout</p>
+            <Modal
+              isOpen={this.state.showJoinModal}
+              contentLabel="Join Hideout Modal"
+              onRequestClose={this.toggleJoinModal}
+              style={{
+                content: {
+                  top: '50%',
+                  left: '50%',
+                  right: '0',
+                  bottom: '0',
+                  marginLeft: "-245px",
+                  marginTop: "-175px",
+                  width: '400px',
+                  height: '210px',
+                  background: 'rgb(54, 57, 63)',
+                  border: '1px solid rgb(54, 57, 63)'
+                },
+                overlay: {
+                  position: 'fixed',
+                  backgroundColor: 'rgba(0,0,0,0.7)',
+                  zIndex: '50'
+                }
+              }}
+            >
+              <h1 id="invite-grunts-title">Partners in Crime</h1>
+              <div id="invite-code-box">
+                <p id="invite-code-title">Secret Code</p>
+                <div id="invite-code-container" tabIndex="1">
+                  <p id="invite-code">Enter code here</p>
+                </div>
+              </div>
+              <label id="invite-grunts-close" onClick={this.toggleJoinModal}>DONE</label>
+            </Modal>
+        </div>
       </div>
     )
   }
