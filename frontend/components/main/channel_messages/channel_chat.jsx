@@ -13,7 +13,7 @@ class ChannelChat extends React.Component {
     this.state = {
       messages: [],
       showEditModal: false,
-      active: false
+      active: true
     };
     this.bottom = React.createRef();
     this.toggleClass = this.toggleClass.bind(this);
