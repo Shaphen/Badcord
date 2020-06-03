@@ -32,7 +32,6 @@
 }
 
 #server-name-display {
-  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
   background: #7289DA;
   color: white;
   font-weight: 600;
@@ -43,7 +42,7 @@
   border-radius: 6px;
   opacity: 0;
   transition: opacity .2s;
-  z-index: 0;
+  z-index: 10;
   cursor: default;
 }
 
