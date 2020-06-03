@@ -1,5 +1,5 @@
 json.server do
-  json.extract! @server, :id, :name, :owner_id, :member_ids
+  json.extract! @server, :id, :name, :owner_id, :member_ids, :channel_ids
   if @server.photo.attached?
     json.photoURL url_for(@server.photo)
   end
