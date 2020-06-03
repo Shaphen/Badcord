@@ -36,13 +36,12 @@
   color: white;
   font-weight: 600;
   position: absolute;
-  left: 80px;
+  left: 85px;
   height: fit-content;
   padding: 8px;
   border-radius: 6px;
   opacity: 0;
   transition: opacity .2s;
-  z-index: 10;
   cursor: default;
 }
 
@@ -113,7 +112,7 @@
   color: white;
   font-weight: 600;
   position: absolute;
-  left: 80px;
+  left: 85px;
   height: fit-content;
   padding: 8px;
   border-radius: 6px;
@@ -184,13 +183,13 @@
   color: white;
   font-weight: 600;
   position: absolute;
-  left: 80px;
+  left: 85px;
   height: fit-content;
   padding: 8px;
   border-radius: 6px;
   opacity: 0;
-  transition: opacity .2s;
   z-index: 10;
+  transition: opacity .2s;
   cursor: default;
 }
 
@@ -264,4 +263,24 @@
   background-color: rgb(32, 128, 48);
   border-radius: 15px;
   cursor: pointer;
+}
+
+#join-server-text {
+  background: #7289DA;
+  color: white;
+  font-weight: 600;
+  position: absolute;
+  left: 85px;
+  height: fit-content;
+  padding: 8px;
+  border-radius: 6px;
+  opacity: 0;
+  transition: opacity .2s;
+  z-index: 10;
+  cursor: default;
+}
+
+#join-server:hover + #join-server-text {
+  display: block;
+  opacity: 1;
 }

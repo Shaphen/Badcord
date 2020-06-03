@@ -91,10 +91,8 @@ class ServerIndex extends React.Component {
           </Modal>
         </div>
         <div id="server-box">
-            <label id="join-server" onClick={this.toggleJoinModal}>
-              <GiEntryDoor size={25} color="white" />
-            </label>
-            <p id="add-server-text">Join Hideout</p>
+            <label id="join-server" onClick={this.toggleJoinModal}><GiEntryDoor size={25} color="white" /></label>
+            <p id="join-server-text">Join Hideout</p>
             <Modal
               isOpen={this.state.showJoinModal}
               contentLabel="Join Hideout Modal"
