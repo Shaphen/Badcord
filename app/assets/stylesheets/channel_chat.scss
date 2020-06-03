@@ -65,8 +65,22 @@
   opacity: 0.8;
 }
 
-#members-list-icon:focus ~ #members-box {
-  background: green;
+#member-list-text {
+  position: absolute;
+  right: 370px;
+  top: 11px;
+  color: white;
+  background: black;
+  padding: 6px;
+  width: 90px;
+  border-radius: 6px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  cursor: default;
+}
+
+#members-list-icon:hover + #member-list-text {
+  opacity: 1;
 }
 
 #chat-box {

@@ -85,6 +85,7 @@ class ChannelChat extends React.Component {
           <p id="channel-chat-header-hash">#</p>
           <p id="channel-chat-header-name">{ nameDisplay }</p>
           <div id="members-list-icon" onClick={this.toggleClass}><BsFillPersonLinesFill size={ 22 } /></div>
+          <p id="member-list-text">Member List</p>
         </div>
         <div id="chat-seperator">
           <div id="channel-chat-box">
