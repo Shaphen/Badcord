@@ -45,7 +45,19 @@ class Api::ServersController < ApplicationController
       ServerMember.create({member_id: current_user.id, server_id: @server.id})
       render :show
     else
-      render json: ["Incorrect code. big womp"]
+      render json: ["Incorrect code. big womp"], status: 422
+    end
+  end
+
+  def leave
+    @server = current_user.servers.find_by(id: params[:id])
+    @server_membership = ServerMembership.find_by(user_id: current_user.id. server_id: params[:id])
+
+    if @server && @server_membership
+      @server_membership.destroy
+      @server
+    else
+      render json: ["Could not leave server. Alternatively you can just like this server"], status: 422
     end
   end
 
