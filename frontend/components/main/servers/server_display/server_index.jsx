@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import ServerIndexItem from './server_index-item';
 import ServerCreateContainer from '../server_CRUD/server_create_container'
 import Modal from 'react-modal';
+import { GiEntryDoor } from 'react-icons/gi'
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -90,7 +91,9 @@ class ServerIndex extends React.Component {
           </Modal>
         </div>
         <div id="server-box">
-            <label id="new-server" onClick={this.toggleJoinModal}>🥔</label>
+            <label id="join-server" onClick={this.toggleJoinModal}>
+              <GiEntryDoor size={25} color="white" />
+            </label>
             <p id="add-server-text">Join Hideout</p>
             <Modal
               isOpen={this.state.showJoinModal}
