@@ -17,8 +17,8 @@ class Api::ServersController < ApplicationController
     @server.photo.attach(params[:server][:photo]) if params[:server][:photo]
 
     if @server.save
-      debugger
       ServerMember.create({member_id: @server.owner_id, server_id: @server.id})
+      Channel.create({name: "general", server_id: @server.id})
       render :show
     else
       render json: ["Thought you'd get away with that, huh?"], status: 422
