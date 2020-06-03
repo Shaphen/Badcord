@@ -16,7 +16,6 @@ class ChannelIndexItem extends React.Component {
     e.preventDefault();
     this.props.deleteChannel(this.props.channel.id)
       .then(() => this.handleCloseModal(e))
-      .then(() => this.props.history.push(`/channels/${this.props.channel.id}`))
   }
 
   handleOpenModal() {
