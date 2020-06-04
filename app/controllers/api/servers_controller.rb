@@ -40,11 +40,14 @@ class Api::ServersController < ApplicationController
 
   def join
     @server = Server.find_by(invite_code: params[:inviteCode])
-    debugger
     
     if @server
-      ServerMember.create({member_id: current_user.id, server_id: @server.id})
-      render :show
+      if current_user.servers.include?(@server)
+        render json: ["Fun fact: You're already part of this server"], status: 422
+      else
+        ServerMember.create({member_id: current_user.id, server_id: @server.id})
+        render :show
+      end
     else
       render json: ["Incorrect code. big womp"], status: 422
     end
