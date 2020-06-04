@@ -4,7 +4,6 @@ import { withRouter } from 'react-router-dom';
 import { selectMembersByServer } from '../../../reducers/selectors';
 import { fetchChannel } from '../../../actions/channel_actions';
 import { fetchMessages } from '../../../actions/channel_chat_actions';
-// import { fetchServer } from '../../../actions/server_actions'
 import { selectMessagesByChannel } from '../../../reducers/selectors'; // add in cleanup
 
 const mSTP = (state, ownProps) => {
@@ -31,7 +30,6 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => ({
   getChannel: channelId => dispatch(fetchChannel(channelId)),
   getMessages: () => dispatch(fetchMessages()),
-  // getServer: serverId => dispatch(fetchServer(serverId))
 });
 
 export default withRouter(connect(mSTP, mDTP)(ChannelChat));
