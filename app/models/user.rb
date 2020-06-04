@@ -2,7 +2,7 @@ class User < ApplicationRecord
   validates :username, :password_digest, :session_token, presence: true
   validates :username, :email, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
-  after_initialize :ensure_session_token #, :ensure_default_photo
+  after_initialize :ensure_session_token, :ensure_default_photo
 
   attr_reader :password
 
@@ -51,12 +51,12 @@ class User < ApplicationRecord
   def ensure_default_photo
     unless self.photo.attached?
       icon_paths = [
-        "/Users/shaphenpangburn/Desktop/Personal_Files/AppAcademy/FSP/Badcord/app/assets/images/logos/isolated-monochrome-green.png",
-        "/Users/shaphenpangburn/Desktop/Personal_Files/AppAcademy/FSP/Badcord/app/assets/images/logos/isolated-monochrome-purple.png",
-        "/Users/shaphenpangburn/Desktop/Personal_Files/AppAcademy/FSP/Badcord/app/assets/images/logos/isolated-monochrome-brown.png",
-        "/Users/shaphenpangburn/Desktop/Personal_Files/AppAcademy/FSP/Badcord/app/assets/images/logos/isolated-monochrome-peach.png",
-        "/Users/shaphenpangburn/Desktop/Personal_Files/AppAcademy/FSP/Badcord/app/assets/images/logos/isolated-monochrome-blue.png",
-        "/Users/shaphenpangburn/Desktop/Personal_Files/AppAcademy/FSP/Badcord/app/assets/images/logos/isolated-monochrome-pink.png",
+        "https://badcord-seeds.s3-us-west-1.amazonaws.com/isolated-monochrome-blue.png",
+        "https://badcord-seeds.s3-us-west-1.amazonaws.com/isolated-monochrome-brown.png",
+        "https://badcord-seeds.s3-us-west-1.amazonaws.com/isolated-monochrome-green.png",
+        "https://badcord-seeds.s3-us-west-1.amazonaws.com/isolated-monochrome-peach.png",
+        "https://badcord-seeds.s3-us-west-1.amazonaws.com/isolated-monochrome-pink.png",
+        "https://badcord-seeds.s3-us-west-1.amazonaws.com/isolated-monochrome-purple.png"
       ]
       file = open(icon_paths.sample)
       self.photo.attach(io: file, filename: "default-icon.png")

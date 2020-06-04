@@ -43,23 +43,6 @@ class Session extends React.Component {
       this.props.demoLogin(user).then(() => this.props.history.push("/channels/@me"))
     }
   }
-
-  // renderErrors() {
-  //   if (this.props.errors){
-  //     // debugger
-  //     return (
-  //       <ul id="error-list">
-  //         <div id="error-list-box">
-  //           {this.props.errors.map((error, i) => (
-  //             <li className="errors" key={`error-${i}`}>
-  //               {error}
-  //             </li>
-  //           ))}
-  //         </div>
-  //       </ul>
-  //     );
-  //   }
-  // }
   
   handleChange(type) {
     return e => {
@@ -75,7 +58,7 @@ class Session extends React.Component {
         <ToastContainer id="toast" position="top-center" />
         <img className="login-signup-bg-img" src={window.login_signup_bg} />
         <img className="login-signup-bg-logo" src={window.mono_logo} />
-        <div id="session">
+        <div className="animate__animated animate__bounceIn" id="session">
           <Link to="/" className="login-signup-go-back">
             X
           </Link>
