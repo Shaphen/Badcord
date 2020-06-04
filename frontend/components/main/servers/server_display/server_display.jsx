@@ -27,6 +27,11 @@ class ServerDisplay extends React.Component {
       .then(() => this.props.history.push(`/channels/@me`))
   }
 
+  leaveServer(e) {
+    e.preventDefault();
+    this.props.leaveServer(this.props.serverId)
+  }
+
   handleOpenDeleteModal() {
     this.setState({ showDeleteModal: true });
   }
@@ -150,10 +155,13 @@ class ServerDisplay extends React.Component {
               />
               <label id="new-server-close2" onClick={this.toggleUpdateModal}>BACK</label>
             </Modal>
-            <div id="delete-server-box" onClick={(e) => this.deleteServer(e)}>
-              <label id="delete-server-button">Destroy Hideout</label>
-              <label id="lighten-icon"><GiBurningDot size={23} color="white" opacity={0.9} /></label>
-            </div>
+            {
+              this.props.currentUser?.id === currentServer?.owner_id ? 
+                <div id="delete-server-box" onClick={(e) => this.deleteServer(e)}>
+                  <label id="delete-server-button">Destroy Hideout</label>
+                  <label id="lighten-icon"><GiBurningDot size={23} color="white" opacity={0.9} /></label>
+                </div> : null
+            }
           </Modal>
         </div>
         <ChannelIndexContainer server={currentServer} />
