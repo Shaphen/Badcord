@@ -24,12 +24,14 @@ class ServerDisplay extends React.Component {
     e.preventDefault();
     this.props.deleteServer(this.props.servers[this.props.match.params.server_id].id)
       .then(() => this.handleCloseDeleteModal(e))
-      .then(() => this.props.history.push(`/channels/@me`))
+      .then(() => this.props.history.push('/channels/@me'))
   }
 
   leaveServer(e) {
     e.preventDefault();
     this.props.leaveServer(this.props.serverId)
+      .then(() => this.handleCloseDeleteModal(e))
+      .then(() => this.props.history.push('/channels/@me'))
   }
 
   handleOpenDeleteModal() {
