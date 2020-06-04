@@ -16,10 +16,8 @@ class ServerDisplay extends React.Component {
     };
     this.handleOpenDeleteModal = this.handleOpenDeleteModal.bind(this);
     this.handleCloseDeleteModal = this.handleCloseDeleteModal.bind(this);
-    this.handleOpenUpdateModal = this.handleOpenUpdateModal.bind(this);
-    this.handleCloseUpdateModal = this.handleCloseUpdateModal.bind(this);
-    this.handleOpenInviteModal = this.handleOpenInviteModal.bind(this);
-    this.handleCloseInviteModal = this.handleCloseInviteModal.bind(this);
+    this.toggleUpdateModal = this.toggleUpdateModal.bind(this);
+    this.toggleInviteModal = this.toggleInviteModal.bind(this);
   }
 
   deleteServer(e) {
@@ -38,23 +36,14 @@ class ServerDisplay extends React.Component {
     this.setState({ showDeleteModal: false });
   }
 
-  handleOpenUpdateModal() {
-    this.setState({ showEditModal: true });
+  toggleUpdateModal() {
+    const prevState = this.state.showEditModal
+    this.setState({ showEditModal: !prevState });
   }
 
-  handleCloseUpdateModal(e) {
-    e.stopPropagation();
-    this.setState({ showEditModal: false })
-  }
-
-  handleOpenInviteModal(e) {
-    e.stopPropagation();
-    this.setState({ showInviteModal: true })
-  }
-
-  handleCloseInviteModal(e) {
-    e.stopPropagation();
-    this.setState({ showInviteModal: false })
+  toggleInviteModal(e) {
+    const prevState = this.state.showInviteModal
+    this.setState({ showInviteModal: !prevState })
   }
 
   render() {
@@ -89,14 +78,14 @@ class ServerDisplay extends React.Component {
               }
             }}
           >
-            <div id="invite-grunts-box" onClick={this.handleOpenInviteModal}>
+            <div id="invite-grunts-box" onClick={this.toggleInviteModal}>
               <label id="invite-grunts-button">Invite Partners</label>
               <label><FaRegHandshake size={22} color="white" opacity={0.9} /></label>
             </div>
             <Modal
               isOpen={this.state.showInviteModal}
               contentLabel="Invite Grunts Modal"
-              onRequestClose={this.handleCloseInviteModal}
+              onRequestClose={this.toggleInviteModal}
               style={{
                 content: {
                   top: '50%',
@@ -124,16 +113,16 @@ class ServerDisplay extends React.Component {
                   <p id="invite-code">{ currentServer?.invite_code }</p>
                 </div>
               </div>
-              <label id="invite-grunts-close" onClick={this.handleCloseInviteModal}>DONE</label>
+              <label id="invite-grunts-close" onClick={this.toggleInviteModal}>DONE</label>
             </Modal>
-            <div id="edit-server-box" onClick={this.handleOpenUpdateModal}>
+            <div id="edit-server-box" onClick={this.toggleUpdateModal}>
               <label id="edit-server-button">Modify Hideout</label>
               <label>✏<FiEdit2 size={21} color="white" opacity={0.9} /></label>
             </div>
             <Modal
               isOpen={this.state.showEditModal}
               contentLabel="Update Server Modal"
-              onRequestClose={this.handleCloseUpdateModal}
+              onRequestClose={this.toggleUpdateModal}
               style={{
                 content: {
                   top: '50%',
@@ -156,10 +145,10 @@ class ServerDisplay extends React.Component {
               <h1 id="new-server-title">Picky villans come out ahead</h1>
               <ServerUpdateContainer 
                 server={currentServer}
-                closeModal={this.handleCloseUpdateModal}
+                closeModal={this.toggleUpdateModal}
                 closeDropdown = {this.handleCloseDeleteModal}
               />
-              <label id="new-server-close2" onClick={this.handleCloseUpdateModal}>BACK</label>
+              <label id="new-server-close2" onClick={this.toggleUpdateModal}>BACK</label>
             </Modal>
             <div id="delete-server-box" onClick={(e) => this.deleteServer(e)}>
               <label id="delete-server-button">Destroy Hideout</label>

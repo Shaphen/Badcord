@@ -15,7 +15,6 @@ class ServerUpdateForm extends React.Component {
     const server = Object.assign({}, this.state)
     this.props.updateServer(server)
       .then(() => this.props.closeModal(e))
-      .then(() => this.props.closeDropdown(e))
   }
 
   handleChange(type) {
