@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import { FaRegHandshake } from 'react-icons/fa';
 import { FiEdit2 } from 'react-icons/fi';
-import { GiBurningDot } from 'react-icons/gi';
+import { GiBurningDot, GiExitDoor } from 'react-icons/gi';
 import ServerUpdateContainer from '../server_CRUD/server_update_container';
 import ChannelIndexContainer from '../../channels/channel_display/channel_index_container';
 
@@ -160,7 +160,11 @@ class ServerDisplay extends React.Component {
                 <div id="delete-server-box" onClick={(e) => this.deleteServer(e)}>
                   <label id="delete-server-button">Destroy Hideout</label>
                   <label id="lighten-icon"><GiBurningDot size={23} color="white" opacity={0.9} /></label>
-                </div> : null
+                </div> :
+                <div id="delete-server-box" onClick={(e) => this.leaveServer(e)}>
+                  <label id="delete-server-button">Leave This Hideout</label>
+                  <label id="lighten-icon"><GiExitDoor size={23} color="white" opacity={0.9} /></label>
+                </div>
             }
           </Modal>
         </div>
