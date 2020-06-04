@@ -36,7 +36,7 @@ export const leaveServers = serverId => {
   return $.ajax({
     method: 'DELETE',
     url: 'api/servers',
-    data: serverId
+    data: { serverId }
   });
 }
 

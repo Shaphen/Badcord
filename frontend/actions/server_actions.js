@@ -67,7 +67,7 @@ export const joinServer = inviteCode => dispatch => ApiUtil.joinServers(inviteCo
   });
 
 export const leaveServer = serverId => dispatch => ApiUtil.leaveServers(serverId)
-  .then(server => dispatch(receiveServer(server)), err => {
+  .then(() => dispatch(receiveServer(server)), err => {
     err.responseJSON.map(error => {
       return notifyError(error);
     });
