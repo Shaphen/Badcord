@@ -29,7 +29,15 @@ export const joinServers = inviteCode => {
     method: 'POST',
     url: 'api/servers/join',
     data: inviteCode
-  })
+  });
+}
+
+export const leaveServers = serverId => {
+  return $.ajax({
+    method: 'DELETE',
+    url: 'api/servers',
+    data: serverId
+  });
 }
 
 export const deleteServer = serverId => (

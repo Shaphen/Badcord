@@ -4,7 +4,8 @@ import { fetchServers, fetchServer, deleteServer } from '../../../../actions/ser
 
 const mSTP = state => {
   return {
-    servers: state.entities.servers,
+    currentUser: state.entities.users[state.session.id],
+    servers: state.entities.servers
   }
 };
 

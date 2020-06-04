@@ -30,7 +30,7 @@ class ServerJoinForm extends React.Component {
         <div id="join-server-box">
           <p id="invite-code-title">What's the Secret Code?</p>
           <form onSubmit={ this.handleSubmit }>
-            <input id="join-server-container" tabIndex="1" placeholder="Enter code here" onChange={this.handleChange('inviteCode')}></input>
+            <input id="join-server-container" autoComplete="off" tabIndex="1" placeholder="Enter code here" onChange={this.handleChange('inviteCode')}></input>
             <div id="join-server-footer">
               <button id="join-server-button">Join</button>
             </div>

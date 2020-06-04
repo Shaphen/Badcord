@@ -65,6 +65,14 @@ export const joinServer = inviteCode => dispatch => ApiUtil.joinServers(inviteCo
     });
     dispatch(receiveServerErrors(err.responseJSON))
   });
+
+export const leaveServer = serverId => dispatch => ApiUtil.leaveServers(serverId)
+  .then(server => dispatch(receiveServer(server)), err => {
+    err.responseJSON.map(error => {
+      return notifyError(error);
+    });
+    dispatch(receiveServerErrors(err.responseJSON))
+  });
     
 export const deleteServer = serverId => dispatch => (
   ApiUtil.deleteServer(serverId)
