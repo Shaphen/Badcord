@@ -14,6 +14,7 @@ const mSTP = (state, ownProps) => {
   let serverMembers;
   if (state.entities.servers && state.entities.users) {
     serverMembers = selectMembersByServer(state, ownProps.match.params.serverId)
+    debugger
   }
   
   return {
