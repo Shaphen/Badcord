@@ -59,8 +59,7 @@ class Api::ServersController < ApplicationController
 
     if @server && @server_membership
       @server_membership.destroy
-      @server
-      render :show
+      render json: @server.id
     else
       render json: ["Could not leave server. Alternatively you can just like this server"], status: 422
     end
