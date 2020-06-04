@@ -135,7 +135,7 @@ class ChannelChat extends React.Component {
               <ChatForm authorId={this.props.currentUser.id} channel={currentChannel} />
             </div>
           </div>
-          <div id={ this.state.active ? "members-box" : null }>
+          <div className={this.state.active ? "members-box" : null}> {/*animate__animated animate__fadeInRightBig*/}
             {
               this.props.members.length && this.state.active ? this.props.members.map((member, idx) => (
                 <div key={idx} id="member-bar">

@@ -18,6 +18,9 @@
 }
 
 #channel-chat-header-name {
+  z-index: 10;
+  position: relative;
+  background: #36393f;
   width: 90%;
   font-size: 15px;
   padding: 17px 10px 10px 5px;
@@ -55,18 +58,22 @@
 }
 
 #members-list-icon {
-  opacity: 0.5;
+  z-index: 11;
+  position: relative;
+  color: rgba(255, 255, 255, 0.5);
+  background: #36393f;
   padding: 13px 340px 10px 5px;
-  transition: opacity 0.3s;
+  transition: color 0.3s;
   cursor: pointer;
 }
 
 #members-list-icon:hover {
-  opacity: 0.8;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 #member-list-text {
   position: absolute;
+  z-index: 10;
   right: 370px;
   top: 11px;
   color: white;
@@ -178,10 +185,13 @@
   display: flex;
 }
 
-#members-box {
+.members-box {
   width: 310px;
   padding-top: 50px;
   background: #2f3136;
+
+  animation: fadeInRightBig;
+  animation-duration: 0.5s;
 }
 
 #member-bar {
