@@ -22,7 +22,7 @@ export default ({ currentUser, logout }) => {
         <a className="linkedin-icon" href="https://www.linkedin.com/in/shaphen-pangburn-a27817151/" target="_blank">
             <AiOutlineLinkedin fill="white" size={22} />
         </a>
-        <a className="github-icon" href="https://github.com/Shaphen/Badcord/wiki" target="_blank">
+        <a className="github-icon" href="https://github.com/Shaphen/Badcord/" target="_blank">
           <AiFillGithub fill="white" size={22} />
         </a>
         <Link to="/login" className="header-login-button">Log In</Link>
