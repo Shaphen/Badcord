@@ -64,5 +64,7 @@ Users are able to create, edit, and delete servers as well as upload an image fr
 Users are also able to create, edit, and delete channels within' servers to diversify their conversation funnels!
 
 ### Future Directions
-* Add members list with online/offline status
-* Persist chat history for users
+- [x] Add members list with online/offline status
+- [x] Persist chat history for users
+- [ ] Add direct messages between two users
+- [ ] Enable custom profile photos
