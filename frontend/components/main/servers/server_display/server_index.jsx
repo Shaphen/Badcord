@@ -18,6 +18,7 @@ class ServerIndex extends React.Component {
     };
     this.toggleCreateModal = this.toggleCreateModal.bind(this);
     this.toggleJoinModal = this.toggleJoinModal.bind(this);
+    this.handleCloseCreateModal = this.handleCloseCreateModal.bind(this);
   }
 
   componentDidMount() {
@@ -34,6 +35,11 @@ class ServerIndex extends React.Component {
   toggleCreateModal() {
     const prevState = this.state.showCreateModal;
     this.setState({ showCreateModal: !prevState });
+  }
+
+  handleCloseCreateModal(e) {
+    e.stopPropagation();
+    this.setState({ showCreateModal: false })
   }
 
   toggleJoinModal() {
@@ -87,7 +93,7 @@ class ServerIndex extends React.Component {
             }}
           >
             <h1 id="new-server-title">Greed is good</h1>
-            <ServerCreateContainer closeModal={this.toggleCreateModal} />
+            <ServerCreateContainer closeModal={this.handleCloseCreateModal} />
             <label id="new-server-close" onClick={this.toggleCreateModal}>BACK</label>
           </Modal>
         </div>

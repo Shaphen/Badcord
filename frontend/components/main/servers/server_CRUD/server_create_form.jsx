@@ -14,6 +14,7 @@ class ServerCreateForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
     this.handleImageClick = this.handleImageClick.bind(this);
+    this.handleLoading = this.handleLoading.bind(this);
   }
 
   componentDidMount() {
@@ -23,7 +24,7 @@ class ServerCreateForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.refs.btn.setAttribute("disabled", "disabled");
+    this.setState({ loading: true })
     const formData = new FormData();
     formData.append('server[name]', this.state.name);
     formData.append('server[owner_id]', this.state.ownerId);
@@ -33,13 +34,18 @@ class ServerCreateForm extends React.Component {
     formData.append('server[invite_code]', this.state.inviteCode)
     this.props.createServer(formData)
       .then((res) => res ? this.props.history.push(`/channels/${res.server.server.id}/${res.server.server.channel_ids[0]}`) : this.props.history.push(`/channels/@me`))
-      .then(() => this.props.closeModal())
+      .then(() => this.props.closeModal(e))
   }
 
   handleChange(type){
     return e => {
       this.setState({ [type]: e.target.value })
     }
+  }
+
+  handleLoading() {
+    debugger
+    this.setState({ loading: true })
   }
 
   handleFile(e) {
@@ -70,7 +76,6 @@ class ServerCreateForm extends React.Component {
               <label id="server-name-title2">SERVER NAME</label>
               <input id="server-name-input2" type="text" onChange={this.handleChange('name')} value={this.state.name}/>
               <div id="create-server-button-container">
-                {/* <label id="new-server-close">BACK</label> */}
               </div>
           </div>
           <div id="upload-server-photo" onClick={this.handleImageClick}>
@@ -78,7 +83,9 @@ class ServerCreateForm extends React.Component {
             <p id="change-icon-server">CHANGE ICON</p>
             <input type="file" accept="image/*" id="choose-server-photo-button" onChange={this.handleFile} />
           </div>
-          <button ref="btn" id="create-server-button" value={this.props.formType}>Create</button>
+          <button disabled={this.state.loading} id="create-server-button" value={this.props.formType}>
+            {this.state.loading ? "loading..." : "Create" }
+          </button>
         </form>
       </div>
     )
