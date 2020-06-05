@@ -39,8 +39,9 @@ class ChannelIndexItem extends React.Component {
             <label id="channel-hash">#</label>
             <p id="channel-name">{this.props.channel.name}</p>
             <label id="delete-channel-x" onClick={this.handleOpenModal}>x</label>
-            {/* <p id="delete-channel-text">Delete Channel</p> */}
+            <p id="delete-channel-text">Delete Channel</p>
             <Modal
+              id="delete-channel-modal"
               isOpen={this.state.showModal}
               contentLabel="Delete Server Modal"
               onRequestClose={this.handleCloseModal}
