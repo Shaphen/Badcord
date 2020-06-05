@@ -32,10 +32,15 @@
   font-weight: 500;
   text-align: center;
   font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
-  margin: 33vh 24px 50vh;
+  margin: 33vh 5px 50vh 7px;
   opacity: 0.5;
   transition: opacity 0.2s;
   cursor: default;
+}
+
+#intro-text-arrow {
+  position: relative;
+  top: 3px;
 }
 
 #text-channels-tab-text:hover {

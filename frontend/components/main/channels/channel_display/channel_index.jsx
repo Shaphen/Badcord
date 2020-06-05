@@ -1,5 +1,6 @@
 import React from 'react';
 import ChannelIndexItem from './channel_index-item';
+import { IoIosArrowDropleft } from 'react-icons/io'
 import Modal from 'react-modal';
 import CreateChannelContainer from '../channel_CRUD/create_channel_container';
 
@@ -44,8 +45,9 @@ class ChannelIndex extends React.Component {
               this.props.server ? 
                 <p id="text-channels-tab-text">TEXT CHANNELS</p>
                 :
-                <p id="text-channels-tab-intro">⬅️CLICK ON A SERVER TO BEGIN</p>
+                <p id="text-channels-tab-intro"> CLICK ON A SERVER TO BEGIN <br /> <i id="intro-text-arrow"><IoIosArrowDropleft size={20} /></i></p>
             }
+            {/* { this.props.server ? null : <p id="intro-text-arrow"><IoIosArrowDropleft size={22} /></p> } */}
             {
               this.props.server ? <label id="add-channel-button" onClick={this.handleOpenAddModal}>+</label> : null
             }

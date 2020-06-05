@@ -121,7 +121,6 @@ class Session extends React.Component {
             <p id="qr-note">Scan to go somewhere even better than here</p>
           </div>
           <div id="errors-box">
-            {/* { this.props.errors.length ? this.renderErrors() : null } */}
           </div>
         </div>
       </div>
