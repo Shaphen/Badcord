@@ -63,11 +63,13 @@ class ServerDisplay extends React.Component {
           <p id="server-display-text">{currentServer ? currentServer.name : "Home" }</p>
           {currentServer ? <label id="dropdown-server-name">⌄</label> : null }
           <Modal
+            id="server-drop-modal"
             isOpen={this.state.showDeleteModal}
             contentLabel="Delete Server Modal"
             onRequestClose={this.handleCloseDeleteModal}
             style={{
               content: {
+                position: "absolute",
                 top: '55px',
                 left: '85px',
                 right: '0',
@@ -90,6 +92,7 @@ class ServerDisplay extends React.Component {
               <label><FaRegHandshake size={22} color="white" opacity={0.9} /></label>
             </div>
             <Modal
+              id="invite-modal"
               isOpen={this.state.showInviteModal}
               contentLabel="Invite Grunts Modal"
               onRequestClose={this.toggleInviteModal}
@@ -127,6 +130,7 @@ class ServerDisplay extends React.Component {
               <label>✏<FiEdit2 size={21} color="white" opacity={0.9} /></label>
             </div>
             <Modal
+              id="edit-modal"
               isOpen={this.state.showEditModal}
               contentLabel="Update Server Modal"
               onRequestClose={this.toggleUpdateModal}

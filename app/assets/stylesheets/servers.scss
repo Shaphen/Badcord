@@ -89,3 +89,13 @@
   background: white;
   opacity: 0.06;
 }
+
+#server-drop-modal {
+  animation: fadeInUp;
+  animation-duration: 0.2s;
+}
+
+#create-modal, #join-modal, #edit-modal, #invite-modal{
+  animation: pulse;
+  animation-duration: 0.3s;
+}
