@@ -47,12 +47,12 @@ class ChannelIndex extends React.Component {
                 :
                 <p id="text-channels-tab-intro"> CLICK ON A SERVER TO BEGIN <br /> <i id="intro-text-arrow"><IoIosArrowDropleft size={20} /></i></p>
             }
-            {/* { this.props.server ? null : <p id="intro-text-arrow"><IoIosArrowDropleft size={22} /></p> } */}
             {
               this.props.server ? <label id="add-channel-button" onClick={this.handleOpenAddModal}>+</label> : null
             }
             <p id="add-channel-text">Create Channel</p>
             <Modal
+              id="create-channel-modal"
               isOpen={this.state.showAddModal}
               contentLabel="Delete Server Modal"
               onRequestClose={this.handleCloseAddModal}
