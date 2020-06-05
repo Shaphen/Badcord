@@ -57,7 +57,9 @@ class Session extends React.Component {
       <div className="login-signup-background">
         <ToastContainer id="toast" position="top-center" />
         <img className="login-signup-bg-img" src={window.login_signup_bg} />
-        <img className="login-signup-bg-logo" src={window.mono_logo} />
+        <Link to="/">
+          <img className="login-signup-bg-logo" src={window.mono_logo} />
+        </Link>
         <div id="session">
           <Link to="/" className="login-signup-go-back">
             X

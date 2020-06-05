@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 import { AiFillGithub }from 'react-icons/ai';
 import DemoLoginContainer from '../greeting/demo_login_container';
 import { AiOutlineLinkedin } from 'react-icons/ai'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 
 
 export default ({ currentUser, logout }) => {
