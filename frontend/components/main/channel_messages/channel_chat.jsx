@@ -95,6 +95,7 @@ class ChannelChat extends React.Component {
                   <p id="welcome-text-main">Welcome to #{nameDisplay}!</p>
                   <p id="welcome-text-sub">This is the start of your #{nameDisplay} plot</p>
                   <Modal
+                    id="channel-edit-modal"
                     isOpen={this.state.showEditModal}
                     contentLabel="Delete Server Modal"
                     onRequestClose={this.handleCloseEditModal}

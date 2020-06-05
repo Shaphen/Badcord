@@ -30,8 +30,9 @@
 #text-channels-tab-intro {
   font-size: 14px;
   font-weight: 500;
+  text-align: center;
   font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
-  margin: 37vh 24px 50vh;
+  margin: 33vh 24px 50vh;
   opacity: 0.5;
   transition: opacity 0.2s;
   cursor: default;
@@ -279,7 +280,7 @@
 
 #chat-room-intro-box {
   position: absolute;
-  top: 45%;
+  top: 42%;
   left: 55%;
   color: white;
   cursor: default;
