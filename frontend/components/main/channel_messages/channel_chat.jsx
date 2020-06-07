@@ -3,10 +3,8 @@ import ChatForm from './chat_form';
 import Modal from 'react-modal'
 import EditChannelContainer from '../channels/channel_CRUD/edit_channel_container';
 import { BsFillPersonLinesFill } from 'react-icons/bs'
-import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-toast.configure();
 class ChannelChat extends React.Component {
   constructor(props) {
     super(props)
@@ -80,7 +78,6 @@ class ChannelChat extends React.Component {
 
     return (
       <div id="channel-chat-container">
-        <ToastContainer id="toast" position="top-center" />
         <div id="channel-chat-header">
           <p id="channel-chat-header-hash">#</p>
           <p id="channel-chat-header-name">{ nameDisplay }</p>

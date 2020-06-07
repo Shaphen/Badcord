@@ -118,7 +118,7 @@ class Session extends React.Component {
             </form>
           </div>
           <div id="qr-box">
-            <img className="linkedin-qr" src={window.linkedin_qr} />
+            <img className="session-qr" src={window.linkedin_qr} />
             <p id="qr-title">This is a QR Code</p>
             <p id="qr-note">Scan to go somewhere even better than here</p>
           </div>

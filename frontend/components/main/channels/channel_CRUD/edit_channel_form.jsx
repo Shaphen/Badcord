@@ -2,7 +2,7 @@ import React from 'react';
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-toast.configure();
+// toast.configure();
 class EditChannelForm extends React.Component {
   constructor(props) {
     super(props)
