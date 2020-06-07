@@ -12,7 +12,7 @@
 ## What is Badcord?
 ![Splash](https://github.com/Shaphen/Badcord/blob/master/app/assets/images/gifs/badcord_splash.gif)
 
-Badcord is a fullstack single-paged web application that closely follows the design and features of the popular gaming live-chat system, Discord. Users can securely log in, create/edit/delete servers and channels, and chat in real time with other logged-in users.
+Badcord is a fullstack single-paged web application that closely follows the design and features of the popular gaming live-chat system, Discord. Users can securely log in, create and edit servers and channels, and chat in real time with other logged-in users.
 
 ### Relevant Technologies
 * Frontend
@@ -24,11 +24,11 @@ Badcord is a fullstack single-paged web application that closely follows the des
   
 ## Features
 ### Live Chat
-Users are able to chat in real-time with each other through server channels.
+Users are able to chat in real-time with each other using channels.
 
 ![live-chat](https://github.com/Shaphen/Badcord/blob/master/app/assets/images/gifs/badcord_messages1.gif)
 
-Live chat is the primary feature of this application. It utilizes Rails Action Cable to allow users to subscribe to a chat channel that constantly scans for and organizes new information to broadcast back to all known subscribers.
+Live chat is the primary feature of this application. It utilizes Rails Action Cable, subscribing users to a chat channel that constantly scans for and organizes new information to broadcast back to all known members of that channel.
 ```ruby
 def subscribed
   stream_for "chat_channel"
