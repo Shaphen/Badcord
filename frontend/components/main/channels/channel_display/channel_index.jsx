@@ -45,7 +45,7 @@ class ChannelIndex extends React.Component {
               this.props.server ? 
                 <p id="text-channels-tab-text">TEXT CHANNELS</p>
                 :
-                <p id="text-channels-tab-intro"> CLICK ON A SERVER TO BEGIN <br /> <i id="intro-text-arrow"><IoIosArrowDropleft size={20} /></i></p>
+                <p id="text-channels-tab-intro"> CLICK A SERVER OR CREATE ONE USING "+" TO BEGIN <br /> <i id="intro-text-arrow"><IoIosArrowDropleft size={20} /></i></p>
             }
             {
               this.props.server ? <label id="add-channel-button" onClick={this.handleOpenAddModal}>+</label> : null
