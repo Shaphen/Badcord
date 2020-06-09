@@ -12,7 +12,7 @@
 ## What is Badcord?
 ![Splash](https://github.com/Shaphen/Badcord/blob/master/app/assets/images/gifs/badcord_splash.gif)
 
-Badcord is a fullstack single-paged web application that closely follows the design and features of the popular gaming live-chat system, Discord. Users can securely log in, create and edit servers and channels, and chat in real time with other logged-in users.
+Badcord is a fullstack single-page web application that closely follows the design and features of the popular gaming live-chat system, Discord. Users can securely log in, create and edit servers and channels, and chat in real time with other logged-in users.
 
 ### Relevant Technologies
 * Frontend
