@@ -40,7 +40,7 @@ def speak(data)
   ChatChannel.broadcast_to('chat_channel', socket)
 end
 ```
-The frontend component for the chat system then grabs this organized information and updates state to trigger an instant re-render and display the new message along with the previous ones
+The frontend component for the chat system then grabs this organized information and updates state to trigger an instant re-render and display the new message.
 ```javascript
 App.cable.subscriptions.create(
   { channel: "ChatChannel" },
