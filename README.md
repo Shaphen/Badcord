@@ -40,7 +40,7 @@ def speak(data)
   ChatChannel.broadcast_to('chat_channel', socket)
 end
 ```
-The fronend component for the chat system then grabs this organized information and updates state to trigger an instant re-render and display the new message along with the previous ones
+The frontend component for the chat system then grabs this organized information and updates state to trigger an instant re-render and display the new message along with the previous ones
 ```javascript
 App.cable.subscriptions.create(
   { channel: "ChatChannel" },
@@ -58,10 +58,10 @@ App.cable.subscriptions.create(
 ```
 
 ### Servers
-Users are able to create, edit, and delete servers as well as upload an image from their local storage as a server's cover photo using AWS's S3 Storage System, securily saving their media.
+Users are able to create, edit, and delete servers as well as upload an image from their local storage as a server's cover photo using AWS's S3 Storage System, securely saving their media.
 
 ![server-photo](https://github.com/Shaphen/Badcord/blob/master/app/assets/images/gifs/badcord_AWS.gif)
-Users are also able to create, edit, and delete channels within' servers to diversify their conversation funnels!
+Users are also able to create, edit, and delete channels within servers to diversify their conversation funnels!
 
 ### Future Directions
 - [x] Add members list
