@@ -40,9 +40,9 @@ export const leaveServers = serverId => {
   });
 }
 
-export const deleteServer = serverId => (
-  $.ajax({
+export const deleteServer = serverId => {
+  return $.ajax({
     url: `/api/servers/${serverId}`,
     method: 'DELETE'
   })
-);
+};

@@ -44,7 +44,6 @@ class ServerCreateForm extends React.Component {
   }
 
   handleLoading() {
-    debugger
     this.setState({ loading: true })
   }
 

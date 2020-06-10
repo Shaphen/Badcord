@@ -56,7 +56,7 @@ class Api::ServersController < ApplicationController
   def leave
     @server = current_user.servers.find_by(id: params[:serverId])
     @server_membership = ServerMember.find_by(member_id: current_user.id, server_id: params[:serverId])
-
+    
     if @server && @server_membership
       @server_membership.destroy
       render json: @server.id
@@ -64,7 +64,7 @@ class Api::ServersController < ApplicationController
       render json: ["Could not leave server. Alternatively you can just like this server"], status: 422
     end
   end
-
+  
   def destroy
     @server = current_user.owned_servers.find_by(id: params[:id])
     if @server
