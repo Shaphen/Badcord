@@ -14,7 +14,7 @@ class ChannelChat extends React.Component {
       active: true
     };
     this.bottom = React.createRef();
-    this.toggleClass = this.toggleClass.bind(this);
+    this.toggleMemberList = this.toggleMemberList.bind(this);
     this.handleCloseEditModal = this.handleCloseEditModal.bind(this);
     this.handleOpenEditModal = this.handleOpenEditModal.bind(this);
   }
@@ -49,7 +49,7 @@ class ChannelChat extends React.Component {
     this.setState({ showEditModal: false });
   }
   
-  toggleClass() {
+  toggleMemberList() {
     const currentState = this.state.active;
     this.setState({ active: !currentState })
   }
@@ -81,7 +81,7 @@ class ChannelChat extends React.Component {
         <div id="channel-chat-header">
           <p id="channel-chat-header-hash">#</p>
           <p id="channel-chat-header-name">{ nameDisplay }</p>
-          <div id="members-list-icon" onClick={this.toggleClass}><BsFillPersonLinesFill size={ 22 } /></div>
+          <div id="members-list-icon" onClick={this.toggleMemberList}><BsFillPersonLinesFill size={ 22 } /></div>
           <p id="member-list-text">Member List</p>
         </div>
         <div id="chat-seperator">
@@ -130,10 +130,10 @@ class ChannelChat extends React.Component {
                 { messageList }
                 <div ref={this.bottom} id="spacer"/>
               </div>
-              <ChatForm authorId={this.props.currentUser.id} channel={currentChannel} />
+              <ChatForm authorId={this.props.currentUser.id} channel={currentChannel} isActive={this.state.active} />
             </div>
           </div>
-          <div className={this.state.active ? "members-box" : null}> {/*animate__animated animate__fadeInRightBig*/}
+          <div className={this.state.active ? "members-box" : null}>
             {
               this.props.members.length && this.state.active ? this.props.members.map((member, idx) => (
                 <div key={idx} id="member-bar">

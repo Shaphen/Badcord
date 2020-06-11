@@ -46,6 +46,7 @@ class ChatForm extends React.Component {
             onChange={this.handleChange('body')}
             value={this.state.body}
             id="channel-chat-new-message-box"
+            className="slide-left"
             placeholder="Message channel"
             autoComplete="off"
           />
