@@ -34,11 +34,10 @@ class ChannelChat extends React.Component {
         }
       }
     );
-    // this.props.getServer(parseInt(this.props.match.params.serverId))
   }
 
   componentDidUpdate() {
-    this.bottom.current.scrollIntoView(); // ({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+    this.bottom.current.scrollIntoView();
   }
 
   handleOpenEditModal() {
@@ -57,7 +56,7 @@ class ChannelChat extends React.Component {
   render() {
     let currentChannel = this.props.channels[this.props.match.params.channelId]
     let currentServer = this.props.servers[this.props.match.params.serverId]
-    let nameDisplay = currentChannel?.name // same as currentChannel ? currentChannel.name : null
+    let nameDisplay = currentChannel?.name
     let messageList;
     if (currentChannel) {
       let filteredMessages = this.props.messages.concat(this.state.messages).filter(message => {
@@ -65,7 +64,7 @@ class ChannelChat extends React.Component {
       });
       messageList = filteredMessages.map((message, idx) => {
         return (
-          <div key={idx} id="new-message">
+          <div key={idx} id="new-message" className="message-animation">
             <img id="message-avatar" src={this.props.users[message.author_id]?.photoURL || window.logo_head_white} />
             <div id="message-content-box">
               <p id="sender-name">{this.props.users[message.author_id]?.username}</p>
