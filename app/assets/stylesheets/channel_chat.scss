@@ -226,5 +226,7 @@
 }
 
 .slide-left {
-  transition: width 1s;
+  animation: fadeInRight;
+  animation: slideInRight;
+  animation-duration: 0.8s;
 }
