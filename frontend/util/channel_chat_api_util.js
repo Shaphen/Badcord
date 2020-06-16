@@ -5,3 +5,10 @@ export const fetchChatMessages = () => {
     method: 'GET'
   });
 }
+
+export const deleteChatMessage = messageId => {
+  return $.ajax ({
+    url: `/api/channel_messages/${messageId}`,
+    method: 'DELETE'
+  });
+}
