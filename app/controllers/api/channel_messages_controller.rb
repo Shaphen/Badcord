@@ -24,7 +24,6 @@ class Api::ChannelMessagesController < ApplicationController
 
   def destroy
     @message = ChannelMessage.find(params[:id])
-    debugger
     if @message
       @message.destroy
       render json: ["It worked!"], status: 200
