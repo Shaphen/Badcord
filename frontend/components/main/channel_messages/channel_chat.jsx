@@ -25,6 +25,7 @@ class ChannelChat extends React.Component {
       { channel: "ChatChannel", channelId: channelId },
       {
         received: message => {
+          debugger
           this.setState({
             messages: this.state.messages.concat(message)
           });
@@ -63,6 +64,7 @@ class ChannelChat extends React.Component {
         return message.channel_id === currentChannel.id
       });
       messageList = filteredMessages.map((message, idx) => {
+        debugger
         return (
           <div key={idx} id="new-message" className="message-animation">
             <img id="message-avatar" src={this.props.users[message.author_id]?.photoURL || window.logo_head_white} />
