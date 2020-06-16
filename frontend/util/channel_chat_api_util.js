@@ -6,6 +6,14 @@ export const fetchChatMessages = () => {
   });
 }
 
+export const updateChatMessage = message => {
+  return $.ajax({
+    url: `/api/channel_messages/${message.id}`,
+    method: 'PATCH',
+    data: { message }
+  })
+}
+
 export const deleteChatMessage = messageId => {
   return $.ajax ({
     url: `/api/channel_messages/${messageId}`,
