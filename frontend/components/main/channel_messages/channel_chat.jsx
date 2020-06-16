@@ -37,6 +37,11 @@ class ChannelChat extends React.Component {
     );
   }
 
+  deleteMessage(e, message) {
+    e.preventDefault();
+    this.props.deleteMessage(message.id)
+  }
+
   componentDidUpdate() {
     this.bottom.current.scrollIntoView();
   }
@@ -64,7 +69,6 @@ class ChannelChat extends React.Component {
         return message.channel_id === currentChannel.id
       });
       messageList = filteredMessages.map((message, idx) => {
-        debugger
         return (
           <div key={idx} id="new-message" className="message-animation">
             <img id="message-avatar" src={this.props.users[message.author_id]?.photoURL || window.logo_head_white} />
@@ -72,6 +76,7 @@ class ChannelChat extends React.Component {
               <p id="sender-name">{this.props.users[message.author_id]?.username}</p>
               <p id="sender-message">{message.body}</p>
             </div>
+            <button onClick={(e) => this.deleteMessage(e, message) } id="delete-channel-message">DELETE</button>
           </div>
         );
       });
