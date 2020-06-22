@@ -205,6 +205,10 @@
   background-color: #242529;
 }
 
+#display-label {
+  cursor: pointer;
+}
+
 #invite-grunts-button {
   cursor: pointer;
   font-size: 14px;
@@ -242,6 +246,7 @@
 
 #lighten-icon {
   opacity: 0.85;
+  cursor: pointer;
 }
 
 #img-preview {

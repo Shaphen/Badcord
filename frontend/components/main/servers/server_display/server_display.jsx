@@ -89,7 +89,7 @@ class ServerDisplay extends React.Component {
           >
             <div id="invite-grunts-box" onClick={this.toggleInviteModal}>
               <label id="invite-grunts-button">Invite Partners</label>
-              <label><FaRegHandshake size={22} color="white" opacity={0.9} /></label>
+              <label id="display-label"><FaRegHandshake size={22} color="white" opacity={0.9} /></label>
             </div>
             <Modal
               id="invite-modal"
@@ -127,7 +127,7 @@ class ServerDisplay extends React.Component {
             </Modal>
             <div id="edit-server-box" onClick={this.toggleUpdateModal}>
               <label id="edit-server-button">Modify Hideout</label>
-              <label>✏<FiEdit2 size={21} color="white" opacity={0.9} /></label>
+              <label id="display-label">✏<FiEdit2 size={21} color="white" opacity={0.9} /></label>
             </div>
             <Modal
               id="edit-modal"
