@@ -46,7 +46,7 @@ class Api::ServersController < ApplicationController
         render json: ["Fun fact: You're already part of this server"], status: 422
       else
         ServerMember.create({member_id: current_user.id, server_id: @server.id})
-        render :show
+        render json: @reward
       end
     else
       render json: ["Incorrect code. big womp"], status: 422
