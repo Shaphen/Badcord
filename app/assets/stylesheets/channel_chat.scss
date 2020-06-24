@@ -232,4 +232,19 @@
 #delete-channel-message {
   background: none;
   border: none;
+  font-size: 13px;
+  padding: 0px;
+  font-weight: bolder;
+  color: rgba(238, 35, 35, 0.678);
+  opacity: 0;
+  height: 50%;
+  transition: all 0.3s;
+}
+
+#new-message:hover #delete-channel-message {
+  opacity: 1;
+}
+
+#delete-channel-message:hover {
+  color: rgb(238, 35, 35);
 }
