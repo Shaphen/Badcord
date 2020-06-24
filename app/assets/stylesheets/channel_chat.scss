@@ -163,6 +163,7 @@
 
 #message-content-box {
   padding-top: 2px;
+  width: 100%;
 }
 
 #sender-name {
@@ -226,4 +227,9 @@
   font-size: 14px;
   font-style: italic;
   cursor: default;
+}
+
+#delete-channel-message {
+  background: none;
+  border: none;
 }
