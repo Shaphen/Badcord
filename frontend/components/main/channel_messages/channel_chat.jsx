@@ -25,7 +25,6 @@ class ChannelChat extends React.Component {
       { channel: "ChatChannel", channelId: channelId },
       {
         received: message => {
-          debugger
           this.setState({
             messages: this.state.messages.concat(message)
           });
@@ -39,7 +38,6 @@ class ChannelChat extends React.Component {
 
   deleteMessage(e, message) {
     e.preventDefault();
-    debugger
     this.props.deleteMessage(message.id)
   }
 
@@ -67,7 +65,6 @@ class ChannelChat extends React.Component {
     let messageList;
     if (currentChannel) {
       let filteredMessages = this.props.messages.concat(this.state.messages).filter(message => {
-        debugger
         return message.channel_id === currentChannel.id
       });
       messageList = filteredMessages.map((message, idx) => {

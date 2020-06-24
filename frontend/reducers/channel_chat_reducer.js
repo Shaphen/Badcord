@@ -11,7 +11,7 @@ const channelChatReducer = (state={}, action) => {
       const newMessage = { [action.message.id]: action.message };
       return Object.assign({}, nextState, newMessage);
     case REMOVE_MESSAGE:
-      delete nextState[action.channelId];
+      delete nextState[action.messageId];
       return nextState;
     default:
       return state;
