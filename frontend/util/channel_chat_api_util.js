@@ -18,7 +18,7 @@ export const updateChatMessage = message => {
   return $.ajax({
     url: `/api/channel_messages/${message.id}`,
     method: 'PATCH',
-    data: { message }
+    data: message
   })
 }
 

@@ -45,8 +45,7 @@ class ChannelChat extends React.Component {
   }
 
   updateMessage(e, message) {
-    e.preventDefault();
-    debugger
+    this.props.updateMessage(message)
   }
 
   componentDidUpdate() {

@@ -18,9 +18,12 @@ class Api::ChannelMessagesController < ApplicationController
   end
 
   def update
-    debugger
     @message = ChannelMessage.find_by(id: params[:id])
-    if @message.update(channel_message_params)
+    if @message.update(
+      body: params[:body],
+      author_id: params[:author_id],
+      channel_id: params[:channel_id]
+    )
       render :show
     else
       render json: @message.errors.full_messages, status: 422
