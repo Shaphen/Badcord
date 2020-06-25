@@ -149,6 +149,7 @@
 
 #new-message {
   display: flex;
+  align-items: center;
   width: 93%;
   margin-bottom: 8px;
   padding: 10px 15px;
@@ -178,7 +179,9 @@
 }
 
 #message-avatar {
+  align-self: center;
   width: 40px;
+  height: 43px;
   padding-right: 14px;
 }
 
@@ -230,12 +233,30 @@
 }
 
 #delete-channel-message {
+  position: relative;
+  left: 30px;
+  bottom: 10px;
   background: none;
   border: none;
   font-size: 13px;
   padding: 0px;
   font-weight: bolder;
-  color: rgba(238, 35, 35, 0.678);
+  color: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  height: 50%;
+  transition: all 0.3s;
+}
+
+#update-channel-message {
+  position: relative;
+  top: 12px;
+  right: 11px;
+  background: none;
+  border: none;
+  font-size: 13px;
+  padding: 0px;
+  font-weight: bolder;
+  color: rgba(255, 255, 255, 0.5);
   opacity: 0;
   height: 50%;
   transition: all 0.3s;
@@ -246,5 +267,13 @@
 }
 
 #delete-channel-message:hover {
-  color: rgb(238, 35, 35);
+  color: rgba(238, 35, 35, 0.9);
+}
+
+#new-message:hover #update-channel-message {
+  opacity: 1;
+}
+
+#update-channel-message:hover {
+  color: rgba(255, 255, 255, 0.8);
 }

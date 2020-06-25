@@ -30,9 +30,9 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => ({
   getChannel: channelId => dispatch(fetchChannel(channelId)),
   getMessages: () => dispatch(fetchMessages()),
+  createMessage: message => dispatch(createMessage(message)),
   updateMessage: message => dispatch(updateMessage(message)),
   deleteMessage: messageId => dispatch(deleteMessage(messageId)),
-  createMessage: message => dispatch(createMessage(message))
 });
 
 export default withRouter(connect(mSTP, mDTP)(ChannelChat));

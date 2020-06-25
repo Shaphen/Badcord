@@ -17,14 +17,15 @@ class Api::ChannelMessagesController < ApplicationController
     end
   end
 
-  # def update
-  #   @message = ChannelMessage.find_by(id: params[:id])
-  #   if @message.update(channel_message_params)
-  #     render :show
-  #   else
-  #     render json: @message.errors.full_messages, status: 422
-  #   end
-  # end
+  def update
+    debugger
+    @message = ChannelMessage.find_by(id: params[:id])
+    if @message.update(channel_message_params)
+      render :show
+    else
+      render json: @message.errors.full_messages, status: 422
+    end
+  end
 
   def destroy
     @message = current_user.messages.find_by(id: params[:id])

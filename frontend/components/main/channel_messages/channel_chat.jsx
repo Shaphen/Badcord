@@ -44,6 +44,11 @@ class ChannelChat extends React.Component {
     this.props.deleteMessage(message.id)
   }
 
+  updateMessage(e, message) {
+    e.preventDefault();
+    debugger
+  }
+
   componentDidUpdate() {
     this.bottom.current.scrollIntoView();
   }
@@ -78,7 +83,8 @@ class ChannelChat extends React.Component {
               <p id="sender-name">{this.props.users[message.author_id]?.username}</p>
               <p id="sender-message">{message.body}</p>
             </div>
-            <button onClick={(e) => this.deleteMessage(e, message) } id="delete-channel-message">DELETE</button>
+            <button onClick={(e) => this.deleteMessage(e, message)} id="delete-channel-message">DELETE</button>
+            <button onClick={(e) => this.updateMessage(e, message)} id="update-channel-message">EDIT</button>
           </div>
         );
       });
