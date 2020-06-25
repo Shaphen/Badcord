@@ -27,12 +27,12 @@ class Api::ChannelMessagesController < ApplicationController
   # end
 
   def destroy
-    @message = ChannelMessage.find(params[:id])
+    @message = current_user.messages.find_by(id: params[:id])
     if @message
       @message.destroy
       render json: ["It worked!"], status: 200
     else
-      render json: ["Could not find or delete message. Big sad"], status: 422
+      render json: ["Can't delete other people's messages. Big sad"], status: 422
     end
   end
 end

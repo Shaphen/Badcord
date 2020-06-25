@@ -48,6 +48,10 @@ class User < ApplicationRecord
     through: :owned_servers,
     source: :channels
 
+  has_many :messages,
+    foreign_key: :author_id,
+    class_name: :ChannelMessage
+
   has_one_attached :photo
 
   def ensure_default_photo
