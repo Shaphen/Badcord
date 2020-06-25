@@ -1,4 +1,4 @@
-import { fetchChatMessages, updateChatMessage, deleteChatMessage } from '../util/channel_chat_api_util';
+import { fetchChatMessages, updateChatMessage, deleteChatMessage, createChatMessage } from '../util/channel_chat_api_util';
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -37,6 +37,13 @@ export const fetchMessages = () => dispatch => fetchChatMessages()
       return notifyError(error);
     });
     dispatch(receiveMessageErrors(err.responseJSON));
+  });
+
+export const createMessage = message => createChatMessage(message)
+  .then(message => dispatch(receiveMessage(message)), err => {
+    err.responseJSON.map(error => {
+      return notifyError(error);
+    });
   });
 
 export const updateMessage = message => dispatch => updateChatMessage(message)

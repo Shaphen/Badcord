@@ -22,9 +22,11 @@ class ChannelChat extends React.Component {
   componentDidMount() {
     let channelId = this.props.channels[this.props.match.params.channelId]
     App.cable.subscriptions.create(
-      { channel: "ChatChannel", channelId: channelId },
+      { 
+        channel: "ChatChannel", channelId: channelId },
       {
         received: message => {
+          debugger
           this.setState({
             messages: this.state.messages.concat(message)
           });

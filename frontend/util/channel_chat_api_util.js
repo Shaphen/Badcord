@@ -6,6 +6,15 @@ export const fetchChatMessages = () => {
   });
 }
 
+export const createChatMessage = (message) => {
+  debugger
+  return $.ajax ({
+    url: '/api/channel_messages',
+    method: 'POST',
+    data: message
+  });
+}
+
 export const updateChatMessage = message => {
   return $.ajax({
     url: `/api/channel_messages/${message.id}`,
