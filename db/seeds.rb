@@ -2,6 +2,7 @@ User.delete_all
 Server.delete_all
 ServerMember.delete_all
 Channel.delete_all
+ChannelMessage.delete_all
 
 User.create!([
   {username: "masterchef", email: "shaphen@aa.io", password_digest: "$2a$12$v26IS.RKAACveUisf2eE7uWQ1f6aZ1zVilYi9HMlFCPUyRjyc14G.", session_token: "bcHoWfo1cZUUhZIc6xu7lg"},
@@ -46,4 +47,8 @@ Channel.create!([
   {name: "general", server_id: Server.fourth.id},
   {name: "Secret Cave Meetings", server_id: Server.fourth.id},
   {name: "Secreter Cave Meetings", server_id: Server.fourth.id},
+])
+
+ChannelMessage.create!([
+  {body: "Anyone want my trash?", author_id: User.third.id, channel_id: Channel.first.id}
 ])
