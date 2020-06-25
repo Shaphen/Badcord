@@ -7,7 +7,6 @@ export const fetchChatMessages = () => {
 }
 
 export const createChatMessage = (message) => {
-  debugger
   return $.ajax ({
     url: '/api/channel_messages',
     method: 'POST',

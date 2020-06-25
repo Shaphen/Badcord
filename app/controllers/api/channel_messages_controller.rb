@@ -5,7 +5,11 @@ class Api::ChannelMessagesController < ApplicationController
   end
   
   def create
-    @message = ChannelMessage.new(channel_message_params)
+    @message = ChannelMessage.new(
+      body: params[:body],
+      author_id: params[:author_id],
+      channel_id: params[:channel_id]
+    )
     if @message.save
       render :show
     else
@@ -32,8 +36,8 @@ class Api::ChannelMessagesController < ApplicationController
     end
   end
 
-  private
-  def channel_message_params
-    params.require(:channel_messages).permit(:body, :author_id, :channel_id)
-  end
+  # private
+  # def channel_message_params
+  #   params.require(:channel_message).permit(:body, :author_id, :channel_id)
+  # end
 end

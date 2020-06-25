@@ -26,10 +26,11 @@ class ChannelChat extends React.Component {
         channel: "ChatChannel", channelId: channelId },
       {
         received: message => {
-          debugger
-          this.setState({
-            messages: this.state.messages.concat(message)
-          });
+          // debugger
+          // this.setState({
+          //   messages: this.state.messages.concat(message)
+          // });
+          this.props.createMessage(message)
         },
         speak: function(message) {
           return this.perform("speak", message)
