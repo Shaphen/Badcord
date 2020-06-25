@@ -12,10 +12,10 @@ const receiveAllMessages = messages => ({
   messages
 });
 
-const receiveMessage = message => ({
-  type: RECEIVE_MESSAGE,
-  message
-});
+const receiveMessage = message => {
+  return {type: RECEIVE_MESSAGE,
+  message}
+};
 
 const removeMessage = messageId => ({
   type: REMOVE_MESSAGE,
@@ -39,14 +39,12 @@ export const fetchMessages = () => dispatch => fetchChatMessages()
     dispatch(receiveMessageErrors(err.responseJSON));
   });
 
-export const createMessage = message => createChatMessage(message)
-  .then(message => { 
-    debugger
-    dispatch(receiveMessage(message)), err => {
+export const createMessage = message => dispatch => createChatMessage(message)
+  .then(message => dispatch(receiveMessage(message)), err => {
     err.responseJSON.map(error => {
       return notifyError(error);
     });
-  }});
+  });
 
 export const updateMessage = message => dispatch => updateChatMessage(message)
   .then(message => dispatch(receiveMessage(message)), err => {
