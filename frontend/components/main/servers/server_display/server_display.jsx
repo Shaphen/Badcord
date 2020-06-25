@@ -48,7 +48,7 @@ class ServerDisplay extends React.Component {
     this.setState({ showEditModal: !prevState });
   }
 
-  toggleInviteModal(e) {
+  toggleInviteModal() {
     const prevState = this.state.showInviteModal
     this.setState({ showInviteModal: !prevState })
   }

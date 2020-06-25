@@ -2,6 +2,7 @@ import React from 'react';
 import ChatForm from './chat_form';
 import Modal from 'react-modal'
 import EditChannelContainer from '../channels/channel_CRUD/edit_channel_container';
+import UpdateMessageContainer from './channel_message_CRUD/update_message_container'
 import { BsFillPersonLinesFill } from 'react-icons/bs'
 import "react-toastify/dist/ReactToastify.css";
 
@@ -11,10 +12,12 @@ class ChannelChat extends React.Component {
     this.state = {
       messages: [],
       showEditModal: false,
+      showEditChatModal: false,
       active: true
     };
     this.bottom = React.createRef();
     this.toggleMemberList = this.toggleMemberList.bind(this);
+    this.toggleEditChatModal = this.toggleEditChatModal.bind(this);
     this.handleCloseEditModal = this.handleCloseEditModal.bind(this);
     this.handleOpenEditModal = this.handleOpenEditModal.bind(this);
   }
@@ -26,10 +29,6 @@ class ChannelChat extends React.Component {
         channel: "ChatChannel", channelId: channelId },
       {
         received: message => {
-          // debugger
-          // this.setState({
-          //   messages: this.state.messages.concat(message)
-          // });
           this.props.createMessage(message)
         },
         speak: function(message) {
@@ -44,10 +43,6 @@ class ChannelChat extends React.Component {
     this.props.deleteMessage(message.id)
   }
 
-  updateMessage(e, message) {
-    this.props.updateMessage(message)
-  }
-
   componentDidUpdate() {
     this.bottom.current.scrollIntoView();
   }
@@ -58,6 +53,11 @@ class ChannelChat extends React.Component {
 
   handleCloseEditModal() {
     this.setState({ showEditModal: false });
+  }
+
+  toggleEditChatModal() {
+    const prevState = this.state.showEditChatModal
+    this.setState({ showEditChatModal: !prevState })
   }
   
   toggleMemberList() {
@@ -83,7 +83,39 @@ class ChannelChat extends React.Component {
               <p id="sender-message">{message.body}</p>
             </div>
             <button onClick={(e) => this.deleteMessage(e, message)} id="delete-channel-message">DELETE</button>
-            <button onClick={(e) => this.updateMessage(e, message)} id="update-channel-message">EDIT</button>
+            <button onClick={this.toggleEditChatModal} id="update-channel-message">EDIT</button>
+            <Modal
+              id="channel-edit-modal"
+              isOpen={this.state.showEditChatModal}
+              contentLabel="Edit Message Modal"
+              onRequestClose={this.toggleEditChatModal}
+              style={{
+                content: {
+                  top: '50%',
+                  left: '50%',
+                  right: '0',
+                  bottom: '0',
+                  marginLeft: "-245px",
+                  marginTop: "-175px",
+                  overflow: "hidden",
+                  marginTop: "-170px",
+                  width: "410px",
+                  height: "220px",
+                  backgroundColor: "#36393f",
+                  border: "none",
+                  color: "white"
+                },
+                overlay: {
+                  position: 'fixed',
+                  backgroundColor: 'rgba(0,0,0,0.7)',
+                  zIndex: '50'
+                }
+              }}
+            >
+              <UpdateMessageContainer
+                closeModal={this.toggleEditChatModal}
+              />
+            </Modal>
           </div>
         );
       });
@@ -107,7 +139,7 @@ class ChannelChat extends React.Component {
                   <Modal
                     id="channel-edit-modal"
                     isOpen={this.state.showEditModal}
-                    contentLabel="Delete Server Modal"
+                    contentLabel="Edit Channel Modal"
                     onRequestClose={this.handleCloseEditModal}
                     style={{
                       content: {
@@ -138,7 +170,7 @@ class ChannelChat extends React.Component {
                       closeModal={this.handleCloseEditModal}
                     />
                   </Modal>
-                  <label id="welcome-text-edit-channel" onClick={this.handleOpenEditModal}>Edit Channel</label>
+                  <label id="welcome-text-edit-channel" onClick={this.handleOpenEditModal}>Edit Message</label>
                 </div>
                 { messageList }
                 <div ref={this.bottom} id="spacer"/>

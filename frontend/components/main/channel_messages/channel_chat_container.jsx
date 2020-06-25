@@ -3,7 +3,7 @@ import ChannelChat from './channel_chat';
 import { withRouter } from 'react-router-dom';
 import { selectMembersByServer } from '../../../reducers/selectors';
 import { fetchChannel } from '../../../actions/channel_actions';
-import { fetchMessages, updateMessage, deleteMessage, createMessage } from '../../../actions/channel_chat_actions';
+import { fetchMessages, deleteMessage, createMessage } from '../../../actions/channel_chat_actions';
 import { selectMessagesByChannel } from '../../../reducers/selectors'; // add in cleanup
 
 const mSTP = (state, ownProps) => {
@@ -31,7 +31,6 @@ const mDTP = dispatch => ({
   getChannel: channelId => dispatch(fetchChannel(channelId)),
   getMessages: () => dispatch(fetchMessages()),
   createMessage: message => dispatch(createMessage(message)),
-  updateMessage: message => dispatch(updateMessage(message)),
   deleteMessage: messageId => dispatch(deleteMessage(messageId)),
 });
 
