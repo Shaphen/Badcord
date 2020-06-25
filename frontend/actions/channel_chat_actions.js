@@ -40,11 +40,13 @@ export const fetchMessages = () => dispatch => fetchChatMessages()
   });
 
 export const createMessage = message => createChatMessage(message)
-  .then(message => dispatch(receiveMessage(message)), err => {
+  .then(message => { 
+    debugger
+    dispatch(receiveMessage(message)), err => {
     err.responseJSON.map(error => {
       return notifyError(error);
     });
-  });
+  }});
 
 export const updateMessage = message => dispatch => updateChatMessage(message)
   .then(message => dispatch(receiveMessage(message)), err => {

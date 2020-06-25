@@ -35,9 +35,4 @@ class Api::ChannelMessagesController < ApplicationController
       render json: ["Could not find or delete message. Big sad"], status: 422
     end
   end
-
-  # private
-  # def channel_message_params
-  #   params.require(:channel_message).permit(:body, :author_id, :channel_id)
-  # end
 end
