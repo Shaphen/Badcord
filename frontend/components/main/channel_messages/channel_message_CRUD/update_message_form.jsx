@@ -19,9 +19,13 @@ class UpdateMessageForm extends React.Component {
 
   
   render() {
+    let message
+    if (this.props.messageList.id === this.props.messageId) {
+      message = this.props.messageList
+    }
     return (
       <div>
-        this is a test
+        { message ? message.body : "bleh" }
       </div>
     )
   }

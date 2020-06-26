@@ -13,6 +13,7 @@ class ChannelChat extends React.Component {
       messages: [],
       showEditModal: false,
       showEditChatModal: false,
+      currMessageId: null,
       active: true
     };
     this.bottom = React.createRef();
@@ -55,7 +56,10 @@ class ChannelChat extends React.Component {
     this.setState({ showEditModal: false });
   }
 
-  toggleEditChatModal() {
+  toggleEditChatModal(e, message) {
+    if (message) {
+      this.setState({ currMessageId: message.id })
+    }
     const prevState = this.state.showEditChatModal
     this.setState({ showEditChatModal: !prevState })
   }
@@ -82,13 +86,13 @@ class ChannelChat extends React.Component {
               <p id="sender-name">{this.props.users[message.author_id]?.username}</p>
               <p id="sender-message">{message.body}</p>
             </div>
-            <button onClick={(e) => this.deleteMessage(e, message)} id="delete-channel-message">DELETE</button>
-            <button onClick={this.toggleEditChatModal} id="update-channel-message">EDIT</button>
+            <button onClick={e => this.deleteMessage(e, message)} id="delete-channel-message">DELETE</button>
+            <button onClick={e => this.toggleEditChatModal(e, message)} id="update-channel-message">EDIT</button>
             <Modal
               id="channel-edit-modal"
               isOpen={this.state.showEditChatModal}
               contentLabel="Edit Message Modal"
-              onRequestClose={this.toggleEditChatModal}
+              onRequestClose={e => this.toggleEditChatModal(e)}
               style={{
                 content: {
                   top: '50%',
@@ -113,7 +117,9 @@ class ChannelChat extends React.Component {
               }}
             >
               <UpdateMessageContainer
-                closeModal={this.toggleEditChatModal}
+                messageId={this.state.currMessageId}
+                messageList={message}
+                closeModal={e => this.toggleEditChatModal(e)}
               />
             </Modal>
           </div>
