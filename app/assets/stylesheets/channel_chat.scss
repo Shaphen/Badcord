@@ -234,7 +234,7 @@
 
 #delete-channel-message {
   position: relative;
-  left: 30px;
+  left: -5px;
   bottom: 10px;
   background: none;
   border: none;
@@ -248,6 +248,7 @@
 }
 
 #update-channel-message {
+  display: none;
   position: relative;
   top: 12px;
   right: 11px;
