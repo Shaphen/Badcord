@@ -99,8 +99,8 @@ ChannelMessage.create!([
   {body: "BECAUSE IT'S A SECRET MRUAHAHAHAH", author_id: User.second.id, channel_id: Channel.all[10].id},
   {body: "... Right", author_id: User.first.id, channel_id: Channel.all[10].id},
 
-  {body: "I'm not even going to try on this one", author_id: User.first.id, channel_id: Channel.all[10].id},
-  {body: "Aww but that's no fun!", author_id: User.second.id, channel_id: Channel.all[10].id},
-  {body: "Can't I go back to my obama shrine now?", author_id: User.fourth.id, channel_id: Channel.all[10].id},
+  {body: "I'm not even going to try on this one", author_id: User.first.id, channel_id: Channel.all[11].id},
+  {body: "Aww but that's no fun!", author_id: User.second.id, channel_id: Channel.all[11].id},
+  {body: "Can't I go back to my obama shrine now?", author_id: User.fourth.id, channel_id: Channel.all[11].id},
 
 ])
