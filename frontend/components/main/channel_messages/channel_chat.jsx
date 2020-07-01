@@ -58,7 +58,7 @@ class ChannelChat extends React.Component {
 
   toggleEditChatModal(e, message) {
     if (message) {
-      this.setState({ currMessageId: message })
+      this.setState({ currMessage: message })
     }
     const prevState = this.state.showEditChatModal
     this.setState({ showEditChatModal: !prevState })
