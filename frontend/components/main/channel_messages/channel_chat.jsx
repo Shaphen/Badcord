@@ -86,8 +86,16 @@ class ChannelChat extends React.Component {
               <p id="sender-name">{this.props.users[message.author_id]?.username}</p>
               <p id="sender-message">{message.body}</p>
             </div>
-            <button onClick={e => this.deleteMessage(e, message)} id="delete-channel-message">DELETE</button>
-            <button onClick={e => this.toggleEditChatModal(e, message)} id="update-channel-message">EDIT</button>
+            {
+              currentUser.id === message.author_id ? 
+              <button onClick={e => this.deleteMessage(e, message)} id="delete-channel-message">DELETE</button>
+              : null
+            }
+            {
+              currentUser.id === message.author_id ?
+              <button onClick={e => this.toggleEditChatModal(e, message)} id="update-channel-message">EDIT</button>
+              : null
+            }
             <Modal
               id="channel-update-modal"
               isOpen={this.state.showEditChatModal}
