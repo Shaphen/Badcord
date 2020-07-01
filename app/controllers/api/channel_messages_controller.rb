@@ -18,11 +18,11 @@ class Api::ChannelMessagesController < ApplicationController
   end
 
   def update
-    @message = ChannelMessage.find_by(channel_id: params[:channel_id])
+    @message = current_user.messages.find_by(id: params[:id])
     if @message.update(
       body: params[:body],
-      author_id: params[:author_id],
-      channel_id: params[:channel_id]
+      # author_id: params[:author_id],
+      # channel_id: params[:channel_id]
     )
       render :show
     else
