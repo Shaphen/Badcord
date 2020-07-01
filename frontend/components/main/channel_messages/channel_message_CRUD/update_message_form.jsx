@@ -13,8 +13,6 @@ class UpdateMessageForm extends React.Component {
     const message = {
       id: this.props.message.id,
       body: this.state.body,
-      // author_id: this.props.message.author_id,
-      // channel_id: this.props.message.channel_id
     }
     this.props.updateMessage(message)
       .then(() => this.props.closeModal())

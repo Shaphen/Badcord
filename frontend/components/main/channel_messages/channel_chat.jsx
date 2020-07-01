@@ -120,7 +120,7 @@ class ChannelChat extends React.Component {
                 },
                 overlay: {
                   position: 'fixed',
-                  backgroundColor: 'rgba(0,0,0,0.15)',
+                  backgroundColor: 'rgba(0,0,0,0.7)',
                   zIndex: '50'
                 }
               }}
