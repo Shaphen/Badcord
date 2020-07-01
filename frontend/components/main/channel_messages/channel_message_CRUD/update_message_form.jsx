@@ -16,6 +16,7 @@ class UpdateMessageForm extends React.Component {
       channel_id: this.props.message.channel_id
     }
     this.props.updateMessage(message)
+      .then(() => this.props.closeModal())
   }
 
   handleChange(type) {
