@@ -70,11 +70,12 @@ class ChannelChat extends React.Component {
   }
   
   render() {
-    let currentChannel = this.props.channels[this.props.match.params.channelId]
-    let currentServer = this.props.servers[this.props.match.params.serverId]
-    let nameDisplay = currentChannel?.name
+    let currentChannel = this.props.channels[this.props.match.params.channelId];
+    let currentServer = this.props.servers[this.props.match.params.serverId];
+    let currentUser = this.props.currentUser;
+    let nameDisplay = currentChannel?.name;
     let messageList;
-    if (currentChannel) {
+    if (currentChannel && currentUser) {
       let filteredMessages = this.props.messages.concat(this.state.messages).filter(message => {
         return message.channel_id === currentChannel.id
       });
