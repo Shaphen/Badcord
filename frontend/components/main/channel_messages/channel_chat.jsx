@@ -13,7 +13,7 @@ class ChannelChat extends React.Component {
       messages: [],
       showEditModal: false,
       showEditChatModal: false,
-      currMessageId: null,
+      currMessage: null,
       active: true
     };
     this.bottom = React.createRef();
@@ -58,7 +58,7 @@ class ChannelChat extends React.Component {
 
   toggleEditChatModal(e, message) {
     if (message) {
-      this.setState({ currMessageId: message.id })
+      this.setState({ currMessageId: message })
     }
     const prevState = this.state.showEditChatModal
     this.setState({ showEditChatModal: !prevState })
@@ -117,8 +117,7 @@ class ChannelChat extends React.Component {
               }}
             >
               <UpdateMessageContainer
-                messageId={this.state.currMessageId}
-                messageList={message}
+                message={this.state.currMessage}
                 closeModal={e => this.toggleEditChatModal(e)}
               />
             </Modal>

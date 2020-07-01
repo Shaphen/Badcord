@@ -28,7 +28,6 @@ class ChatForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     if (this.state.body.length) {
-      debugger
       App.cable.subscriptions.subscriptions[0].speak({
         message: this.state.body,
         authorId: this.state.authorId,

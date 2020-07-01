@@ -10,7 +10,6 @@ class Api::ChannelMessagesController < ApplicationController
       author_id: params[:author_id],
       channel_id: params[:channel_id]
     )
-    debugger
     if @message.save
       render :show
     else
