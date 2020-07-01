@@ -6,7 +6,6 @@ class UpdateMessageForm extends React.Component {
     this.state = {
       body: props.message.body
     }
-    debugger
   }
 
   handleSubmit() {
@@ -25,23 +24,19 @@ class UpdateMessageForm extends React.Component {
   }
   
   render() {
-    let message
-    if (this.props.message) {
-      message = this.props.message
-    }
     return (
       <div>
-        <div id="create-channel-header">
-          <p id="update-channel-text-main">EDIT MESSAGE</p>
+        <div id="update-message-header">
+          <p id="update-message-text-main">EDIT MESSAGE</p>
         </div>
         <form onSubmit={this.handleSubmit}>
-          <div id="update-channel-name-box">
-            <label id="create-channel-text">CHANNEL MESSAGE</label>
-            <input id="create-channel-input" type="text" onChange={this.handleChange('body')} value={this.state.body} />
+          <div id="update-message-box">
+            <label id="update-message-text">CHANNEL MESSAGE</label>
+            <input id="update-message-input" type="text" onChange={this.handleChange('body')} value={this.state.body} />
           </div>
-          <div id="update-channel-footer">
-            <label id="create-channel-cancel" onClick={this.props.closeModal}>Cancel</label>
-            <button id="create-channel-submit">Update Message</button>
+          <div id="update-message-footer">
+            <label id="update-message-cancel" onClick={this.props.closeModal}>Cancel</label>
+            <button id="update-message-submit">Update Message</button>
           </div>
         </form>
       </div>
