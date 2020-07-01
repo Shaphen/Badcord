@@ -89,7 +89,7 @@ class ChannelChat extends React.Component {
             <button onClick={e => this.deleteMessage(e, message)} id="delete-channel-message">DELETE</button>
             <button onClick={e => this.toggleEditChatModal(e, message)} id="update-channel-message">EDIT</button>
             <Modal
-              id="channel-edit-modal"
+              id="channel-update-modal"
               isOpen={this.state.showEditChatModal}
               contentLabel="Edit Message Modal"
               onRequestClose={e => this.toggleEditChatModal(e)}
