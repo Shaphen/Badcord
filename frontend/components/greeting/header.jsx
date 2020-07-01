@@ -34,7 +34,7 @@ export default ({ currentUser, logout }) => {
       {display}
       <header className="splash-header">
         <h3>The same way to chat with your communities and friends</h3>
-        <p>Badcord is the second easiest way to communicate over only text (because the others are too much work), whether you’re part of a mob, a nightly robber group, a worldwide assassins guild, or just a handful of friends that want to atack things.</p>
+        <p>Badcord is the second easiest way to communicate over only text (because the others are too much work), whether you’re part of a mob, a nightly robber group, a worldwide assassins guild, or just a handful of friends that want to attack things.</p>
         <DemoLoginContainer />
       </header>
     </div>
