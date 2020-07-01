@@ -18,7 +18,7 @@ class Api::ChannelMessagesController < ApplicationController
   end
 
   def update
-    @message = ChannelMessage.find_by(id: params[:id])
+    @message = ChannelMessage.find_by(channel_id: params[:channel_id])
     if @message.update(
       body: params[:body],
       author_id: params[:author_id],

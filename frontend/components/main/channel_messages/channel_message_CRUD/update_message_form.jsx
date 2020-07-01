@@ -6,13 +6,14 @@ class UpdateMessageForm extends React.Component {
     this.state = {
       body: props.message.body
     }
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit() {
-    message = {
+    const message = {
       body: this.state.body,
-      author_id: this.props.authorId,
-      channel_id: this.props.channelId
+      author_id: this.props.message.author_id,
+      channel_id: this.props.message.channel_id
     }
     this.props.updateMessage(message)
   }
