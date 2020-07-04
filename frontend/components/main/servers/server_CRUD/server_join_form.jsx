@@ -12,7 +12,6 @@ class ServerJoinForm extends React.Component {
   handleChange(type) {
     return e => {
       this.setState({ [type]: e.target.value })
-      console.log(this.state.inviteCode)
     }
   }
 
