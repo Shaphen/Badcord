@@ -6,7 +6,7 @@ class ServerUpdateForm extends React.Component {
     this.state = {
       id: this.props.serverId,
       name: this.props.server.name,
-      inviteCode: this.props.server.inviteCode
+      invite_code: this.props.server.invite_code
     }
     this.handleSubmit = this.handleSubmit.bind(this)
   }
@@ -14,7 +14,6 @@ class ServerUpdateForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const server = Object.assign({}, this.state)
-    debugger
     this.props.updateServer(server)
       .then(() => this.props.closeModal(e))
   }
