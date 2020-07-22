@@ -7,6 +7,7 @@ class Api::UsersController < ApplicationController
   
   def create
     @user = User.new(user_params)
+    @user.photo.attach(params[:photo]) if params[:photo]
     if @user.save
       login!(@user)
       render '/api/users/show'
