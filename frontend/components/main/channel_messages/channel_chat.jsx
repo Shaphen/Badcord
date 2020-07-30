@@ -184,7 +184,7 @@ class ChannelChat extends React.Component {
                       closeModal={this.handleCloseEditModal}
                     />
                   </Modal>
-                  <label id="welcome-text-edit-channel" onClick={this.handleOpenEditModal}>Edit Message</label>
+                  <label id="welcome-text-edit-channel" onClick={this.handleOpenEditModal}>Edit Channel</label>
                 </div>
                 { messageList }
                 <div ref={this.bottom} id="spacer"/>
