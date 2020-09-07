@@ -25,7 +25,5 @@ document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(<Root store={ store } />, root)
 
   // test code
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
   window.selectMembersByServer = selectMembersByServer; //for future creating members list for servers
 });
