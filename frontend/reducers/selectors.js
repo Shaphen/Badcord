@@ -7,7 +7,6 @@ export const selectMembersByServer = (state, serverId) => {
 }
 
 // export const selectMessagesByChannel = state => {
-//   debugger
 //   state.messages.filter(message => {
 //     return message.channel_id === currentChannel.id
 //   });
