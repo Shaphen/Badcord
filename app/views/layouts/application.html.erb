@@ -1,19 +1,28 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:fb="http://ogp.me/ns/fb#">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <title>Badcord</title>
-    <link rel="shortcut icon" href="<%= image_url('logos/vector/isolated-monochrome-white.svg') %>" />
+    <link 
+      rel="shortcut icon" 
+      href="<%= image_url('logos/vector/isolated-monochrome-white.svg') %>"
+    />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <meta property="og:image" content="<%= image_url('logos/git_versions/name_bottom.png') %>" />
+    <%# Social Media Image Preview %>
+    <meta 
+      prefix="og: http://ogp.me/ns#" 
+      property="og:image" 
+      content="<%= image_url('logos/git_versions/name_bottom.png') %>"
+    />
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <meta prefix="og: http://ogp.me/ns#" property="og:image" content="https://badcord-seeds.s3-us-west-1.amazonaws.com/badcord_splash.png" />
+    
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
     />
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180912387-1"></script>
     <script>
@@ -23,7 +32,9 @@
 
       gtag('config', 'UA-180912387-1');
     </script>
+    
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
     <script type="text/javascript">
       window.logo_head_white = "<%= image_url('logos/vector/isolated-monochrome-white.svg') %>"
       window.login_signup_bg = "<%= image_url('splash/login_signup_bg.jpg') %>"
