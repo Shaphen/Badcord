@@ -12,12 +12,28 @@
     <%# Social Media Image Preview %>
     <meta 
       prefix="og: http://ogp.me/ns#" 
+      property="og:type" 
+      content="website"
+    />
+    <meta 
+      prefix="og: http://ogp.me/ns#" 
+      property="og:title" 
+      content="Badcord" 
+    />
+    <meta
+      prefix="og: http://ogp.me/ns#" 
       property="og:image" 
       content="<%= image_url('logos/git_versions/name_bottom.png') %>"
     />
+    <meta 
+      prefix="og: http://ogp.me/ns#" 
+      property="og:url" 
+      content="https://badcord.herokuapp.com/" 
+    />
 
+
+    <%# Add CSS Animation Library %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
@@ -33,8 +49,10 @@
       gtag('config', 'UA-180912387-1');
     </script>
     
+    <%# Allow Ajax Calls %>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     
+    <%# Add Accessibility to Images and Logos Globally %>
     <script type="text/javascript">
       window.logo_head_white = "<%= image_url('logos/vector/isolated-monochrome-white.svg') %>"
       window.login_signup_bg = "<%= image_url('splash/login_signup_bg.jpg') %>"
