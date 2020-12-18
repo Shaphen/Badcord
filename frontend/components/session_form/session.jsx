@@ -35,7 +35,8 @@ class Session extends React.Component {
     e.preventDefault();
     const user = {
       username: this.props.generateUsername,
-      password: this.props.generatePassword
+      password: this.props.generatePassword,
+      email: this.props.generateEmail
     }
     
     this.props.demoLogin(user)

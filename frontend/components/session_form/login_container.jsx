@@ -1,9 +1,13 @@
 import { connect } from 'react-redux';
 import Session from './session';
-import { login, receiveErrors } from '../../actions/session_actions'
+import { signup, login, receiveErrors } from '../../actions/session_actions'
+import { generateRandEmail, generateRandUsername, generateRandPassword } from "../../reducers/selectors";
 
 const mSTP = state => {
   return {
+    generateUsername: generateRandUsername(),
+    generatePassword: generateRandPassword(),
+    generateEmail: generateRandEmail(),
     errors: state.errors.session,
     formType: 'Welcome Back!'
   }
