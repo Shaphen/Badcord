@@ -10,10 +10,13 @@ class DemoLogin extends React.Component {
   demoLogin(e) {
     e.preventDefault();
     const user = {
-      username: "masterchef",
-      password: "password"
+      username: this.props.generateUsername,
+      password: this.props.generatePassword,
+      email: this.props.generateEmail
     }
-    this.props.login(user)
+    
+    this.props.demoLogin(user)
+      .then(() => this.props.history.push("/channels/@me"))
   }
 
   render() {
