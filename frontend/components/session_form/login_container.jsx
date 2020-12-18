@@ -10,6 +10,7 @@ const mSTP = state => {
 };
 
 const mDTP = dispatch => ({
+  demoLogin: demo => dispatch(signup(demo)),
   processEntry: user => dispatch(login(user)),
   clearErrors: () => dispatch(receiveErrors([]))
 });

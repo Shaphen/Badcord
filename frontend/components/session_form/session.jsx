@@ -34,14 +34,12 @@ class Session extends React.Component {
   demoLogin(e) {
     e.preventDefault();
     const user = {
-      username: "masterchef",
-      password: "password"
+      username: this.props.generateUsername,
+      password: this.props.generatePassword
     }
-    if (this.props.formType === 'Welcome Back!') {
-      this.props.processEntry(user).then(() => this.props.history.push("/channels/@me"))
-    } else {
-      this.props.demoLogin(user).then(() => this.props.history.push("/channels/@me"))
-    }
+    
+    this.props.demoLogin(user)
+      .then(() => this.props.history.push("/channels/@me"))
   }
   
   handleChange(type) {
