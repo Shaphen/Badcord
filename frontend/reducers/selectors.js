@@ -7,15 +7,31 @@ export const selectMembersByServer = (state, serverId) => {
 }
 
 export const generateRandUsername = () => {
-  return "test_username1"
+  const startNames = [
+    "badboi",
+    "CrmnlMnd",
+    "bigbaddy",
+    "d3v!l",
+    "robber_lyfe",
+    "Karjacker",
+    "PainMachine",
+    "meanbutsexi"
+  ]
+  let newUsername = startNames[Math.floor(Math.random() * 8)];
+  let endName = Math.random().toString(18).slice(5);
+
+  const username = newUsername + "-" + endName;
+  return username;
 }
 
 export const generateRandPassword = () => {
-  return "password"
+  const password = Math.random().toString(18).slice(2);
+  return password;
 }
 
 export const generateRandEmail = () => {
-  return "email1@email.com"
+  const email = Math.random().toString(18).slice(5) + "@email.com";
+  return email;
 }
 
 // export const selectMessagesByChannel = state => {
