@@ -20,6 +20,7 @@ class ServerJoinForm extends React.Component {
     e.preventDefault();
     const server = Object.assign({}, this.state)
     this.props.joinServer(server)
+      .then((res) => res ? this.props.history.push(`/channels/${res.server.server.id}/${res.server.server.channel_ids[0]}`): this.props.history.push(`/channels/@me`))
       .then(() => this.props.closeModal(e))
   }
 

@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { joinServer } from '../../../../actions/server_actions'
+import { withRouter } from 'react-router-dom'
 import ServerJoinForm from './server_join_form';
 
 const mSTP = state => ({
@@ -11,4 +12,4 @@ const mDTP = dispatch => ({
   joinServer: inviteCode => dispatch(joinServer(inviteCode))
 });
 
-export default connect(mSTP, mDTP)(ServerJoinForm);
+export default withRouter(connect(mSTP, mDTP)(ServerJoinForm));
