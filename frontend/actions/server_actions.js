@@ -59,7 +59,7 @@ export const updateServer = server => dispatch => ApiUtil.updateServer(server)
   });
 
 export const joinServer = inviteCode => dispatch => ApiUtil.joinServers(inviteCode)
-  .then((server) => dispatch(receiveServer(server)), err => {
+  .then(server => dispatch(receiveServer(server)), err => {
     err.responseJSON.map(error => {
       return notifyError(error);
     });
