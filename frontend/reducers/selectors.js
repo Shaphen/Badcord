@@ -18,7 +18,7 @@ export const generateRandUsername = () => {
     "meanbutsexi"
   ]
   let newUsername = startNames[Math.floor(Math.random() * 8)];
-  let endName = Math.random().toString(18).slice(5);
+  let endName = Math.random().toString(10).slice(9);
 
   const username = newUsername + "-" + endName;
   return username;
