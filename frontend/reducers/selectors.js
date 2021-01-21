@@ -39,6 +39,5 @@ export const selectMessagesByCurrentUser = (messages, channelId) => {
     return message.channel_id === parseInt(channelId)
   });
   
-  debugger
   return filtered
 }

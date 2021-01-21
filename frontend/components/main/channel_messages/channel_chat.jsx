@@ -77,11 +77,8 @@ class ChannelChat extends React.Component {
     let messageList;
 
     if (currentChannel && currentUser) {
-      // let filteredMessages = this.props.messages.concat(this.state.messages).filter(message => {
-      //   return message.channel_id === currentChannel.id
-      // });
-
       let filteredMessages = this.props.filterMessages
+      
       messageList = filteredMessages.map((message, idx) => {
         return (
           <div key={idx} id="new-message" className="message-animation">
