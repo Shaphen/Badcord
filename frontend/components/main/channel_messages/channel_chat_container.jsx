@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { selectMembersByServer } from '../../../reducers/selectors';
 import { fetchChannel } from '../../../actions/channel_actions';
 import { fetchMessages, deleteMessage, createMessage } from '../../../actions/channel_chat_actions';
-import { selectMessagesByChannel } from '../../../reducers/selectors'; // add in cleanup
+import { selectMessagesByCurrentUser } from '../../../reducers/selectors'; // add in cleanup
 
 const mSTP = (state, ownProps) => {
   let messages
@@ -15,6 +15,10 @@ const mSTP = (state, ownProps) => {
   if (state.entities.servers && state.entities.users) {
     serverMembers = selectMembersByServer(state, ownProps.match.params.serverId)
   }
+  let currentChannelId
+  if (state.entities.channels) {
+    currentChannelId = ownProps.match.params.channelId
+  }
   
   return {
     currentUser: state.entities.users[state.session.id],
@@ -24,6 +28,7 @@ const mSTP = (state, ownProps) => {
     servers: state.entities.servers,
     errors: state.errors.session,
     messages: messages,
+    filterMessages: selectMessagesByCurrentUser(messages, currentChannelId),
   }
 };
 

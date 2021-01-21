@@ -34,8 +34,11 @@ export const generateRandEmail = () => {
   return email;
 }
 
-// export const selectMessagesByChannel = state => {
-//   state.messages.filter(message => {
-//     return message.channel_id === currentChannel.id
-//   });
-// }
+export const selectMessagesByCurrentUser = (messages, channelId) => {
+  let filtered = messages.filter(message => {
+    return message.channel_id === parseInt(channelId)
+  });
+  
+  debugger
+  return filtered
+}
