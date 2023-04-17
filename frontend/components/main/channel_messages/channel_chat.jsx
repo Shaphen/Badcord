@@ -189,7 +189,11 @@ class ChannelChat extends React.Component {
                 { messageList }
                 <div ref={this.bottom} id="spacer"/>
               </div>
-              <ChatForm authorId={this.props.currentUser.id} channel={currentChannel} isActive={this.state.active} />
+              <ChatForm 
+                authorId={this.props.currentUser.id} 
+                channel={currentChannel} 
+                isActive={this.state.active} 
+              />
             </div>
           </div>
           <div className={this.state.active ? "members-box" : null}>
