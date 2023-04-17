@@ -23,8 +23,7 @@ class User < ApplicationRecord
   end
   
   def reset_session_token!
-    # URL safe string of length 16
-    self.session_token = SecureRandom.urlsafe_base64 
+    self.session_token = SecureRandom.urlsafe_base64
     self.save
     self.session_token
   end
@@ -65,7 +64,6 @@ class User < ApplicationRecord
         "https://badcord-seeds.s3-us-west-1.amazonaws.com/isolated-monochrome-pink.png",
         "https://badcord-seeds.s3-us-west-1.amazonaws.com/isolated-monochrome-purple.png"
       ]
-      debugger
       file = open(icon_paths.sample)
       self.photo.attach(io: file, filename: "default-icon.png")
     end

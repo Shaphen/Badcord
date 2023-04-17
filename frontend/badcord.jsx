@@ -6,7 +6,7 @@ import Modal from 'react-modal';
 
 document.addEventListener("DOMContentLoaded", () => {
   Modal.setAppElement('#root');
-  
+
   let store;
   if (window.currentUser) {
     const preloadedState = {
