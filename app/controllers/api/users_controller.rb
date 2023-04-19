@@ -9,7 +9,6 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
     @user.photo.attach(params[:photo]) if params[:photo]
     if @user.save
-      debugger
       ServerMember.create([
         {member_id: @user.id, server_id: Server.first.id},
         {member_id: @user.id, server_id: Server.second.id},
