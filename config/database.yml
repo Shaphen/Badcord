@@ -82,6 +82,7 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
   database: Dabcord_production
   username: Dabcord
   password: <%= ENV['DABCORD_DATABASE_PASSWORD'] %>
