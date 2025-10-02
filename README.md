@@ -2,9 +2,11 @@
 ## Table of Contents
 * [What is Badcord?](#what-is-badcord)
 * [Technologies](#relevant-technologies)
+* [Local Development Setup](#local-development-setup)
 * Features
   * [Live Chat](#live-chat)
   * [Servers](#servers)
+* [Database Schema](#database-schema)
 * [Future Directions](#future-directions)
 ## Live Site
 [Badcord](https://badcord.herokuapp.com/)
@@ -21,7 +23,78 @@ Badcord is a fullstack single-page web application that closely follows the desi
 * Backend
   * Ruby on Rails - MVC framework
   * PostgreSQL - database
-  
+
+## Local Development Setup
+
+### Prerequisites
+Before running this project locally, ensure you have the following installed:
+- **Ruby 2.7.2** (recommended to use RVM: `rvm install 2.7.2`)
+- **Node.js 10.13.0+** (though newer versions should work)
+- **PostgreSQL** (install via Homebrew: `brew install postgresql`)
+- **Bundler** gem
+
+### Installation Steps
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Shaphen/Badcord.git
+   cd Badcord
+   ```
+
+2. **Install Ruby dependencies**
+   ```bash
+   rvm use 2.7.2
+   bundle install
+   ```
+
+3. **Install Node.js dependencies**
+   ```bash
+   npm install
+   ```
+
+4. **Set up PostgreSQL**
+   ```bash
+   # Start PostgreSQL service
+   brew services start postgresql
+   
+   # Create postgres user (if not exists)
+   createuser -s postgres
+   
+   # Set password for postgres user
+   psql -U postgres -c "ALTER USER postgres PASSWORD 'password';"
+   ```
+
+5. **Set up the database**
+   ```bash
+   bin/rails db:setup
+   ```
+
+6. **Build the frontend**
+   ```bash
+   npm run webpack
+   ```
+
+7. **Start the Rails server**
+   ```bash
+   bin/rails server
+   ```
+
+### Running the Application
+
+Once everything is set up, you can access the application at:
+- **Local URL**: `http://localhost:3000`
+
+### Development Workflow
+
+- **Frontend changes**: Webpack automatically rebuilds when you modify React components
+- **Backend changes**: Rails automatically reloads when you modify Ruby files
+- **Database changes**: Run `bin/rails db:migrate` after creating new migrations
+
+### Stopping the Servers
+
+- Press `Ctrl+C` in the terminal where Rails server is running
+- Press `Ctrl+C` in the terminal where webpack is running
+
 ## Features
 ### Live Chat
 Users are able to chat in real-time with each other using channels.
